@@ -352,7 +352,7 @@ MigrationBackup/
 # Ionide (cross platform F# VS Code tools) working folder
 .ionide/
 
-"Sonder files for DeviantArt/"
+
 Skins/@Backup/
 Skins/@Vault/
 Skins/ASTROWeather/
@@ -363,4 +363,4 @@ Skins/LargeCleanWeather/
 Skins/ModernGadgets/
 Skins/RainformerHWi/
 Skins/testing/
-Skins/ToggleCheckBox
+Skins/ToggleCheckBox/
