@@ -4,6 +4,7 @@
 Sonder is a Rainmeter skin with the essentials...
 
 Time and Date (based on Elegance by lilshizzy)
+
 -12hr, 24hr, vertical and horizontal layout, custom colors.
 
 Weather (based on Astro Weather by xxenium)
