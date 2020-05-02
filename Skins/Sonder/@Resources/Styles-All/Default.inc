@@ -1,4 +1,6 @@
 [Variables]
+SonderVersion=2.0.4
+notifyUpdates=1
 LocalFontFace=ITC Avant Garde Pro XLt
 LocalFontFace2=ITC Avant Garde Pro Bk
 FontFace3=Segou UI
@@ -8,6 +10,8 @@ Color3=105,155,115
 Color4=255,255,255,204
 Hours=%I
 fc=f
+DateFormat1=%A | %B %d %Y
+DateFormat2=%A | %B %d
 January=jan
 February=feb
 March=march
@@ -50,8 +54,8 @@ ScaleValueSystem=1
 Systembarheight=1
 SystemcolorBar=105,155,115
 SystemcolorText=210,210,210
-ShowSystemGPU=1
-ShowSystemTemp=1
+ShowSystemGPU=0
+ShowSystemTemp=0
 ShowSystemSwap=0
 
 ScaleValueNetwork=1
