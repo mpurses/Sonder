@@ -1,0 +1,10 @@
+COLORPICKERPLUS CHANGELOG
+
+v1.1.0 - 2019-05-31
+- Added ability to close the eyedropper by pressing escape
+- Converted all icons to shape meters
+- Removed FontAwesome icon font
+- Reduced flickering upon skin refresh
+
+v1.0.0 - 2019-04-14
+- Initial release

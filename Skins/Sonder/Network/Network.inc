@@ -1,3 +1,5 @@
+[Rainmeter]
+Group=AllNoWeather
 ;---------------------------------------------------------------------
 ; MEASURES
 
@@ -60,18 +62,22 @@ MeterStyle=StyleSidebarBackground | StyleSystem#Variant#Background
 [Border1]
 Meter=IMAGE
 MeterStyle=StyleSystem#Variant#Border | StyleSystem#Variant#Border1
+;Hidden=#GraphVariant#
 
 [VerticalBorderA]
 Meter=IMAGE
 MeterStyle=StyleSystem#Variant#VerticalBorderA
+;Hidden=#GraphVariant#
 
 [VerticalBorderB]
 Meter=IMAGE
 MeterStyle=StyleSystem#Variant#VerticalBorderB
+;Hidden=#GraphVariant#
 
 [Border2]
 Meter=IMAGE
 MeterStyle=StyleSystem#Variant#Border | StyleSystem#Variant#Border2
+;Hidden=#GraphVariant#
 
 ;-----------------------
 ; LABELS & TEXT
@@ -80,42 +86,50 @@ MeterStyle=StyleSystem#Variant#Border | StyleSystem#Variant#Border2
 Meter=STRING
 MeterStyle=StyleSystem#Variant#Label | StyleSystem#Variant#Label1
 Text="SSID"
+Hidden=#GraphVariant#
 
 [SSID]
 Meter=STRING
 MeterStyle=StyleSystem#Variant#Text | StyleSystem#Variant#Text1
 MeasureName=MeasureSSID
+Hidden=#GraphVariant#
 
 [LabelWiFi]
 Meter=STRING
 MeterStyle=StyleSystem#Variant#Label | StyleSystem#Variant#Label2
 Text="WiFi"
+Hidden=#GraphVariant#
 
 [WiFi]
 Meter=STRING
 MeterStyle=StyleSystem#Variant#Text | StyleSystem#Variant#Text2
 MeasureName=MeasureWiFi
 Postfix="%"
+Hidden=#GraphVariant#
 
 [LabelLAN]
 Meter=STRING
 MeterStyle=StyleSystem#Variant#Label | StyleSystem#Variant#Label3
 Text="LAN"
+Hidden=#GraphVariant#
 
 [LAN]
 Meter=STRING
 MeterStyle=StyleSystem#Variant#Text | StyleSystem#Variant#Text3 | StyleSystem#Variant#TextDark
 MeasureName=MeasureLAN
+Hidden=#GraphVariant#
 
 [LabelWAN]
 Meter=STRING
 MeterStyle=StyleSystem#Variant#Label | StyleSystem#Variant#Label4
 Text="WAN"
+Hidden=#GraphVariant#
 
 [WAN]
 Meter=STRING
 MeterStyle=StyleSystem#Variant#Text | StyleSystem#Variant#Text4 | StyleSystem#Variant#TextDark
 MeasureName=MeasureWAN
+Hidden=#GraphVariant#
 ;Text="12.345.678.90"
 ;Uncomment this text when taking screenshots to protect your IP.
 

@@ -25,6 +25,7 @@ MouseOverAction=[!SetOption #CURRENTSECTION# ImageAlpha #SkinBackgroundAlpha#][!
 MouseLeaveAction=[!SetOption #CURRENTSECTION# ImageAlpha #GlobalSkinBackgroundAlphaInactive#][!UpdateMeter #CURRENTSECTION#][!Redraw]
 W=(#scale#*200)
 H=(#scale#*90)+(#ShowSystemGPU#+#ShowSystemTemp#+#ShowSystemSwap#)*20
+imagetint=#GlobalSkinBackgroundColorTint#
 ;DynamicVariables=1
 
 [Background]

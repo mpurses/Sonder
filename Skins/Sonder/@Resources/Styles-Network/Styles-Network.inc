@@ -18,14 +18,14 @@ Font=LocalFontFace
 SkinBackgroundAlpha=#GlobalSkinBackgroundAlpha#
 HideBordersTop=1
 HideBordersBottom=1
-
+GraphVariant=#GraphVariant#
 [Rainmeter]
 Group=Network
 MiddleMouseUpAction=!Refresh
 LeftMouseDoubleClickAction=!ActivateConfig #CURRENTCONFIG#
-;MouseOverAction=[!SetVariable SkinMouseOver 1][!Redraw]
-;MouseLeaveAction=[!SetVariable SkinMouseOver 0][!Redraw]
 DynamicWindowSize=1
+AccurateText=1
+Group=AllNoWeather
 
 [StyleSidebarBackground]
 ImageName=#@#Images\SkinBackground.#ColorImage#.png
@@ -34,7 +34,7 @@ ImageAlpha=#GlobalSkinBackgroundAlphaInactive#
 MouseOverAction=[!SetOption #CURRENTSECTION# ImageAlpha #SkinBackgroundAlpha#][!UpdateMeter #CURRENTSECTION#][!Redraw]
 MouseLeaveAction=[!SetOption #CURRENTSECTION# ImageAlpha #GlobalSkinBackgroundAlphaInactive#][!UpdateMeter #CURRENTSECTION#][!Redraw]
 W=(#Scale#*#SidebarWidth#)
-
+imagetint=#GlobalSkinBackgroundColorTint#
 ;--------------------------------------------------------------------------------------------
 ; SIDEBAR SYSTEM
 
@@ -218,7 +218,7 @@ Hidden=1
 ; GRAPH
 
 [StyleSystemGraphBackground]
-H=(#Scale#*152)
+H=(#Scale#*(152-#GraphSubtraction#))
 
 [StyleSystemGraphBorder]
 SolidColor=#ColorBorder#
@@ -307,7 +307,7 @@ X=(#Scale#*9)r
 W=(#Scale#*(#SidebarWidth#-163))
 StringAlign=LEFT
 
-;--------------------------------------------------------*****************************
+;--------------------------------------------------------
 
 [StyleSystemGraphText3]
 X=(#Scale#*-9)r
@@ -327,25 +327,25 @@ FontColor=#NetworkLabelsColor#
 
 [StyleSystemGraphBorder3]
 X=(#Scale#*(10+(4*#HideBordersBottom#)))
-Y=(#Scale#*89)
+Y=(#Scale#*(89-#GraphSubtraction#))
 W=(#Scale#*(#SidebarWidth#-20-(4*#HideBordersBottom#)))
 
 [StyleSystemGraphVerticalBorderC]
 SolidColor=#ColorBorder#
 X=(#Scale#*(#SidebarWidth#/2))
-Y=(#Scale#*90)
+Y=(#Scale#*(90-#GraphSubtraction#))
 W=1
 H=(#Scale#*19)
 
 [StyleSystemGraphBorder4]
 SolidColor=#ColorBorder#
 X=(#Scale#*(10+(4*#HideBordersBottom#)))
-Y=(#Scale#*109)
+Y=(#Scale#*(109-#GraphSubtraction#))
 W=(#Scale#*(#SidebarWidth#-20-(4*#HideBordersBottom#)))
 H=1
 
 [StyleSystemGraphBorder5]
-Y=(#Scale#*147)
+Y=(#Scale#*(147-#GraphSubtraction#))
 Hidden=#HideBordersBottom#
 
 ;-----------------------
@@ -359,11 +359,11 @@ AntiAlias=1
 AutoScale=1
 
 [StyleSystemGraphGraph1]
-Y=(#Scale#*52)
+Y=(#Scale#*(52-#GraphSubtraction#))
 PrimaryColor=#NetworkUpColor#
 
 [StyleSystemGraphGraph2]
-Y=(#Scale#*110)
+Y=(#Scale#*(110-#GraphSubtraction#))
 PrimaryColor=#NetworkDownColor#
 Flip=1
 
@@ -371,7 +371,7 @@ Flip=1
 ; GRAPH TEXT AND LABELS
 
 [StyleSystemGraphGraphLabel]
-Y=(#Scale#*92)
+Y=(#Scale#*(92-#GraphSubtraction#))
 H=(#Scale#*10)
 FontFace=#Font#
 FontSize=#Size4#
@@ -390,7 +390,7 @@ FontColor=#NetworkDownColor#
 StringAlign=LEFT
 
 [StyleSystemGraphGraphText]
-Y=(#Scale#*92)
+Y=(#Scale#*(92-#GraphSubtraction#))
 FontColor=#NetworkMainTextColor#
 FontFace=#Font#
 FontSize=#Size3#
