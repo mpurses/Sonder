@@ -4,16 +4,15 @@
 Sonder is a Rainmeter skin with the essentials...  
 
 Time and Date (based on Elegance by lilshizzy)  
--12hr, 24hr, vertical and horizontal layout, custom colors.  
-
+-12hr, 24hr, vertical and horizontal layout, customize format, custom colors.  
 
 Weather (based on Astro Weather by xxenium)  
 -Gets feed from Weather Channel website html (updated for 2020)  
--6 variants, added another variant option from AstroWeather.  
+-7 variants, added 2 other variant options from AstroWeather.  
 -Click current temperature to customize.  
 
 System (based on illustro)  
--Overall CPU % and RAM usage.  
+-Overall CPU % and RAM usage. (GPU, Swap, Core Temp options) 
 -Click on System text to open Task Manager.  
 
 Network Graph (based on Enigma by Kaelri)  
@@ -22,6 +21,9 @@ Network Graph (based on Enigma by Kaelri)
 
 Recycle bin  
 -Right Click to empty, Left Click to Open.   
+
+"Everyday Habit Calendar"  
+-Keep track of your habits and don't break the chain!  
 
 Wallpaper  
 https://ze-robot.com/images/source/3035.jpg  
