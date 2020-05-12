@@ -1,5 +1,5 @@
 function Initialize()
-print('Script Running...')
+print('Calendar Script Running...')
 	local CurrentDayNumber = SKIN:GetVariable('CurrentDayMeter')
 	local CurrentStreakTemp = 0
 	local DayComplete = 1
@@ -7,6 +7,12 @@ print('Script Running...')
 		DayComplete = SKIN:GetVariable('Day'..i)
 		if DayComplete == '0' then
 			CurrentStreakTemp = CurrentStreakTemp + 1
+			if CurrentDayNumber == ''..i  then
+				SKIN:Bang('!WriteKeyValue', 'Variables', 'TodayComplete', 1, '#@#Variables.inc')
+			end
+		elseif CurrentDayNumber == ''..i  then
+			CurrentStreakTemp = CurrentStreakTemp
+			SKIN:Bang('!WriteKeyValue', 'Variables', 'TodayComplete', 0, '#@#Variables.inc')
 		else
 			SKIN:Bang('!WriteKeyValue', 'Variables', 'CurrentStreak', CurrentStreakTemp, '#@#Variables.inc')
 			return CurrentStreakTemp
