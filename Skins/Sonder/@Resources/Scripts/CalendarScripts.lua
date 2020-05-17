@@ -1,6 +1,7 @@
 function Initialize()
 print('Calendar Script Running...')
 	local CurrentDayNumber = SKIN:GetVariable('CurrentDayMeter')
+	local LeapYear = SKIN:GetVariable('LeapYearAdj')
 	local CurrentStreakTemp = 0
 	local DayComplete = 1
 	for i = CurrentDayNumber, 1, -1 do
@@ -14,8 +15,12 @@ print('Calendar Script Running...')
 			CurrentStreakTemp = CurrentStreakTemp
 			SKIN:Bang('!WriteKeyValue', 'Variables', 'TodayComplete', 0, '#@#Variables.inc')
 		else
-			SKIN:Bang('!WriteKeyValue', 'Variables', 'CurrentStreak', CurrentStreakTemp, '#@#Variables.inc')
-			return CurrentStreakTemp
+			if CurrentDayNumber == 60  and LeapYear == 1 then
+				CurrentStreakTemp = CurrentStreakTemp
+			else
+				SKIN:Bang('!WriteKeyValue', 'Variables', 'CurrentStreak', CurrentStreakTemp, '#@#Variables.inc')
+				return CurrentStreakTemp
+			end
 		end
 	end
 

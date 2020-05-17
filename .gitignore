@@ -355,12 +355,14 @@ MigrationBackup/
 Sonder files for DeviantArt/
 Skins/@Backup/
 Skins/@Vault/
+Skins/ActionTimerExamples/
 Skins/ASTROWeather/
 Skins/background/
 Skins/CoreTemp/
 Skins/HWiNFO/
 Skins/LargeCleanWeather/
 Skins/ModernGadgets/
+Skins/_ModernGadgets_/
 Skins/RainformerHWi/
 Skins/testing/
 Skins/ToggleCheckBox/
@@ -370,3 +372,5 @@ Skins/Sawny/
 Skins/bluetoothswitch/
 Skins/calendar/
 Skins/monstercat-visualizer/
+Skins/Ageo/
+Skins/Laro/

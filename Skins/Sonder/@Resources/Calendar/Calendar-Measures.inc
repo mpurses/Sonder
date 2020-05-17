@@ -5,7 +5,7 @@
 Measure=Calc
 Formula=Counter
 IfCondition=MeasureOnLoad = 1
-IfTrueAction=[!RainmeterWriteKeyValue Variables RefreshOverride 0 "#@#Variables.inc"]
+IfTrueAction=[!RainmeterWriteKeyValue Variables RefreshOverride 0 "#@#Variables.inc"][!UpdateMeasure StreakScript][!UpdateMeasure MeasureStreakActive]
 
 [ResetRefreshOverride]
 Measure=Calc
@@ -22,7 +22,7 @@ UpdateDivider=-1
 [CurrentDayNum]
 Measure=Time
 Format="%#j"
-UpdateDivider=-1
+UpdateDivider=60
 
 [CurrentDayofMonthNum]
 Measure=Time
@@ -45,9 +45,10 @@ IfCondition=([CurrentYear]%4 = 0) && (([CurrentYear]%100 <> 0) || ([CurrentYear]
 IfTrueAction=[!WriteKeyValue Variables LeapYearAdj 0 "#@#Variables.inc"]
 IfFalseAction=[!WriteKeyValue Variables LeapYearAdj 1 "#@#Variables.inc"]
 IfCondition2=([CurrentMonth] > 2)
-IfTrueAction2=[!WriteKeyValue Variables CurrentDayMeter ([CurrentDayNum]-#LeapYearAdj#) "#@#Variables.inc"]
+IfTrueAction2=[!WriteKeyValue Variables CurrentDayMeter ([CurrentDayNum]+#LeapYearAdj#) "#@#Variables.inc"]
+;Also need to ignore feb 29 on the streak checker if not a leap year... havent done yet since its currently a leap year and im lazy
 IfFalseAction2=[!WriteKeyValue Variables CurrentDayMeter ([CurrentDayNum]) "#@#Variables.inc"]
-UpdateDivider=-1
+UpdateDivider=60
 
 ;===================================================================================================================================================================================================
 ;============================================================================ Language month translate measures ====================================================================================
@@ -164,6 +165,10 @@ UpdateDivider=-1
 ;============================================================================ Month, 1st day, and current day Location measures ====================================================================
 ;============================================================================         only done on first load of skin           ====================================================================
 ;===================================================================================================================================================================================================
+;==================================================== For people wondering why its a lot of repeated formulas and not referencing each other =======================================================
+;==================================================== It was like that, but if rainmeter runs it all at once, some references may be behind,  ======================================================
+;======================================================================== and then it will take longer to update, dumb..  ==========================================================================
+;===================================================================================================================================================================================================
 ;0=Horizontal  1= Vertical
 [UpdateMonthDayspacings]
 Measure=Calc
@@ -176,14 +181,13 @@ IfCondition2=(#CalendarLayout# = 1) && ((MeasureOnLoad = 1) || (#RefreshOverride
 IfTrueAction2=[!Log "Running: UpdateMonthDayspacingsV"][!WriteKeyValue Variables MonthSpacings (#WORKAREAWIDTH#/12) "#@#Variables.inc"][!WriteKeyValue Variables DayHeight ((#WORKAREAHEIGHT#-86)/31) "#@#Variables.inc"][!UpdateMeterGroup Months]
 UpdateDivider=-1
 ;DynamicVariables=1
-
 [UpdateDayOneLocation]
 Measure=Calc
 Formula=(#CalendarLayout#)
 IfCondition=(#CalendarLayout# = 0) && ((MeasureOnLoad = 1) || (#RefreshOverride# = 1))
-IfTrueAction=[!Log "Running: DayOneLocationH"][!WriteKeyValue Variables DayLocationX "(#DayHeight#/2)" "#@#Variables.inc"][!WriteKeyValue Variables DayLocationY "(#DayHeight#/-2)" "#@#Variables.inc"]
+IfTrueAction=[!Log "Running: DayOneLocationH"][!WriteKeyValue Variables DayLocationX "(((#WORKAREAWIDTH#-145)/31)/2)" "#@#Variables.inc"][!WriteKeyValue Variables DayLocationY "(((#WORKAREAWIDTH#-145)/31)/-2)" "#@#Variables.inc"]
 IfCondition2=(#CalendarLayout# = 1) && ((MeasureOnLoad = 1) || (#RefreshOverride# = 1))
-IfTrueAction2=[!Log "Running: DayOneLocationV"][!WriteKeyValue Variables DayLocationX "(#DayHeight#/-2)" "#@#Variables.inc"][!WriteKeyValue Variables DayLocationY "(#DayHeight#/2)" "#@#Variables.inc"]
+IfTrueAction2=[!Log "Running: DayOneLocationV"][!WriteKeyValue Variables DayLocationX "(((#WORKAREAHEIGHT#-86)/31)/-2)" "#@#Variables.inc"][!WriteKeyValue Variables DayLocationY "(((#WORKAREAHEIGHT#-86)/31)/2)" "#@#Variables.inc"]
 UpdateDivider=-1
 ;DynamicVariables=1
 
@@ -191,11 +195,11 @@ UpdateDivider=-1
 Measure=Calc
 Formula=(#CalendarLayout#)
 IfCondition=(#CalendarLayout# = 0) && ((MeasureOnLoad = 1) || (#RefreshOverride# = 1))
-IfTrueAction=[!Log "Running: FirstDayLocationsH"][!WriteKeyValue Variables M1Day1X 145 "#@#Variables.inc"][!WriteKeyValue Variables M1Day1Y 82 "#@#Variables.inc"][!WriteKeyValue Variables M2Day1X (#M1Day1X#) "#@#Variables.inc"][!WriteKeyValue Variables M2Day1Y (#M1Day1Y#+#MonthSpacings#) "#@#Variables.inc"][!WriteKeyValue Variables M3Day1X (#M1Day1X#) "#@#Variables.inc"][!WriteKeyValue Variables M3Day1Y (#M1Day1Y#+#MonthSpacings#*2) "#@#Variables.inc"][!WriteKeyValue Variables M4Day1X (#M1Day1X#) "#@#Variables.inc"][!WriteKeyValue Variables M4Day1Y (#M1Day1Y#+#MonthSpacings#*3) "#@#Variables.inc"][!WriteKeyValue Variables M5Day1X (#M1Day1X#) "#@#Variables.inc"][!WriteKeyValue Variables M5Day1Y (#M1Day1Y#+#MonthSpacings#*4) "#@#Variables.inc"][!WriteKeyValue Variables M6Day1X (#M1Day1X#) "#@#Variables.inc"][!WriteKeyValue Variables M6Day1Y (#M1Day1Y#+#MonthSpacings#*5) "#@#Variables.inc"][!WriteKeyValue Variables M7Day1X (#M1Day1X#) "#@#Variables.inc"][!WriteKeyValue Variables M7Day1Y (#M1Day1Y#+#MonthSpacings#*6) "#@#Variables.inc"][!WriteKeyValue Variables M8Day1X (#M1Day1X#) "#@#Variables.inc"][!WriteKeyValue Variables M8Day1Y (#M1Day1Y#+#MonthSpacings#*7) "#@#Variables.inc"][!WriteKeyValue Variables M9Day1X (#M1Day1X#) "#@#Variables.inc"][!WriteKeyValue Variables M9Day1Y (#M1Day1Y#+#MonthSpacings#*8) "#@#Variables.inc"][!WriteKeyValue Variables M10Day1X (#M1Day1X#) "#@#Variables.inc"][!WriteKeyValue Variables M10Day1Y (#M1Day1Y#+#MonthSpacings#*9) "#@#Variables.inc"][!WriteKeyValue Variables M11Day1X (#M1Day1X#) "#@#Variables.inc"][!WriteKeyValue Variables M11Day1Y (#M1Day1Y#+#MonthSpacings#*10) "#@#Variables.inc"][!WriteKeyValue Variables M12Day1X (#M1Day1X#) "#@#Variables.inc"][!WriteKeyValue Variables M12Day1Y (#M1Day1Y#+#MonthSpacings#*11) "#@#Variables.inc"]
+IfTrueAction=[!Log "Running: FirstDayLocationsH"][!WriteKeyValue Variables M1Day1X 145 "#@#Variables.inc"][!WriteKeyValue Variables M1Day1Y 82 "#@#Variables.inc"][!WriteKeyValue Variables M2Day1X 145 "#@#Variables.inc"][!WriteKeyValue Variables M2Day1Y (82+((#WORKAREAHEIGHT#-62)/12)) "#@#Variables.inc"][!WriteKeyValue Variables M3Day1X 145 "#@#Variables.inc"][!WriteKeyValue Variables M3Day1Y (82+((#WORKAREAHEIGHT#-62)/12)*2) "#@#Variables.inc"][!WriteKeyValue Variables M4Day1X 145 "#@#Variables.inc"][!WriteKeyValue Variables M4Day1Y (82+((#WORKAREAHEIGHT#-62)/12)*3) "#@#Variables.inc"][!WriteKeyValue Variables M5Day1X 145 "#@#Variables.inc"][!WriteKeyValue Variables M5Day1Y (82+((#WORKAREAHEIGHT#-62)/12)*4) "#@#Variables.inc"][!WriteKeyValue Variables M6Day1X 145 "#@#Variables.inc"][!WriteKeyValue Variables M6Day1Y (82+((#WORKAREAHEIGHT#-62)/12)*5) "#@#Variables.inc"][!WriteKeyValue Variables M7Day1X 145 "#@#Variables.inc"][!WriteKeyValue Variables M7Day1Y (82+((#WORKAREAHEIGHT#-62)/12)*6) "#@#Variables.inc"][!WriteKeyValue Variables M8Day1X 145 "#@#Variables.inc"][!WriteKeyValue Variables M8Day1Y (82+((#WORKAREAHEIGHT#-62)/12)*7) "#@#Variables.inc"][!WriteKeyValue Variables M9Day1X 145 "#@#Variables.inc"][!WriteKeyValue Variables M9Day1Y (82+((#WORKAREAHEIGHT#-62)/12)*8) "#@#Variables.inc"][!WriteKeyValue Variables M10Day1X 145 "#@#Variables.inc"][!WriteKeyValue Variables M10Day1Y (82+((#WORKAREAHEIGHT#-62)/12)*9) "#@#Variables.inc"][!WriteKeyValue Variables M11Day1X 145 "#@#Variables.inc"][!WriteKeyValue Variables M11Day1Y (82+((#WORKAREAHEIGHT#-62)/12)*10) "#@#Variables.inc"][!WriteKeyValue Variables M12Day1X 145 "#@#Variables.inc"][!WriteKeyValue Variables M12Day1Y (82+((#WORKAREAHEIGHT#-62)/12)*11) "#@#Variables.inc"]
 ; M1Day1X=145 - Hard coding to lock in x/y location for horizontal layout
-; M1Day1Y=81.74194  = (([Month1:Y]+([Month1:H]*2))-#DayHeight#-8) - Hard coding to lock in x/y location for horizontal layout
+; M1Day1Y=81.74194  = (([Month1:Y]+([Month1:H]*2))-#DayHeight#-8) - Hard coding to lock in x/y location for horizontal layout, cause above noted issues
 IfCondition2=(#CalendarLayout# = 1) && ((MeasureOnLoad = 1) || (#RefreshOverride# = 1))
-IfTrueAction2=[!Log "Running: FirstDayLocationsV"][!WriteKeyValue Variables M1Day1X ((#MonthSpacings#/2)-#DayHeight#/2) "#@#Variables.inc"][!WriteKeyValue Variables M1Day1Y 113 "#@#Variables.inc"][!WriteKeyValue Variables M2Day1X (#M1Day1X#+#MonthSpacings#) "#@#Variables.inc"][!WriteKeyValue Variables M2Day1Y (#M1Day1Y#) "#@#Variables.inc"][!WriteKeyValue Variables M3Day1X (#M1Day1X#+#MonthSpacings#*2) "#@#Variables.inc"][!WriteKeyValue Variables M3Day1Y (#M1Day1Y#) "#@#Variables.inc"][!WriteKeyValue Variables M4Day1X (#M1Day1X#+#MonthSpacings#*3) "#@#Variables.inc"][!WriteKeyValue Variables M4Day1Y (#M1Day1Y#) "#@#Variables.inc"][!WriteKeyValue Variables M5Day1X (#M1Day1X#+#MonthSpacings#*4) "#@#Variables.inc"][!WriteKeyValue Variables M5Day1Y (#M1Day1Y#) "#@#Variables.inc"][!WriteKeyValue Variables M6Day1X (#M1Day1X#+#MonthSpacings#*5) "#@#Variables.inc"][!WriteKeyValue Variables M6Day1Y (#M1Day1Y#) "#@#Variables.inc"][!WriteKeyValue Variables M7Day1X (#M1Day1X#+#MonthSpacings#*6) "#@#Variables.inc"][!WriteKeyValue Variables M7Day1Y (#M1Day1Y#) "#@#Variables.inc"][!WriteKeyValue Variables M8Day1X (#M1Day1X#+#MonthSpacings#*7) "#@#Variables.inc"][!WriteKeyValue Variables M8Day1Y (#M1Day1Y#) "#@#Variables.inc"][!WriteKeyValue Variables M9Day1X (#M1Day1X#+#MonthSpacings#*8) "#@#Variables.inc"][!WriteKeyValue Variables M9Day1Y (#M1Day1Y#) "#@#Variables.inc"][!WriteKeyValue Variables M10Day1X (#M1Day1X#+#MonthSpacings#*9) "#@#Variables.inc"][!WriteKeyValue Variables M10Day1Y (#M1Day1Y#) "#@#Variables.inc"][!WriteKeyValue Variables M11Day1X (#M1Day1X#+#MonthSpacings#*10) "#@#Variables.inc"][!WriteKeyValue Variables M11Day1Y (#M1Day1Y#) "#@#Variables.inc"][!WriteKeyValue Variables M12Day1X (#M1Day1X#+#MonthSpacings#*11) "#@#Variables.inc"][!WriteKeyValue Variables M12Day1Y (#M1Day1Y#) "#@#Variables.inc"]
+IfTrueAction2=[!Log "Running: FirstDayLocationsV"][!WriteKeyValue Variables M1Day1X (((#WORKAREAWIDTH#/12)/2)-((#WORKAREAHEIGHT#-86)/31)/2) "#@#Variables.inc"][!WriteKeyValue Variables M1Day1Y 113 "#@#Variables.inc"][!WriteKeyValue Variables M2Day1X ((((#WORKAREAWIDTH#/12)/2)-((#WORKAREAHEIGHT#-86)/31)/2)+(#WORKAREAWIDTH#/12)) "#@#Variables.inc"][!WriteKeyValue Variables M2Day1Y 113 "#@#Variables.inc"][!WriteKeyValue Variables M3Day1X ((((#WORKAREAWIDTH#/12)/2)-((#WORKAREAHEIGHT#-86)/31)/2)+(#WORKAREAWIDTH#/12)*2) "#@#Variables.inc"][!WriteKeyValue Variables M3Day1Y 113 "#@#Variables.inc"][!WriteKeyValue Variables M4Day1X ((((#WORKAREAWIDTH#/12)/2)-((#WORKAREAHEIGHT#-86)/31)/2)+(#WORKAREAWIDTH#/12)*3) "#@#Variables.inc"][!WriteKeyValue Variables M4Day1Y 113 "#@#Variables.inc"][!WriteKeyValue Variables M5Day1X ((((#WORKAREAWIDTH#/12)/2)-((#WORKAREAHEIGHT#-86)/31)/2)+(#WORKAREAWIDTH#/12)*4) "#@#Variables.inc"][!WriteKeyValue Variables M5Day1Y 113 "#@#Variables.inc"][!WriteKeyValue Variables M6Day1X ((((#WORKAREAWIDTH#/12)/2)-((#WORKAREAHEIGHT#-86)/31)/2)+(#WORKAREAWIDTH#/12)*5) "#@#Variables.inc"][!WriteKeyValue Variables M6Day1Y 113 "#@#Variables.inc"][!WriteKeyValue Variables M7Day1X ((((#WORKAREAWIDTH#/12)/2)-((#WORKAREAHEIGHT#-86)/31)/2)+(#WORKAREAWIDTH#/12)*6) "#@#Variables.inc"][!WriteKeyValue Variables M7Day1Y 113 "#@#Variables.inc"][!WriteKeyValue Variables M8Day1X ((((#WORKAREAWIDTH#/12)/2)-((#WORKAREAHEIGHT#-86)/31)/2)+(#WORKAREAWIDTH#/12)*7) "#@#Variables.inc"][!WriteKeyValue Variables M8Day1Y 113 "#@#Variables.inc"][!WriteKeyValue Variables M9Day1X ((((#WORKAREAWIDTH#/12)/2)-((#WORKAREAHEIGHT#-86)/31)/2)+(#WORKAREAWIDTH#/12)*8) "#@#Variables.inc"][!WriteKeyValue Variables M9Day1Y 113 "#@#Variables.inc"][!WriteKeyValue Variables M10Day1X ((((#WORKAREAWIDTH#/12)/2)-((#WORKAREAHEIGHT#-86)/31)/2)+(#WORKAREAWIDTH#/12)*9) "#@#Variables.inc"][!WriteKeyValue Variables M10Day1Y 113 "#@#Variables.inc"][!WriteKeyValue Variables M11Day1X ((((#WORKAREAWIDTH#/12)/2)-((#WORKAREAHEIGHT#-86)/31)/2)+(#WORKAREAWIDTH#/12)*10) "#@#Variables.inc"][!WriteKeyValue Variables M11Day1Y 113 "#@#Variables.inc"][!WriteKeyValue Variables M12Day1X ((((#WORKAREAWIDTH#/12)/2)-((#WORKAREAHEIGHT#-86)/31)/2)+(#WORKAREAWIDTH#/12)*11) "#@#Variables.inc"][!WriteKeyValue Variables M12Day1Y 113 "#@#Variables.inc"]
 ; M1Day1X=64.6129  =  ((#MonthSpacings#/2)-#DayHeight#/2)  -  KEEPING FORMULA BECAUSE SCREEN WIDTH SPACINGS
 ; M1Day1Y=112.6129  =  (([Month1:Y]+([Month1:H]*2))-#DayHeight#/2)
 UpdateDivider=-1
@@ -205,17 +209,19 @@ UpdateDivider=-1
 Measure=Calc
 Formula=(#CalendarLayout#)
 IfCondition=(#CalendarLayout# = 0) && ((MeasureOnLoad = 1) || (#RefreshOverride# = 1))
-IfTrueAction=[!HideMeter CurrentDayUnderline][!Delay 500][!Log "Running: CurrentDayH"][!WriteKeyValue Variables CurrentDayX (#M1Day1X#+(#DayHeight#*0.3)+(#DayHeight#*([CurrentDayofMonthNum]-1))) "#@#Variables.inc"][!WriteKeyValue Variables CurrentDayY (#M1Day1Y#+([CurrentMonth]-1)*#MonthSpacings#+(#DayHeight#*0.1)) "#@#Variables.inc"][!Refresh "#ROOTCONFIG#\EverydayHabitCalendar" "EverydayHabitCalendar.ini"][!Delay 4000][!ShowMeter CurrentDayUnderline]
+IfTrueAction=[!DisableMeasure MeasureDayUnderline][!Delay 50][!EnableMeasure MeasureDayUnderline][!Refresh "#ROOTCONFIG#\EverydayHabitCalendar" "EverydayHabitCalendar.ini"]
 IfCondition2=(#CalendarLayout# = 1) && ((MeasureOnLoad = 1) || (#RefreshOverride# = 1))
-IfTrueAction2=[!HideMeter CurrentDayUnderline][!Delay 500][!Log "Running: CurrentDayV..."][!WriteKeyValue Variables CurrentDayX (#MonthSpacings#/2)+(([CurrentMonth]-1)*#MonthSpacings#) "#@#Variables.inc"][!WriteKeyValue Variables CurrentDayY (#M1Day1Y#+(#DayHeight#*([CurrentDayofMonthNum]-1))-(#DayHeight#*0.1)) "#@#Variables.inc"][!Refresh "#ROOTCONFIG#\EverydayHabitCalendar" "EverydayHabitCalendar.ini"][!Delay 4000][!ShowMeter CurrentDayUnderline]
+IfTrueAction2=[!DisableMeasure MeasureDayUnderline][!Delay 50][!EnableMeasure MeasureDayUnderline][!Refresh "#ROOTCONFIG#\EverydayHabitCalendar" "EverydayHabitCalendar.ini"]
 UpdateDivider=-1
 ;DynamicVariables=1
+;[!Log "Running: CurrentDayH"][!WriteKeyValue Variables CurrentDayX (145+(((#WORKAREAWIDTH#-145)/31)*0.3)+(((#WORKAREAWIDTH#-145)/31)*([CurrentDayofMonthNum]-1))) "#@#Variables.inc"][!WriteKeyValue Variables CurrentDayY (82+([CurrentMonth]-1)*((#WORKAREAHEIGHT#-62)/12)+(((#WORKAREAWIDTH#-145)/31)*0.1)) "#@#Variables.inc"]
+;[!Log "Running: CurrentDayV..."][!WriteKeyValue Variables CurrentDayX ((#WORKAREAWIDTH#/12)/2)+(([CurrentMonth]-1)*(#WORKAREAWIDTH#/12)) "#@#Variables.inc"][!WriteKeyValue Variables CurrentDayY (113+(((#WORKAREAHEIGHT#-86)/31)*([CurrentDayofMonthNum]-1))-(((#WORKAREAHEIGHT#-86)/31)*0.2)) "#@#Variables.inc"]
 
 [ResetOverride]
 Measure=Calc
 Formula=1
 IfEqualValue=1
-IfEqualAction=[!Delay 5000][!RainmeterWriteKeyValue Variables RefreshOverride 0 "#@#Variables.inc"]
+IfEqualAction=[!Delay 4000][!RainmeterWriteKeyValue Variables RefreshOverride 0 "#@#Variables.inc"]
 UpdateDivider=-1
 DynamicVariables=1
 
@@ -232,10 +238,21 @@ DynamicVariables=1
 ;===================================================================================================================================================================================================
 ;============================================================================ 366 Day measures =====================================================================================================
 ;===================================================================================================================================================================================================
+[MeasureStreakNumUpdate]
+Measure=Calc
+Formula=1
+DynamicVariables=1
+;Update every hour if day changes...
+UpdateDivider=3600
+IfEqualValue=1
+Ifequalaction=[!CommandMeasure StreakScript "Initialize()"]
+
 [MeasureStreakActive]
 Measure=Calc
 Formula=#TodayComplete#
-;UpdateDivider=-1
+DynamicVariables=1
+;Update every hour if day changes...
+UpdateDivider=3600
 IfCondition=(#TodayComplete# = 0)
 IfTrueAction=[!SetOption StreakCircle imagetint #StreakTodayNotCompleteColor#][!UpdateMeter StreakCircle]
 IfFalseAction=[!SetOption StreakCircle imagetint #DayActiveColor#][!UpdateMeter StreakCircle]
@@ -426,7 +443,7 @@ Measure=Calc
 Formula=#Day31#
 UpdateDivider=-1
 Substitute="0":"#FontColorOn#","1":"#CalendarFontColor#"
-
+;Feb
 [MeasureDay32Active]
 Measure=Calc
 Formula=#Day32#
@@ -594,13 +611,13 @@ Measure=Calc
 Formula=#Day59#
 UpdateDivider=-1
 Substitute="0":"#FontColorOn#","1":"#CalendarFontColor#"
-
+;Feb 29 in leap year (must ignore in streak counter script if not leap year)
 [MeasureDay60Active]
 Measure=Calc
 Formula=#Day60#
 UpdateDivider=-1
 Substitute="0":"#FontColorOn#","1":"#CalendarFontColor#"
-
+;March 1
 [MeasureDay61Active]
 Measure=Calc
 Formula=#Day61#

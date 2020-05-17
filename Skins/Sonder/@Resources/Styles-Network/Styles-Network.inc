@@ -1,3 +1,11 @@
+[Rainmeter]
+Group=Network
+MiddleMouseUpAction=!Refresh
+LeftMouseDoubleClickAction=!ActivateConfig #CURRENTCONFIG#
+DynamicWindowSize=1
+AccurateText=1
+Group=AllNoWeather
+
 [Variables]
 Stylesheet=Dark
 SkinMouseOver=0
@@ -19,13 +27,6 @@ SkinBackgroundAlpha=#GlobalSkinBackgroundAlpha#
 HideBordersTop=1
 HideBordersBottom=1
 GraphVariant=#GraphVariant#
-[Rainmeter]
-Group=Network
-MiddleMouseUpAction=!Refresh
-LeftMouseDoubleClickAction=!ActivateConfig #CURRENTCONFIG#
-DynamicWindowSize=1
-AccurateText=1
-Group=AllNoWeather
 
 [StyleSidebarBackground]
 ImageName=#@#Images\SkinBackground.#ColorImage#.png
