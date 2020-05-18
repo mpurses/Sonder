@@ -7,34 +7,34 @@ fpfRamDepth=4
 fpfPageDepth=4
 
 ; SpeedFan Configuration
-sfCoreTemp=4
+sfCoreTemp=10
 sfCpuFan=1
 
 ; Settings
 showCpuName=1
-showPageFile=1
+showPageFile=0
+showPageAmount=0
 showRamAmount=1
-showPageAmount=1
-showCoreTemps=2
+showCoreTemps=1
 showCoreVoltages=1
 showCpuTempGraph=1
 showTopProcess=0
 showCpuFan=1
-showCpuFanGraph=1
+showCpuFanGraph=0
 showCpuClock=1
-showLineGraph=0
+showLineGraph=1
 ; -----
 ; Naming mixup - first is line graph, second is the main display
-showAvgCpu=1
+showAvgCpu=0
 showAvgCpuUsage=0
 ; -----
-showTt=1
+showTt=0
 playTtSound=0
-graphAllCoresMode=1
+graphAllCoresMode=0
 
 cpuName=auto
 
-maxCpuTempMode=custom
+maxCpuTempMode=auto
 maxCpuFanMode=auto
 customMaxCpuTemp=85
 customMaxCpuFan=1600
@@ -144,21 +144,21 @@ dTtHistogramAlpha=50
 ; CPU 0
 ; 
 ; Core 0 Temperature [HWiNFO-CPU0-Core0Temp]
-HWiNFO-CPU0-Core0Temp-SensorId=0xf0000300
+HWiNFO-CPU0-Core0Temp-SensorId=0xf0000400
 HWiNFO-CPU0-Core0Temp-SensorInstance=0x0
-HWiNFO-CPU0-Core0Temp-EntryId=0x7000000
+HWiNFO-CPU0-Core0Temp-EntryId=0x1000000
 ; Core 1 Temperature [HWiNFO-CPU0-Core1Temp]
-HWiNFO-CPU0-Core1Temp-SensorId=0xf0000300
+HWiNFO-CPU0-Core1Temp-SensorId=0xf0000400
 HWiNFO-CPU0-Core1Temp-SensorInstance=0x0
-HWiNFO-CPU0-Core1Temp-EntryId=0x7000001
+HWiNFO-CPU0-Core1Temp-EntryId=0x1000001
 ; Core 2 Temperature [HWiNFO-CPU0-Core2Temp]
-HWiNFO-CPU0-Core2Temp-SensorId=0xf0000300
-HWiNFO-CPU0-Core2Temp-SensorInstance=0x0
-HWiNFO-CPU0-Core2Temp-EntryId=0x7000002
+HWiNFO-CPU0-Core2Temp-SensorId=#HWiNFO-CPU0-Core0Temp-SensorId#
+HWiNFO-CPU0-Core2Temp-SensorInstance=#HWiNFO-CPU0-Core0Temp-SensorInstance#
+HWiNFO-CPU0-Core2Temp-EntryId=0x1000002
 ; Core 3 Temperature [HWiNFO-CPU0-Core3Temp]
-HWiNFO-CPU0-Core3Temp-SensorId=0xf0000300
-HWiNFO-CPU0-Core3Temp-SensorInstance=0x0
-HWiNFO-CPU0-Core3Temp-EntryId=0x7000003
+HWiNFO-CPU0-Core3Temp-SensorId=#HWiNFO-CPU0-Core0Temp-SensorId#
+HWiNFO-CPU0-Core3Temp-SensorInstance=#HWiNFO-CPU0-Core0Temp-SensorInstance#
+HWiNFO-CPU0-Core3Temp-EntryId=0x1000003
 ; Core 4 Temperature [HWiNFO-CPU0-Core4Temp]
 HWiNFO-CPU0-Core4Temp-SensorId=#HWiNFO-CPU0-Core0Temp-SensorId#
 HWiNFO-CPU0-Core4Temp-SensorInstance=#HWiNFO-CPU0-Core0Temp-SensorInstance#
@@ -423,11 +423,9 @@ HWiNFO-CPU0-RingClock-EntryId=0x6000000
 ; MOBO
 ;
 ; CPU Fan [HWiNFO-MOBO-CPUFan]
-HWiNFO-MOBO-CPUFan-SensorId=0xf0000300
+HWiNFO-MOBO-CPUFan-SensorId=0xf7067910
 HWiNFO-MOBO-CPUFan-SensorInstance=0x0
-HWiNFO-MOBO-CPUFan-EntryId=0x7000005
-showGpuName=1
-useManualMaxVram=1
+HWiNFO-MOBO-CPUFan-EntryId=0x3000001
 
 [HWiNFO-Config-General]
 HWiNFO-CPU0-RingClock=Ring/LLC Clock (MHz)

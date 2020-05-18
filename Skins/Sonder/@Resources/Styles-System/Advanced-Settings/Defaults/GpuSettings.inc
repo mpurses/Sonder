@@ -14,11 +14,11 @@ useManualMaxVram=0
 maxVram=5192
 maxGpuTemp=100
 
-colorCoreUsage=255,246,42
-colorMemoryUsage=107,198,250
-colorFanUsage=107,238,98
-colorMemoryController=255,204,0
-colorTempGraph=200,0,0
+colorCoreUsage=#SystemcolorBar#
+colorMemoryUsage=#SystemcolorBar#
+colorFanUsage=#SystemcolorBar#
+colorMemoryController=#SystemcolorBar#
+colorTempGraph=#SystemcolorBar#
 
 ; ===== HWiNFO =====
 

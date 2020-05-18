@@ -10,7 +10,7 @@ showTempGraph=1
 
 gpuName=auto
 
-useManualMaxVram=1
+useManualMaxVram=0
 maxVram=5192
 maxGpuTemp=100
 
@@ -26,13 +26,13 @@ colorTempGraph=#SystemcolorBar#
 ; GPU 0
 ; 
 ; GPU Clock [HWiNFO-GPU0-Clock]
-HWiNFO-GPU0-Clock-SensorId=0xe0001800
-HWiNFO-GPU0-Clock-SensorInstance=0x20
+HWiNFO-GPU0-Clock-SensorId=0xe0002000
+HWiNFO-GPU0-Clock-SensorInstance=0x0
 HWiNFO-GPU0-Clock-EntryId=0x6000000
 ; GPU Temperature [HWiNFO-GPU0-Temp]
-HWiNFO-GPU0-Temp-SensorId=0xe0001800
-HWiNFO-GPU0-Temp-SensorInstance=0x20
-HWiNFO-GPU0-Temp-EntryId=0x1000005
+HWiNFO-GPU0-Temp-SensorId=#HWiNFO-GPU0-Clock-SensorId#
+HWiNFO-GPU0-Temp-SensorInstance=#HWiNFO-GPU0-Clock-SensorInstance#
+HWiNFO-GPU0-Temp-EntryId=0x1000000
 ; GPU Load [HWiNFO-GPU0-CoreLoad]
 HWiNFO-GPU0-CoreLoad-SensorId=#HWiNFO-GPU0-Clock-SensorId#
 HWiNFO-GPU0-CoreLoad-SensorInstance=#HWiNFO-GPU0-Clock-SensorInstance#
@@ -73,13 +73,13 @@ HWiNFO-GPU0-CoreVoltage-EntryId=0x2000000
 ; GPU 1
 ; 
 ; GPU Clock [HWiNFO-GPU1-Clock]
-HWiNFO-GPU1-Clock-SensorId=0xe0001800
-HWiNFO-GPU1-Clock-SensorInstance=0x20
+HWiNFO-GPU1-Clock-SensorId=0xe0002000
+HWiNFO-GPU1-Clock-SensorInstance=0x0
 HWiNFO-GPU1-Clock-EntryId=0x6000000
 ; GPU Temperature [HWiNFO-GPU1-Temp]
-HWiNFO-GPU1-Temp-SensorId=0xe0001800
-HWiNFO-GPU1-Temp-SensorInstance=0x20
-HWiNFO-GPU1-Temp-EntryId=0x1000009
+HWiNFO-GPU1-Temp-SensorId=#HWiNFO-GPU1-Clock-SensorId#
+HWiNFO-GPU1-Temp-SensorInstance=#HWiNFO-GPU1-Clock-SensorInstance#
+HWiNFO-GPU1-Temp-EntryId=0x1000000
 ; GPU Load [HWiNFO-GPU1-CoreLoad]
 HWiNFO-GPU1-CoreLoad-SensorId=#HWiNFO-GPU1-Clock-SensorId#
 HWiNFO-GPU1-CoreLoad-SensorInstance=#HWiNFO-GPU1-Clock-SensorInstance#
