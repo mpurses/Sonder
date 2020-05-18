@@ -423,9 +423,9 @@ HWiNFO-CPU0-RingClock-EntryId=0x6000000
 ; MOBO
 ;
 ; CPU Fan [HWiNFO-MOBO-CPUFan]
-HWiNFO-MOBO-CPUFan-SensorId=0xf7067910
+HWiNFO-MOBO-CPUFan-SensorId=0xf0000300
 HWiNFO-MOBO-CPUFan-SensorInstance=0x0
-HWiNFO-MOBO-CPUFan-EntryId=0x3000001
+HWiNFO-MOBO-CPUFan-EntryId=0x7000005
 showGpuName=1
 useManualMaxVram=1
 

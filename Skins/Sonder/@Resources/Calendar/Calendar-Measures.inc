@@ -17,7 +17,7 @@ UpdateDivider=-1
 [StreakScript]
 Measure=Script
 ScriptFile=#@#Scripts\CalendarScripts.lua
-UpdateDivider=-1
+UpdateDivider=60
 
 [CurrentDayNum]
 Measure=Time
@@ -46,7 +46,7 @@ IfTrueAction=[!WriteKeyValue Variables LeapYearAdj 0 "#@#Variables.inc"]
 IfFalseAction=[!WriteKeyValue Variables LeapYearAdj 1 "#@#Variables.inc"]
 IfCondition2=([CurrentMonth] > 2)
 IfTrueAction2=[!WriteKeyValue Variables CurrentDayMeter ([CurrentDayNum]+#LeapYearAdj#) "#@#Variables.inc"]
-;Also need to ignore feb 29 on the streak checker if not a leap year... havent done yet since its currently a leap year and im lazy
+;Also need to ignore feb 29 on the streak checker if not a leap year... in the script file
 IfFalseAction2=[!WriteKeyValue Variables CurrentDayMeter ([CurrentDayNum]) "#@#Variables.inc"]
 UpdateDivider=60
 
