@@ -7,15 +7,17 @@ fpfRamDepth=4
 fpfPageDepth=4
 
 ; SpeedFan Configuration
-sfCoreTemp=10
+sfCoreTemp=2
 sfCpuFan=1
 
 ; Settings
+showCpuTitle=1
+showRamTitle=1
 showCpuName=1
-showPageFile=0
-showPageAmount=0
+showPageFile=1
+showPageAmount=1
 showRamAmount=1
-showCoreTemps=1
+showCoreTemps=2
 showCoreVoltages=1
 showCpuTempGraph=1
 showTopProcess=0
@@ -26,17 +28,17 @@ showLineGraph=1
 ; -----
 ; Naming mixup - first is line graph, second is the main display
 showAvgCpu=0
-showAvgCpuUsage=0
+showAvgCpuUsage=1
 ; -----
-showTt=0
+showTt=1
 playTtSound=0
 graphAllCoresMode=0
 
 cpuName=auto
 
-maxCpuTempMode=auto
+maxCpuTempMode=custom
 maxCpuFanMode=auto
-customMaxCpuTemp=85
+customMaxCpuTemp=100
 customMaxCpuFan=1600
 
 ; Colors

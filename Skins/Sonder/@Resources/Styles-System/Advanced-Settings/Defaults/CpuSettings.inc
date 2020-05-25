@@ -11,6 +11,8 @@ sfCoreTemp=10
 sfCpuFan=1
 
 ; Settings
+showCpuTitle=1
+showRamTitle=1
 showCpuName=1
 showPageFile=0
 showPageAmount=0

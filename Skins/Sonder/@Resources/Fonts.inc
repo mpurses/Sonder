@@ -12,3 +12,7 @@ LocalFontFace10="#@#Fonts\Glacial Indifference.otf"
 LocalFontFace11="#@#Fonts\Gobold Bold.otf"
 LocalFontFace12="#@#Fonts\Porter.otf"
 LocalFontFace13="#@#Fonts\Tuesday Night.otf"
+;LocalFontFace14=Trebuchet MS
+LocalFontFace15="#@#Fonts\Emmylou Signature Normal.ttf"
+LocalFontFace16="#@#Fonts\Montserrat Light.ttf"
+LocalFontFace17="#@#Fonts\Montserrat"

@@ -27,7 +27,7 @@ UpdateDivider=60
 [CurrentDayofMonthNum]
 Measure=Time
 Format="%e"
-UpdateDivider=-1
+UpdateDivider=60
 
 [CurrentMonth]
 Measure=Time
@@ -43,7 +43,7 @@ UpdateDivider=-1
 Measure=Calc
 IfCondition=([CurrentYear]%4 = 0) && (([CurrentYear]%100 <> 0) || ([CurrentYear]%400 = 0))
 IfTrueAction=[!WriteKeyValue Variables LeapYearAdj 0 "#@#Variables.inc"]
-IfFalseAction=[!WriteKeyValue Variables LeapYearAdj 1 "#@#Variables.inc"]
+IfFalseAction=[!WriteKeyValue Variables LeapYearAdj 1 "#@#Variables.inc"][!HideMeter M2Day60Num]
 IfCondition2=([CurrentMonth] > 2)
 IfTrueAction2=[!WriteKeyValue Variables CurrentDayMeter ([CurrentDayNum]+#LeapYearAdj#) "#@#Variables.inc"]
 ;Also need to ignore feb 29 on the streak checker if not a leap year... in the script file
@@ -242,8 +242,8 @@ DynamicVariables=1
 Measure=Calc
 Formula=1
 DynamicVariables=1
-;Update every hour if day changes...
-UpdateDivider=3600
+;Update every 30 sec if day changes/for minimuzed state...
+UpdateDivider=30
 IfEqualValue=1
 Ifequalaction=[!CommandMeasure StreakScript "Initialize()"]
 
@@ -251,8 +251,8 @@ Ifequalaction=[!CommandMeasure StreakScript "Initialize()"]
 Measure=Calc
 Formula=#TodayComplete#
 DynamicVariables=1
-;Update every hour if day changes...
-UpdateDivider=3600
+;Update every 30 sec if day changes/for minimuzed state...
+UpdateDivider=60
 IfCondition=(#TodayComplete# = 0)
 IfTrueAction=[!SetOption StreakCircle imagetint #StreakTodayNotCompleteColor#][!UpdateMeter StreakCircle]
 IfFalseAction=[!SetOption StreakCircle imagetint #DayActiveColor#][!UpdateMeter StreakCircle]
