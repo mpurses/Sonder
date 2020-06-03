@@ -3,10 +3,22 @@ Group=AllNoWeather
 ;---------------------------------------------------------------------
 ; MEASURES
 
+; Technically there is no max to the graph. The Histogram graph autoscales based on the current displayed history.  This way when there is just a little internet traffic(lets say 100 kb/s), you actually see it in the graph vs. it being so tiny it isn't displayed.
+; You might see it autoscale when you have little network traffic, followed by a larger download. Those smaller bars will get scaled down to basically nothing.
+; If you do want it to have a hard set Max: 
+; First in "Styles-Network.inc" > go to [StyleSystemGraphGraph] > set AutoScale=0.
+; In "Network.inc" > [MeasureNetInFloating] & [MeasureNetOutFloating] > change the max value to whatever your max is. Currently it's set to ~1 Mb/s (1000000  bytes)
+ ; https://docs.rainmeter.net/tips/network-skin/ 
+ ; https://docs.rainmeter.net/manual/measures/net/ 
+; You may see other max values in places throughout the code, but they are not used. (For a single bar graph in percent that is not used right now. Which is what the max value would be better used for.)
+
 [MeasureNetInFloating]
 Measure=NetIn
+;1 MB/s
 MaxValue=1000000
 MinValue=0
+;Interface=Best
+;DynamicVariables=1
 
 [MeasureNetInPercent]
 Measure=Calc
@@ -14,8 +26,11 @@ Formula=MeasureNetInFloating / #NetworkMaxDownload#
 
 [MeasureNetOutFloating]
 Measure=NetOut
+;1 MB/s
 MaxValue=1000000
 MinValue=0
+;Interface=Best
+;DynamicVariables=1
 
 [MeasureNetOutPercent]
 Measure=Calc
@@ -107,6 +122,7 @@ MeasureName=MeasureWiFi
 Postfix="%"
 Hidden=#GraphVariant#
 
+
 [LabelLAN]
 Meter=STRING
 MeterStyle=StyleSystem#Variant#Label | StyleSystem#Variant#Label3
@@ -183,6 +199,7 @@ Text="UP"
 Meter=STRING
 MeterStyle=StyleSystem#Variant#GraphText | StyleSystem#Variant#GraphText1
 MeasureName=MeasureNetOutFloating
+;Text="%1/s"
 AutoScale=1
 NumOfDecimals=0
 
@@ -196,5 +213,6 @@ Text="DOWN"
 Meter=STRING
 MeterStyle=StyleSystem#Variant#GraphText | StyleSystem#Variant#GraphText2
 MeasureName=MeasureNetInFloating
+;Text="%1/s"
 AutoScale=1
 NumOfDecimals=0

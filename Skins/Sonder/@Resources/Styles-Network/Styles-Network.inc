@@ -9,7 +9,10 @@ Group=AllNoWeather
 [Variables]
 Stylesheet=Dark
 SkinMouseOver=0
+;These aren't used right now...
+;2 MB/s
 NetworkMaxDownload=2000000
+;0.15 MB/s
 NetworkMaxUpload=150000
 SystemGraphType=Floating
 TriptychInterval=30
@@ -312,12 +315,12 @@ StringAlign=LEFT
 
 [StyleSystemGraphText3]
 X=(#Scale#*-9)r
-W=(#Scale#*75)
+W=(#Scale#*76)
 StringAlign=RIGHT
 
 [StyleSystemGraphText4]
 X=(#Scale#*-9)r
-W=(#Scale#*75)
+W=(#Scale#*76)
 StringAlign=RIGHT
 
 [StyleSystemGraphTextDark]
