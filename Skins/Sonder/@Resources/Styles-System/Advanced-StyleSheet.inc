@@ -25,6 +25,7 @@ useUpdateNotificationSound=1
 
 showBgBorder=0
 rowSpacing=5
+rowSpacingDisk=1
 
 ; Sidebars
 setupSb=2
@@ -161,9 +162,9 @@ styleSheetPath=#@#Styles-System\Advanced-StyleSheet.inc
 SystemMeterConfig=Sonder\System
 cpuMeterPath=#ROOTCONFIGPATH#System\System-Advanced.ini
 cpuSettingsPath=#@#Styles-System\Advanced-Settings\CpuSettings.inc
-;disksMeterPath=#ROOTCONFIGPATH#System\System-Advanced.ini
+disksMeterPath=#ROOTCONFIGPATH#System\System-Advanced.ini
 ;disksMeterConfig=Sonder\System
-;disksSettingsPath=#@#Styles-System\Advanced-Settings\DisksSettings.inc
+disksSettingsPath=#@#Styles-System\Advanced-Settings\DisksSettings.inc
 gpuMeterPath=#ROOTCONFIGPATH#System\System-Advanced.ini
 ;gpuMeterConfig=Sonder\System
 gpuSettingsPath=#@#Styles-System\Advanced-Settings\GpuSettings.inc
@@ -228,6 +229,18 @@ FontFace=#fontFace#
 FontWeight=#fontWeight#
 X=#contentMargin#
 Y=#rowSpacing#R
+Antialias=1
+TransformationMatrix=#transformationMatrix#
+
+[StyleStringDisk]
+FontColor=#colorMain#
+StringEffect=SHADOW
+FontEffectColor=0,0,0,100
+FontSize=#fontSize#
+FontFace=#fontFace#
+FontWeight=#fontWeight#
+X=#contentMargin#
+Y=#rowSpacingDisk#R
 Antialias=1
 TransformationMatrix=#transformationMatrix#
 
@@ -432,64 +445,64 @@ TransformationMatrix=#transformationMatrix#
 ; ------------------------------
 ; LINE GRAPH
 
-[StyleLineGraphBackground]
-Shape=Rectangle 0,0,[&[#CURRENTSECTION]:W],[&[#CURRENTSECTION]:H],#cornerRoundness# | StrokeWidth 0 | Fill Color #colorGraphBorder#
-Shape2=Rectangle 1,1,([&[#CURRENTSECTION]:W] - 2),([&[#CURRENTSECTION]:H] - 2),#cornerRoundness# | StrokeWidth 0 | Fill Color #colorGraphBg#
-; Vertical
-Shape3=Rectangle (floor(([&[#CURRENTSECTION]:W] - 2) * 0.1)),1,0.5,([&[#CURRENTSECTION]:H] - 2) | Extend VerticalLines
-Shape4=Rectangle (floor(([&[#CURRENTSECTION]:W] - 2) * 0.2)),1,0.5,([&[#CURRENTSECTION]:H] - 2) | Extend VerticalLines
-Shape5=Rectangle (floor(([&[#CURRENTSECTION]:W] - 2) * 0.3)),1,0.5,([&[#CURRENTSECTION]:H] - 2) | Extend VerticalLines
-Shape6=Rectangle (floor(([&[#CURRENTSECTION]:W] - 2) * 0.4)),1,0.5,([&[#CURRENTSECTION]:H] - 2) | Extend VerticalLines
-Shape7=Rectangle (floor(([&[#CURRENTSECTION]:W] - 2) * 0.5)),1,0.5,([&[#CURRENTSECTION]:H] - 2) | Extend VerticalLines
-Shape8=Rectangle (ceil(([&[#CURRENTSECTION]:W] - 2) * 0.6)),1,0.5,([&[#CURRENTSECTION]:H] - 2) | Extend VerticalLines
-Shape9=Rectangle (ceil(([&[#CURRENTSECTION]:W] - 2) * 0.7)),1,0.5,([&[#CURRENTSECTION]:H] - 2) | Extend VerticalLines
-Shape10=Rectangle (ceil(([&[#CURRENTSECTION]:W] - 2) * 0.8)),1,0.5,([&[#CURRENTSECTION]:H] - 2) | Extend VerticalLines
-Shape11=Rectangle (ceil(([&[#CURRENTSECTION]:W] - 2) * 0.9)),1,0.5,([&[#CURRENTSECTION]:H] - 2) | Extend VerticalLines
-; Horizontal
-Shape12=Rectangle 1,(floor(([&[#CURRENTSECTION]:H] - 2) * 0.2)),([&[#CURRENTSECTION]:W] - 2),1 | Extend HorizontalLines
-Shape13=Rectangle 1,(floor(([&[#CURRENTSECTION]:H] - 2) * 0.4)),([&[#CURRENTSECTION]:W] - 2),1 | Extend HorizontalLines
-Shape14=Rectangle 1,(ceil(([&[#CURRENTSECTION]:H] - 2) * 0.6)),([&[#CURRENTSECTION]:W] - 2),1 | Extend HorizontalLines
-Shape15=Rectangle 1,(ceil(([&[#CURRENTSECTION]:H] - 2) * 0.8)),([&[#CURRENTSECTION]:W] - 2),1 | Extend HorizontalLines
-HorizontalLines=Fill Color #colorGraphGrid#,(255 * ((#lineGraphBgType# % 2) = 1)) | StrokeWidth 0
-VerticalLines=Fill Color #colorGraphGrid#,(255 * (#lineGraphBgType# > 1)) | StrokeWidth 0
-X=(#contentMargin#)
-Y=((#showLineGraph# = 0) ? -1 : #contentMarginAbs#)R
-W=(#contentWidth#)
-H=#graphHeight#
-DynamicVariables=1
-Group=LineGraph
-Hidden=(#showLineGraph# = 0)
-TransformationMatrix=#transformationMatrix#
+; [StyleLineGraphBackground]
+; Shape=Rectangle 0,0,[&[#CURRENTSECTION]:W],[&[#CURRENTSECTION]:H],#cornerRoundness# | StrokeWidth 0 | Fill Color #colorGraphBorder#
+; Shape2=Rectangle 1,1,([&[#CURRENTSECTION]:W] - 2),([&[#CURRENTSECTION]:H] - 2),#cornerRoundness# | StrokeWidth 0 | Fill Color #colorGraphBg#
+; ; Vertical
+; Shape3=Rectangle (floor(([&[#CURRENTSECTION]:W] - 2) * 0.1)),1,0.5,([&[#CURRENTSECTION]:H] - 2) | Extend VerticalLines
+; Shape4=Rectangle (floor(([&[#CURRENTSECTION]:W] - 2) * 0.2)),1,0.5,([&[#CURRENTSECTION]:H] - 2) | Extend VerticalLines
+; Shape5=Rectangle (floor(([&[#CURRENTSECTION]:W] - 2) * 0.3)),1,0.5,([&[#CURRENTSECTION]:H] - 2) | Extend VerticalLines
+; Shape6=Rectangle (floor(([&[#CURRENTSECTION]:W] - 2) * 0.4)),1,0.5,([&[#CURRENTSECTION]:H] - 2) | Extend VerticalLines
+; Shape7=Rectangle (floor(([&[#CURRENTSECTION]:W] - 2) * 0.5)),1,0.5,([&[#CURRENTSECTION]:H] - 2) | Extend VerticalLines
+; Shape8=Rectangle (ceil(([&[#CURRENTSECTION]:W] - 2) * 0.6)),1,0.5,([&[#CURRENTSECTION]:H] - 2) | Extend VerticalLines
+; Shape9=Rectangle (ceil(([&[#CURRENTSECTION]:W] - 2) * 0.7)),1,0.5,([&[#CURRENTSECTION]:H] - 2) | Extend VerticalLines
+; Shape10=Rectangle (ceil(([&[#CURRENTSECTION]:W] - 2) * 0.8)),1,0.5,([&[#CURRENTSECTION]:H] - 2) | Extend VerticalLines
+; Shape11=Rectangle (ceil(([&[#CURRENTSECTION]:W] - 2) * 0.9)),1,0.5,([&[#CURRENTSECTION]:H] - 2) | Extend VerticalLines
+; ; Horizontal
+; Shape12=Rectangle 1,(floor(([&[#CURRENTSECTION]:H] - 2) * 0.2)),([&[#CURRENTSECTION]:W] - 2),1 | Extend HorizontalLines
+; Shape13=Rectangle 1,(floor(([&[#CURRENTSECTION]:H] - 2) * 0.4)),([&[#CURRENTSECTION]:W] - 2),1 | Extend HorizontalLines
+; Shape14=Rectangle 1,(ceil(([&[#CURRENTSECTION]:H] - 2) * 0.6)),([&[#CURRENTSECTION]:W] - 2),1 | Extend HorizontalLines
+; Shape15=Rectangle 1,(ceil(([&[#CURRENTSECTION]:H] - 2) * 0.8)),([&[#CURRENTSECTION]:W] - 2),1 | Extend HorizontalLines
+; HorizontalLines=Fill Color #colorGraphGrid#,(255 * ((#lineGraphBgType# % 2) = 1)) | StrokeWidth 0
+; VerticalLines=Fill Color #colorGraphGrid#,(255 * (#lineGraphBgType# > 1)) | StrokeWidth 0
+; X=(#contentMargin#)
+; Y=((#showLineGraph# = 0) ? -1 : #contentMarginAbs#)R
+; W=(#contentWidth#)
+; H=#graphHeight#
+; DynamicVariables=1
+; Group=LineGraph
+; Hidden=(#showLineGraph# = 0)
+; TransformationMatrix=#transformationMatrix#
 
-[StyleLineGraphBackgroundOverlay]
-Shape=Rectangle 0,0,[&[#CURRENTSECTION]:W],[&[#CURRENTSECTION]:H],#cornerRoundness# | StrokeWidth 0 | Fill Color #colorGraphBorder#
-Shape2=Rectangle 1,1,([&[#CURRENTSECTION]:W] - 2),([&[#CURRENTSECTION]:H] - 2),#cornerRoundness# | StrokeWidth 0 | Fill Color #colorGraphBg#
-Shape3=Combine Shape | XOR Shape2
-X=-1r
-Y=-1r
-W=(#contentWidth#)
-H=#graphHeight#
-Group=LineGraph
-Hidden=(#showLineGraph# = 0)
-TransformationMatrix=#transformationMatrix#
+; [StyleLineGraphBackgroundOverlay]
+; Shape=Rectangle 0,0,[&[#CURRENTSECTION]:W],[&[#CURRENTSECTION]:H],#cornerRoundness# | StrokeWidth 0 | Fill Color #colorGraphBorder#
+; Shape2=Rectangle 1,1,([&[#CURRENTSECTION]:W] - 2),([&[#CURRENTSECTION]:H] - 2),#cornerRoundness# | StrokeWidth 0 | Fill Color #colorGraphBg#
+; Shape3=Combine Shape | XOR Shape2
+; X=-1r
+; Y=-1r
+; W=(#contentWidth#)
+; H=#graphHeight#
+; Group=LineGraph
+; Hidden=(#showLineGraph# = 0)
+; TransformationMatrix=#transformationMatrix#
 
-[StyleLineGraph]
-X=1r
-Y=1r
-W=(#contentWidth# - 2)
-H=(#graphHeight# - 2)
-Group=LineGraph
-Antialias=#lineGraphAa#
-DynamicVariables=1
-Hidden=(#showLineGraph# = 0)
-TransformationMatrix=#transformationMatrix#
+; [StyleLineGraph]
+; X=1r
+; Y=1r
+; W=(#contentWidth# - 2)
+; H=(#graphHeight# - 2)
+; Group=LineGraph
+; Antialias=#lineGraphAa#
+; DynamicVariables=1
+; Hidden=(#showLineGraph# = 0)
+; TransformationMatrix=#transformationMatrix#
 
-[StyleLineGraphBgAdjustor]
-X=#contentMargin#
-Y=((#showLineGraph# = 0) ? 0 : 1)R
-Hidden=(#showLineGraph# = 0)
-Group=LineGraph
-TransformationMatrix=#transformationMatrix#
+; [StyleLineGraphBgAdjustor]
+; X=#contentMargin#
+; Y=((#showLineGraph# = 0) ? 0 : 1)R
+; Hidden=(#showLineGraph# = 0)
+; Group=LineGraph
+; TransformationMatrix=#transformationMatrix#
 
 ; ------------------------------
 ; SETTINGS WINDOW ELEMENTS
@@ -607,6 +620,19 @@ H=18
 DynamicVariables=1
 TransformationMatrix=#transformationMatrix#
 
+[StyleInputBoxBackgroundDisk]
+Shape=Rectangle 0,0,[&[#CURRENTSECTION]:W],[&[#CURRENTSECTION]:H],(#cornerRoundness# * #scale#) | StrokeWidth 0 | Fill Color #colorBorder#
+Shape2=Rectangle 1,1,([&[#CURRENTSECTION]:W] - 2),([&[#CURRENTSECTION]:H] - 2),(#cornerRoundness# * #scale#) | StrokeWidth 0 | Extend Fill
+Fill=Fill Color #colorSubBg#
+;X=r
+;#contentMargin#
+Y=r
+W=100
+;#contentWidth#
+H=18
+DynamicVariables=1
+TransformationMatrix=#transformationMatrix#
+
 [StyleInputBoxBackgroundAdjacent]
 X=5R
 Y=-1r
@@ -709,6 +735,16 @@ Group=Settings
 MouseOverAction=[!SetOption [&MeasureSettingsScriptGPU:Gsub('[#CURRENTSECTION]','MouseRegion')]Icon Fill "[&MeasureSettingsScriptGPU:GetKey('[&MeasureSettingsScriptGPU:Gsub('[#CURRENTSECTION]','MouseRegion')]Icon','Fill')],#hoverAlpha#"][!SetOption [&MeasureSettingsScriptGPU:Gsub('[#CURRENTSECTION]','MouseRegion')]Label FontColor "[&MeasureSettingsScriptGPU:GetKey('[&MeasureSettingsScriptGPU:Gsub('[#CURRENTSECTION]','MouseRegion')]Label','FontColor')],#hoverAlpha#"][!UpdateMeter [&MeasureSettingsScriptGPU:Gsub('[#CURRENTSECTION]','MouseRegion')]Icon][!UpdateMeter [&MeasureSettingsScriptGPU:Gsub('[#CURRENTSECTION]','MouseRegion')]Label][!Redraw]
 MouseLeaveAction=[!SetOption [&MeasureSettingsScriptGPU:Gsub('[#CURRENTSECTION]','MouseRegion')]Icon Fill "[&MeasureSettingsScriptGPU:Gsub('[&MeasureSettingsScriptGPU:GetKey('[&MeasureSettingsScriptGPU:Gsub('[#CURRENTSECTION]','MouseRegion')]Icon','Fill')]', ',#hoverAlpha#')]"][!SetOption [&MeasureSettingsScriptGPU:Gsub('[#CURRENTSECTION]','MouseRegion')]Label FontColor "[&MeasureSettingsScriptGPU:Gsub('[&MeasureSettingsScript:GetKey('[&MeasureSettingsScriptGPU:Gsub('[#CURRENTSECTION]','MouseRegion')]Label','FontColor')]', ',#hoverAlpha#')]"][!UpdateMeter [&MeasureSettingsScriptGPU:Gsub('[#CURRENTSECTION]','MouseRegion')]Icon][!UpdateMeter [&MeasureSettingsScriptGPU:Gsub('[#CURRENTSECTION]','MouseRegion')]Label][!Redraw]
 
+[StyleSettingsButtonMouseRegionDISK]
+X=[&[&MeasureSettingsScriptDISK:Gsub('[#CURRENTSECTION]','MouseRegion')]Icon:X]
+Y=[&[&MeasureSettingsScriptDISK:Gsub('[#CURRENTSECTION]','MouseRegion')]Icon:Y]
+W=([&[&MeasureSettingsScriptDISK:Gsub('[#CURRENTSECTION]','MouseRegion')]Icon:W] + [&[&MeasureSettingsScriptDISK:Gsub('[#CURRENTSECTION]','MouseRegion')]Label:W] + 2)
+H=[&[&MeasureSettingsScriptDISK:Gsub('[#CURRENTSECTION]','MouseRegion')]Icon:H]
+DynamicVariables=1
+Group=Settings
+MouseOverAction=[!SetOption [&MeasureSettingsScriptDISK:Gsub('[#CURRENTSECTION]','MouseRegion')]Icon Fill "[&MeasureSettingsScriptDISK:GetKey('[&MeasureSettingsScriptDISK:Gsub('[#CURRENTSECTION]','MouseRegion')]Icon','Fill')],#hoverAlpha#"][!SetOption [&MeasureSettingsScriptDISK:Gsub('[#CURRENTSECTION]','MouseRegion')]Label FontColor "[&MeasureSettingsScriptDISK:GetKey('[&MeasureSettingsScriptDISK:Gsub('[#CURRENTSECTION]','MouseRegion')]Label','FontColor')],#hoverAlpha#"][!UpdateMeter [&MeasureSettingsScriptDISK:Gsub('[#CURRENTSECTION]','MouseRegion')]Icon][!UpdateMeter [&MeasureSettingsScriptDISK:Gsub('[#CURRENTSECTION]','MouseRegion')]Label][!Redraw]
+MouseLeaveAction=[!SetOption [&MeasureSettingsScriptDISK:Gsub('[#CURRENTSECTION]','MouseRegion')]Icon Fill "[&MeasureSettingsScriptDISK:Gsub('[&MeasureSettingsScriptDISK:GetKey('[&MeasureSettingsScriptDISK:Gsub('[#CURRENTSECTION]','MouseRegion')]Icon','Fill')]', ',#hoverAlpha#')]"][!SetOption [&MeasureSettingsScriptDISK:Gsub('[#CURRENTSECTION]','MouseRegion')]Label FontColor "[&MeasureSettingsScriptDISK:Gsub('[&MeasureSettingsScript:GetKey('[&MeasureSettingsScriptDISK:Gsub('[#CURRENTSECTION]','MouseRegion')]Label','FontColor')]', ',#hoverAlpha#')]"][!UpdateMeter [&MeasureSettingsScriptDISK:Gsub('[#CURRENTSECTION]','MouseRegion')]Icon][!UpdateMeter [&MeasureSettingsScriptDISK:Gsub('[#CURRENTSECTION]','MouseRegion')]Label][!Redraw]
+
 [StyleSettingsButtonMouseRegionPreserve]
 X=[&[&MeasureSettingsScript:Gsub('[#CURRENTSECTION]','MouseRegion')]Icon:X]
 Y=[&[&MeasureSettingsScript:Gsub('[#CURRENTSECTION]','MouseRegion')]Icon:Y]
@@ -729,6 +765,15 @@ Group=Settings
 MouseOverAction=[!SetOption [&MeasureSettingsScriptGPU:Gsub('[#CURRENTSECTION]','MouseRegion')]Icon Fill "Fill Color [#*[&MeasureSettingsScriptGPU:GetKey('[&MeasureSettingsScriptGPU:Gsub('[#CURRENTSECTION]','MouseRegion')]Icon','FillRef')]*],#*hoverAlpha*#"][!SetOption [&MeasureSettingsScriptGPU:Gsub('[#CURRENTSECTION]','MouseRegion')]Label FontColor "[&MeasureSettingsScriptGPU:GetKey('[&MeasureSettingsScriptGPU:Gsub('[#CURRENTSECTION]','MouseRegion')]Label','FontColor')],#hoverAlpha#"][!UpdateMeter [&MeasureSettingsScriptGPU:Gsub('[#CURRENTSECTION]','MouseRegion')]Icon][!UpdateMeter [&MeasureSettingsScriptGPU:Gsub('[#CURRENTSECTION]','MouseRegion')]Label][!Redraw]
 MouseLeaveAction=[!SetOption [&MeasureSettingsScriptGPU:Gsub('[#CURRENTSECTION]','MouseRegion')]Icon Fill "Fill Color [#*[&MeasureSettingsScriptGPU:GetKey('[&MeasureSettingsScriptGPU:Gsub('[#CURRENTSECTION]','MouseRegion')]Icon','FillRef')]*]"][!SetOption [&MeasureSettingsScriptGPU:Gsub('[#CURRENTSECTION]','MouseRegion')]Label FontColor "[&MeasureSettingsScriptGPU:Gsub('[&MeasureSettingsScriptGPU:GetKey('[&MeasureSettingsScriptGPU:Gsub('[#CURRENTSECTION]','MouseRegion')]Label','FontColor')]', ',#hoverAlpha#')]"][!UpdateMeter [&MeasureSettingsScriptGPU:Gsub('[#CURRENTSECTION]','MouseRegion')]Icon][!UpdateMeter [&MeasureSettingsScriptGPU:Gsub('[#CURRENTSECTION]','MouseRegion')]Label][!Redraw]
 
+[StyleSettingsButtonMouseRegionPreserveDISK]
+X=[&[&MeasureSettingsScriptDISK:Gsub('[#CURRENTSECTION]','MouseRegion')]Icon:X]
+Y=[&[&MeasureSettingsScriptDISK:Gsub('[#CURRENTSECTION]','MouseRegion')]Icon:Y]
+W=([&[&MeasureSettingsScriptDISK:Gsub('[#CURRENTSECTION]','MouseRegion')]Icon:W] + [&[&MeasureSettingsScriptDISK:Gsub('[#CURRENTSECTION]','MouseRegion')]Label:W] + 2)
+H=[&[&MeasureSettingsScriptDISK:Gsub('[#CURRENTSECTION]','MouseRegion')]Icon:H]
+DynamicVariables=1
+Group=Settings
+MouseOverAction=[!SetOption [&MeasureSettingsScriptDISK:Gsub('[#CURRENTSECTION]','MouseRegion')]Icon Fill "Fill Color [#*[&MeasureSettingsScriptDISK:GetKey('[&MeasureSettingsScriptDISK:Gsub('[#CURRENTSECTION]','MouseRegion')]Icon','FillRef')]*],#*hoverAlpha*#"][!SetOption [&MeasureSettingsScriptDISK:Gsub('[#CURRENTSECTION]','MouseRegion')]Label FontColor "[&MeasureSettingsScriptDISK:GetKey('[&MeasureSettingsScriptDISK:Gsub('[#CURRENTSECTION]','MouseRegion')]Label','FontColor')],#hoverAlpha#"][!UpdateMeter [&MeasureSettingsScriptDISK:Gsub('[#CURRENTSECTION]','MouseRegion')]Icon][!UpdateMeter [&MeasureSettingsScriptDISK:Gsub('[#CURRENTSECTION]','MouseRegion')]Label][!Redraw]
+MouseLeaveAction=[!SetOption [&MeasureSettingsScriptDISK:Gsub('[#CURRENTSECTION]','MouseRegion')]Icon Fill "Fill Color [#*[&MeasureSettingsScriptDISK:GetKey('[&MeasureSettingsScriptDISK:Gsub('[#CURRENTSECTION]','MouseRegion')]Icon','FillRef')]*]"][!SetOption [&MeasureSettingsScriptDISK:Gsub('[#CURRENTSECTION]','MouseRegion')]Label FontColor "[&MeasureSettingsScriptDISK:Gsub('[&MeasureSettingsScriptDISK:GetKey('[&MeasureSettingsScriptDISK:Gsub('[#CURRENTSECTION]','MouseRegion')]Label','FontColor')]', ',#hoverAlpha#')]"][!UpdateMeter [&MeasureSettingsScriptDISK:Gsub('[#CURRENTSECTION]','MouseRegion')]Icon][!UpdateMeter [&MeasureSettingsScriptDISK:Gsub('[#CURRENTSECTION]','MouseRegion')]Label][!Redraw]
 
 [StyleSettingsButton]
 DynamicVariables=1
@@ -744,6 +789,14 @@ TransformationMatrix=#transformationMatrix#
 Group=Settings
 Fill=Fill Color #colorAccent#
 X=(#contentMargin# + 260)
+Y=4R
+
+[StyleSettingsButtonDISK]
+DynamicVariables=1
+TransformationMatrix=#transformationMatrix#
+Group=Settings
+Fill=Fill Color #colorAccent#
+X=(#contentMargin# + 515)
 Y=4R
 
 [StyleSettingsButtonInline]

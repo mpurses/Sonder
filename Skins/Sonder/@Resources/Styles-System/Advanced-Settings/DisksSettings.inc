@@ -1,5 +1,6 @@
 ; DISKS METER SETTINGS
 [Variables]
+showDiskTitle=1
 fpfReadDepth=4
 fpfWriteDepth=4
 fpfSpaceUsedDepth=5
