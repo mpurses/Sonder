@@ -31,7 +31,7 @@ UpdateDivider=60
 
 [CurrentMonth]
 Measure=Time
-Format=%#m
+Format="%#m"
 UpdateDivider=-1
 
 [CurrentYear]
@@ -48,11 +48,24 @@ IfCondition2=([CurrentMonth] > 2)
 IfTrueAction2=[!WriteKeyValue Variables CurrentDayMeter ([CurrentDayNum]+#LeapYearAdj#) "#@#Variables.inc"]
 ;Also need to ignore feb 29 on the streak checker if not a leap year... in the script file
 IfFalseAction2=[!WriteKeyValue Variables CurrentDayMeter ([CurrentDayNum]) "#@#Variables.inc"]
-UpdateDivider=60
+UpdateDivider=-1
+
+[CalculateDayCount]
+Measure=Calc
+Formula=((CurrentMonth = 4) || (CurrentMonth = 6) || (CurrentMonth = 9) || (CurrentMonth = 11)) ? 30 : ((CurrentMonth = 2) ? (CalculateLeapYear ? 29 : 28) : 31)
+
+[CalculateLeapYear]
+Measure=Calc
+Formula=((CurrentYear%4 = 0) && (CurrentYear%100 <> 0) || (CurrentYear%400 = 0))
 
 ;===================================================================================================================================================================================================
 ;============================================================================ Language month translate measures ====================================================================================
 ;===================================================================================================================================================================================================
+[CurrentMonthName]
+Measure=Time
+FormatLocale=Local
+Format=%B
+
 [January]
 Measure=Time
 TimeStamp=January
@@ -242,8 +255,7 @@ DynamicVariables=1
 Measure=Calc
 Formula=1
 DynamicVariables=1
-;Update every 30 sec if day changes/for minimuzed state...
-UpdateDivider=30
+UpdateDivider=-1
 IfEqualValue=1
 Ifequalaction=[!CommandMeasure StreakScript "Initialize()"]
 
@@ -251,8 +263,7 @@ Ifequalaction=[!CommandMeasure StreakScript "Initialize()"]
 Measure=Calc
 Formula=#TodayComplete#
 DynamicVariables=1
-;Update every 30 sec if day changes/for minimuzed state...
-UpdateDivider=60
+UpdateDivider=-1
 IfCondition=(#TodayComplete# = 0)
 IfTrueAction=[!SetOption StreakCircle imagetint #StreakTodayNotCompleteColor#][!UpdateMeter StreakCircle]
 IfFalseAction=[!SetOption StreakCircle imagetint #DayActiveColor#][!UpdateMeter StreakCircle]

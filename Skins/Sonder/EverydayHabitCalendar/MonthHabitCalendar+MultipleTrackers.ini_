@@ -1,0 +1,704 @@
+[Rainmeter]
+Author=mpurses
+Group=AllNoWeather
+Update=1000
+;DynamicWindowSize=1
+AccurateText=1
+
+[Metadata]
+Name=Sonder 2 - Everyday Habit Calendar
+Config=
+Information=Keep track of your daily goals and don't break the chain!
+Version=2.4.1
+Tags=
+License=Creative Commons Attribution-Non-Commercial-Share Alike 3.0
+Variant=
+Preview=
+
+;==============================================================================================================================================================================
+;                                                                                          TO DO
+;fix performance issues
+;Another variant grouped my months (4x3)
+;add custom length option from a starting date (For a 75 day program for example)
+;custom message at top/list of goals?
+;lighter color days, hover brighter - Nevermind, too complicated/possible performance hit maybe since i have to add a seperate mouse hover to each day and not the group styles(im tired of copypasting)
+;==============================================================================================================================================================================
+
+[Variables]
+@include=#@#Fonts.inc
+@include2=#@#Variables.inc
+@includeALL=#@#Calendar-Day-Variables.inc
+@include3=#@#Calendar-Day-Variables-1.inc
+; @include4=#@#Calendar-Day-Variables-2.inc
+; @include5=#@#Calendar-Day-Variables-3.inc
+; @include6=#@#Calendar-Day-Variables-4.inc
+; @include7=#@#Calendar-Day-Variables-5.inc
+; @include8=#@#Calendar-Day-Variables-6.inc
+; @include9=#@#Calendar-Day-Variables-7.inc
+; @include10=#@#Calendar-Day-Variables-8.inc
+; @include11=#@#Calendar-Day-Variables-9.inc
+; @include12=#@#Calendar-Day-Variables-10.inc
+@include13=#@#Calendar\Calendar-Measures.inc
+@include14=#@#Calendar\Calendar-Measures-MonthView.inc
+
+[CalculateDay29Draw]
+Measure=Calc
+Formula=(29 > CalculateDayCount) ? 1 : 0
+IfEqualValue=0
+IfEqualAction=[!ShowMeter MeterDay29]
+IfAboveValue=0
+IfAboveAction=[!HideMeter MeterDay29]
+
+[CalculateDay30Draw]
+Measure=Calc
+Formula=(30 > CalculateDayCount) ? 1 : 0
+IfEqualValue=0
+IfEqualAction=[!ShowMeter MeterDay30]
+IfAboveValue=0
+IfAboveAction=[!HideMeter MeterDay30]
+
+[CalculateDay31Draw]
+Measure=Calc
+Formula=(31 > CalculateDayCount) ? 1 : 0
+IfEqualValue=0
+IfEqualAction=[!ShowMeter MeterDay31]
+IfAboveValue=0
+IfAboveAction=[!HideMeter MeterDay31]
+
+[MeasureDay1]
+Measure=Calc
+Formula=#CurrentDayMeter#-CurrentDayofMonthNum+1
+[MeasureDay2]
+Measure=Calc
+Formula=#CurrentDayMeter#-CurrentDayofMonthNum+2
+[MeasureDay3]
+Measure=Calc
+Formula=#CurrentDayMeter#-CurrentDayofMonthNum+3
+[MeasureDay4]
+Measure=Calc
+Formula=#CurrentDayMeter#-CurrentDayofMonthNum+4
+[MeasureDay5]
+Measure=Calc
+Formula=#CurrentDayMeter#-CurrentDayofMonthNum+5
+[MeasureDay6]
+Measure=Calc
+Formula=#CurrentDayMeter#-CurrentDayofMonthNum+6
+[MeasureDay7]
+Measure=Calc
+Formula=#CurrentDayMeter#-CurrentDayofMonthNum+7
+[MeasureDay8]
+Measure=Calc
+Formula=#CurrentDayMeter#-CurrentDayofMonthNum+8
+[MeasureDay9]
+Measure=Calc
+Formula=#CurrentDayMeter#-CurrentDayofMonthNum+9
+[MeasureDay10]
+Measure=Calc
+Formula=#CurrentDayMeter#-CurrentDayofMonthNum+10
+[MeasureDay11]
+Measure=Calc
+Formula=#CurrentDayMeter#-CurrentDayofMonthNum+11
+[MeasureDay12]
+Measure=Calc
+Formula=#CurrentDayMeter#-CurrentDayofMonthNum+12
+[MeasureDay13]
+Measure=Calc
+Formula=#CurrentDayMeter#-CurrentDayofMonthNum+13
+[MeasureDay14]
+Measure=Calc
+Formula=#CurrentDayMeter#-CurrentDayofMonthNum+14
+[MeasureDay15]
+Measure=Calc
+Formula=#CurrentDayMeter#-CurrentDayofMonthNum+15
+[MeasureDay16]
+Measure=Calc
+Formula=#CurrentDayMeter#-CurrentDayofMonthNum+16
+[MeasureDay17]
+Measure=Calc
+Formula=#CurrentDayMeter#-CurrentDayofMonthNum+17
+[MeasureDay18]
+Measure=Calc
+Formula=#CurrentDayMeter#-CurrentDayofMonthNum+18
+[MeasureDay19]
+Measure=Calc
+Formula=#CurrentDayMeter#-CurrentDayofMonthNum+19
+[MeasureDay20]
+Measure=Calc
+Formula=#CurrentDayMeter#-CurrentDayofMonthNum+20
+[MeasureDay21]
+Measure=Calc
+Formula=#CurrentDayMeter#-CurrentDayofMonthNum+21
+[MeasureDay22]
+Measure=Calc
+Formula=#CurrentDayMeter#-CurrentDayofMonthNum+22
+[MeasureDay23]
+Measure=Calc
+Formula=#CurrentDayMeter#-CurrentDayofMonthNum+23
+[MeasureDay24]
+Measure=Calc
+Formula=#CurrentDayMeter#-CurrentDayofMonthNum+24
+[MeasureDay25]
+Measure=Calc
+Formula=#CurrentDayMeter#-CurrentDayofMonthNum+25
+[MeasureDay26]
+Measure=Calc
+Formula=#CurrentDayMeter#-CurrentDayofMonthNum+26
+[MeasureDay27]
+Measure=Calc
+Formula=#CurrentDayMeter#-CurrentDayofMonthNum+27
+[MeasureDay28]
+Measure=Calc
+Formula=#CurrentDayMeter#-CurrentDayofMonthNum+28
+[MeasureDay29]
+Measure=Calc
+Formula=#CurrentDayMeter#-CurrentDayofMonthNum+29
+[MeasureDay30]
+Measure=Calc
+Formula=#CurrentDayMeter#-CurrentDayofMonthNum+30
+[MeasureDay31]
+Measure=Calc
+Formula=#CurrentDayMeter#-CurrentDayofMonthNum+31
+
+[MeasureOnLoad1]
+Measure=Calc
+Formula=Counter
+IfCondition=MeasureOnLoad1 = 1
+IfTrueAction=[!ZPos "1" #ROOTCONFIG#\EverydayHabitCalendar]
+
+;===================== METERS ======================================
+[Background]
+Meter=IMAGE
+SolidColor=#CalendarBackgroundColor#
+X=0
+Y=0
+;W=#WORKAREAWIDTH#
+;H=#WORKAREAHEIGHT#
+W=#SCREENAREAWIDTH#
+H=#SCREENAREAHEIGHT#
+
+[SettingsHoverArea]
+Meter=Shape
+Shape=Rectangle 0,0,400,75 | Fill Color 0,0,0,1 | Stroke Color 0,0,0,1
+X=(#WORKAREAWIDTH#-400)
+Y=0
+MouseOverAction=[!ShowMeter SettingsIcon][!UpdateMeter SettingsIcon][!Redraw]
+MouseLeaveAction=[!HideMeter SettingsIcon][!UpdateMeter SettingsIcon][!Redraw]
+
+[SettingsIcon]
+Meter=IMAGE
+ImageName=#@#Images\Settings-Box.png
+X=(#WORKAREAWIDTH#-(46*3))
+Y=0
+W=46
+H=32
+ImageTint=255,255,255
+MouseOverAction=[!SetOption SettingsIcon ImageTint #DayActiveColorHover#][!UpdateMeter SettingsIcon][!Redraw]
+MouseLeaveAction=[!SetOption SettingsIcon ImageTint 255,255,255][!UpdateMeter SettingsIcon][!Redraw]
+LeftMouseUpAction=[!RainmeterActivateConfig #ROOTCONFIG#\Settings Calendar-Settings.ini][!ZPos "0" #ROOTCONFIG#\EverydayHabitCalendar][!ZPos "1" #ROOTCONFIG#\Settings]
+Hidden=1
+
+[Exit]
+Meter=IMAGE
+ImageName=#@#Images\Exit-off-transparent.png
+W=46
+H=33
+X=(#WORKAREAWIDTH#-46)
+Y=0
+MouseOverAction=[!SetOption Exit ImageName #@#Images\Exit-on.png][!UpdateMeter Exit][!Redraw]
+MouseLeaveAction=[!SetOption Exit ImageName #@#Images\Exit-off-transparent.png][!UpdateMeter Exit][!Redraw]
+LeftMouseUpAction=[!RainmeterDeactivateConfig]
+
+[Minimize]
+Meter=IMAGE
+ImageName=#@#Images\minimize-off.png
+W=46
+H=32
+X=(#WORKAREAWIDTH#-46-46)
+Y=0
+MouseOverAction=[!SetOption Minimize ImageName #@#Images\minimize-on.png][!UpdateMeter Minimize][!Redraw]
+MouseLeaveAction=[!SetOption Minimize ImageName #@#Images\minimize-off.png][!UpdateMeter Minimize][!Redraw]
+LeftMouseUpAction=[!RainmeterActivateConfig "#ROOTCONFIG#\EverydayHabitCalendar\StreakNumberMinimized\" "Minimized.ini"][!RainmeterDeactivateConfig]
+
+[HeaderText]
+Meter=STRING
+Stringalign=Center
+X=(#WORKAREAWIDTH#/2)
+Y=5
+Antialias=1
+Text=#HeaderText#
+Fontsize=#HeaderTextSize#
+Fontface=#LocalFontFace2#
+FontColor=#CalendarFontColor#
+
+[StreakCircle]
+Meter=IMAGE
+imagename=#ActiveDayImage#
+imagetint=[MeasureStreakActive]
+;Shape=Ellipse (#DayHeight#/2),(#DayHeight#/2),(#DayHeight#/2) | StrokeWidth 3 | Fill Color 0,0,0,1 | Stroke Color #DayActiveColorHover#
+DynamicVariables=1
+Antialias=1
+;UpdateDivider=-1
+;flip negatives for horiz/vert layout
+X=(#WORKAREAWIDTH#/2)-30
+Y=32
+W=60
+H=60
+;Group=Daygroup
+MouseOverAction=[!UpdateMeter #CURRENTSECTION#][!Redraw]
+;[!SetOption #CURRENTSECTION# ImageTint #DayActiveColorHover#]
+MouseLeaveAction=[!UpdateMeter #CURRENTSECTION#][!Redraw]
+
+[StreakNumber]
+Meter=String
+StringStyle=Bold
+StringEffect=Shadow
+Stringalign=Center
+FontEffectColor=#DayFontEffectColor#
+Antialias=1
+DynamicVariables=1
+Fontsize=(#HeaderTextSize#+6)
+Fontface=#LocalFontFace3#
+FontColor=#FontColorOn#
+X=(#WORKAREAWIDTH#/2)
+Y=40
+text=#CurrentStreak#
+Tooltiptext=Streak
+;LeftMouseUpAction=[!CommandMeasure StreakScript "Initialize()"][!Refresh "#ROOTCONFIG#\EverydayHabitCalendar" "EverydayHabitCalendar.ini"]
+
+; If you have enough screen real estate...
+; [HabitText]
+; Meter=STRING
+; Stringalign=Left
+; X=((#WORKAREAWIDTH#/2)-65)
+; Y=40r
+; Antialias=1
+; Text=#HabitsList#
+; Fontsize=#HabitTextSize#
+; Fontface=#LocalFontFace2#
+; FontColor=#CalendarFontColor#
+
+
+;================================================================== MONTHS ==================================================================
+
+[CurrentMonthLine]
+Meter=STRING
+MeasureName=CurrentMonthName
+Stringalign=Center
+X=80
+Y=20R
+Antialias=1
+ClipString=0
+DynamicVariables=1
+Fontsize=(#MonthTextSize#+4)
+Fontface=#LocalFontFace17#
+FontColor=#CalendarFontColor#
+Fontweight=900
+;Text=September
+Group=Months
+
+[Habit1Container]
+Meter=Shape
+Shape=Rectangle 0,(60+#HabitSpacingsMonth#),#WORKAREAWIDTH#,#HabitSpacingsMonth# | Fill Color 0,0,0,1 | Stroke Color 0,0,0,1
+MouseOverAction=[!SetOption #CURRENTSECTION# Shape "Rectangle 0,(60+#HabitSpacingsMonth#),#WORKAREAWIDTH#,#HabitSpacingsMonth# | Fill Color #RowHighlightColor# | Stroke Color 0,0,0,1"][!UpdateMeter #CURRENTSECTION#][!Redraw]
+MouseLeaveAction=[!SetOption #CURRENTSECTION# Shape "Rectangle 0,(60+#HabitSpacingsMonth#),#WORKAREAWIDTH#,#HabitSpacingsMonth# | Fill Color 0,0,0,1 | Stroke Color 0,0,0,1"][!UpdateMeter #CURRENTSECTION#][!Redraw]
+
+[Habit1]
+Meter=STRING
+Stringalign=CenterCenter
+X=80
+Y=(-1*#HabitSpacingsMonth#/2)R
+Antialias=1
+DynamicVariables=1
+UpdateDivider=-1
+Fontsize=#MonthTextSize#
+Fontface=#LocalFontFace2#
+FontColor=#CalendarFontColor#
+Text=#Habit1#
+Group=Months
+
+[Habit2Container]
+Meter=Shape
+Shape=Rectangle 0,(60+2*#HabitSpacingsMonth#),#WORKAREAWIDTH#,#HabitSpacingsMonth# | Fill Color 0,0,0,1 | Stroke Color 0,0,0,1
+MouseOverAction=[!SetOption #CURRENTSECTION# Shape "Rectangle 0,(60+2*#HabitSpacingsMonth#),#WORKAREAWIDTH#,#HabitSpacingsMonth# | Fill Color #RowHighlightColor# | Stroke Color 0,0,0,1"][!UpdateMeter #CURRENTSECTION#][!Redraw]
+MouseLeaveAction=[!SetOption #CURRENTSECTION# Shape "Rectangle 0,(60+2*#HabitSpacingsMonth#),#WORKAREAWIDTH#,#HabitSpacingsMonth# | Fill Color 0,0,0,1 | Stroke Color 0,0,0,1"][!UpdateMeter #CURRENTSECTION#][!Redraw]
+
+[Habit2]
+Meter=STRING
+Stringalign=CenterCenter
+X=80
+Y=(-1*#HabitSpacingsMonth#/2)R
+Antialias=1
+DynamicVariables=1
+UpdateDivider=-1
+Fontsize=#MonthTextSize#
+Fontface=#LocalFontFace2#
+FontColor=#CalendarFontColor#
+Text=#Habit2#
+Group=Months
+Disabled=#Habit2Disabled#
+
+[Habit3Container]
+Meter=Shape
+Shape=Rectangle 0,(60+3*#HabitSpacingsMonth#),#WORKAREAWIDTH#,#HabitSpacingsMonth# | Fill Color 0,0,0,1 | Stroke Color 0,0,0,1
+MouseOverAction=[!SetOption #CURRENTSECTION# Shape "Rectangle 0,(60+3*#HabitSpacingsMonth#),#WORKAREAWIDTH#,#HabitSpacingsMonth# | Fill Color #RowHighlightColor# | Stroke Color 0,0,0,1"][!UpdateMeter #CURRENTSECTION#][!Redraw]
+MouseLeaveAction=[!SetOption #CURRENTSECTION# Shape "Rectangle 0,(60+3*#HabitSpacingsMonth#),#WORKAREAWIDTH#,#HabitSpacingsMonth# | Fill Color 0,0,0,1 | Stroke Color 0,0,0,1"][!UpdateMeter #CURRENTSECTION#][!Redraw]
+
+[Habit3]
+Meter=STRING
+Stringalign=CenterCenter
+X=80
+Y=(-1*#HabitSpacingsMonth#/2)R
+Antialias=1
+DynamicVariables=1
+UpdateDivider=-1
+Fontsize=#MonthTextSize#
+Fontface=#LocalFontFace2#
+FontColor=#CalendarFontColor#
+Text=#Habit3#
+Group=Months
+Disabled=#Habit3Disabled#
+
+[Habit4Container]
+Meter=Shape
+Shape=Rectangle 0,(60+4*#HabitSpacingsMonth#),#WORKAREAWIDTH#,#HabitSpacingsMonth# | Fill Color 0,0,0,1 | Stroke Color 0,0,0,1
+MouseOverAction=[!SetOption #CURRENTSECTION# Shape "Rectangle 0,(60+4*#HabitSpacingsMonth#),#WORKAREAWIDTH#,#HabitSpacingsMonth# | Fill Color #RowHighlightColor# | Stroke Color 0,0,0,1"][!UpdateMeter #CURRENTSECTION#][!Redraw]
+MouseLeaveAction=[!SetOption #CURRENTSECTION# Shape "Rectangle 0,(60+4*#HabitSpacingsMonth#),#WORKAREAWIDTH#,#HabitSpacingsMonth# | Fill Color 0,0,0,1 | Stroke Color 0,0,0,1"][!UpdateMeter #CURRENTSECTION#][!Redraw]
+
+[Habit4]
+Meter=STRING
+Stringalign=CenterCenter
+X=80
+Y=(-1*#HabitSpacingsMonth#/2)R
+Antialias=1
+DynamicVariables=1
+UpdateDivider=-1
+Fontsize=#MonthTextSize#
+Fontface=#LocalFontFace2#
+FontColor=#CalendarFontColor#
+Text=#Habit4#
+Group=Months
+Disabled=#Habit4Disabled#
+
+[Habit5Container]
+Meter=Shape
+Shape=Rectangle 0,(60+5*#HabitSpacingsMonth#),#WORKAREAWIDTH#,#HabitSpacingsMonth# | Fill Color 0,0,0,1 | Stroke Color 0,0,0,1
+MouseOverAction=[!SetOption #CURRENTSECTION# Shape "Rectangle 0,(60+5*#HabitSpacingsMonth#),#WORKAREAWIDTH#,#HabitSpacingsMonth# | Fill Color #RowHighlightColor# | Stroke Color 0,0,0,1"][!UpdateMeter #CURRENTSECTION#][!Redraw]
+MouseLeaveAction=[!SetOption #CURRENTSECTION# Shape "Rectangle 0,(60+5*#HabitSpacingsMonth#),#WORKAREAWIDTH#,#HabitSpacingsMonth# | Fill Color 0,0,0,1 | Stroke Color 0,0,0,1"][!UpdateMeter #CURRENTSECTION#][!Redraw]
+
+[Habit5]
+Meter=STRING
+Stringalign=CenterCenter
+X=80
+Y=(-1*#HabitSpacingsMonth#/2)R
+Antialias=1
+DynamicVariables=1
+UpdateDivider=-1
+Fontsize=#MonthTextSize#
+Fontface=#LocalFontFace2#
+FontColor=#CalendarFontColor#
+Text=#Habit5#
+Group=Months
+Disabled=#Habit5Disabled#
+
+[Habit6Container]
+Meter=Shape
+Shape=Rectangle 0,(60+6*#HabitSpacingsMonth#),#WORKAREAWIDTH#,#HabitSpacingsMonth# | Fill Color 0,0,0,1 | Stroke Color 0,0,0,1
+MouseOverAction=[!SetOption #CURRENTSECTION# Shape "Rectangle 0,(60+6*#HabitSpacingsMonth#),#WORKAREAWIDTH#,#HabitSpacingsMonth# | Fill Color #RowHighlightColor# | Stroke Color 0,0,0,1"][!UpdateMeter #CURRENTSECTION#][!Redraw]
+MouseLeaveAction=[!SetOption #CURRENTSECTION# Shape "Rectangle 0,(60+6*#HabitSpacingsMonth#),#WORKAREAWIDTH#,#HabitSpacingsMonth# | Fill Color 0,0,0,1 | Stroke Color 0,0,0,1"][!UpdateMeter #CURRENTSECTION#][!Redraw]
+
+[Habit6]
+Meter=STRING
+Stringalign=CenterCenter
+X=80
+Y=(-1*#HabitSpacingsMonth#/2)R
+Antialias=1
+DynamicVariables=1
+UpdateDivider=-1
+Fontsize=#MonthTextSize#
+Fontface=#LocalFontFace2#
+FontColor=#CalendarFontColor#
+Text=#Habit6#
+Group=Months
+Disabled=#Habit6Disabled#
+
+[Habit7Container]
+Meter=Shape
+Shape=Rectangle 0,(60+7*#HabitSpacingsMonth#),#WORKAREAWIDTH#,#HabitSpacingsMonth# | Fill Color 0,0,0,1 | Stroke Color 0,0,0,1
+MouseOverAction=[!SetOption #CURRENTSECTION# Shape "Rectangle 0,(60+7*#HabitSpacingsMonth#),#WORKAREAWIDTH#,#HabitSpacingsMonth# | Fill Color #RowHighlightColor# | Stroke Color 0,0,0,1"][!UpdateMeter #CURRENTSECTION#][!Redraw]
+MouseLeaveAction=[!SetOption #CURRENTSECTION# Shape "Rectangle 0,(60+7*#HabitSpacingsMonth#),#WORKAREAWIDTH#,#HabitSpacingsMonth# | Fill Color 0,0,0,1 | Stroke Color 0,0,0,1"][!UpdateMeter #CURRENTSECTION#][!Redraw]
+
+[Habit7]
+Meter=STRING
+Stringalign=CenterCenter
+X=80
+Y=(-1*#HabitSpacingsMonth#/2)R
+Antialias=1
+DynamicVariables=1
+UpdateDivider=-1
+Fontsize=#MonthTextSize#
+Fontface=#LocalFontFace2#
+FontColor=#CalendarFontColor#
+Text=#Habit7#
+Group=Months
+Disabled=#Habit7Disabled#
+
+[Habit8Container]
+Meter=Shape
+Shape=Rectangle 0,(60+8*#HabitSpacingsMonth#),#WORKAREAWIDTH#,#HabitSpacingsMonth# | Fill Color 0,0,0,1 | Stroke Color 0,0,0,1
+MouseOverAction=[!SetOption #CURRENTSECTION# Shape "Rectangle 0,(60+8*#HabitSpacingsMonth#),#WORKAREAWIDTH#,#HabitSpacingsMonth# | Fill Color #RowHighlightColor# | Stroke Color 0,0,0,1"][!UpdateMeter #CURRENTSECTION#][!Redraw]
+MouseLeaveAction=[!SetOption #CURRENTSECTION# Shape "Rectangle 0,(60+8*#HabitSpacingsMonth#),#WORKAREAWIDTH#,#HabitSpacingsMonth# | Fill Color 0,0,0,1 | Stroke Color 0,0,0,1"][!UpdateMeter #CURRENTSECTION#][!Redraw]
+
+[Habit8]
+Meter=STRING
+Stringalign=CenterCenter
+X=80
+Y=(-1*#HabitSpacingsMonth#/2)R
+Antialias=1
+DynamicVariables=1
+UpdateDivider=-1
+Fontsize=#MonthTextSize#
+Fontface=#LocalFontFace2#
+FontColor=#CalendarFontColor#
+Text=#Habit8#
+Group=Months
+Disabled=#Habit8Disabled#
+
+[Habit9Container]
+Meter=Shape
+Shape=Rectangle 0,(60+9*#HabitSpacingsMonth#),#WORKAREAWIDTH#,#HabitSpacingsMonth# | Fill Color 0,0,0,1 | Stroke Color 0,0,0,1
+MouseOverAction=[!SetOption #CURRENTSECTION# Shape "Rectangle 0,(60+9*#HabitSpacingsMonth#),#WORKAREAWIDTH#,#HabitSpacingsMonth# | Fill Color #RowHighlightColor# | Stroke Color 0,0,0,1"][!UpdateMeter #CURRENTSECTION#][!Redraw]
+MouseLeaveAction=[!SetOption #CURRENTSECTION# Shape "Rectangle 0,(60+9*#HabitSpacingsMonth#),#WORKAREAWIDTH#,#HabitSpacingsMonth# | Fill Color 0,0,0,1 | Stroke Color 0,0,0,1"][!UpdateMeter #CURRENTSECTION#][!Redraw]
+
+[Habit9]
+Meter=STRING
+Stringalign=CenterCenter
+X=80
+Y=(-1*#HabitSpacingsMonth#/2)R
+Antialias=1
+DynamicVariables=1
+UpdateDivider=-1
+Fontsize=#MonthTextSize#
+Fontface=#LocalFontFace2#
+FontColor=#CalendarFontColor#
+Text=#Habit9#
+Group=Months
+Disabled=#Habit9Disabled#
+
+[Habit10Container]
+Meter=Shape
+Shape=Rectangle 0,(60+10*#HabitSpacingsMonth#),#WORKAREAWIDTH#,#HabitSpacingsMonth# | Fill Color 0,0,0,1 | Stroke Color 0,0,0,1
+MouseOverAction=[!SetOption #CURRENTSECTION# Shape "Rectangle 0,(60+10*#HabitSpacingsMonth#),#WORKAREAWIDTH#,#HabitSpacingsMonth# | Fill Color #RowHighlightColor# | Stroke Color 0,0,0,1"][!UpdateMeter #CURRENTSECTION#][!Redraw]
+MouseLeaveAction=[!SetOption #CURRENTSECTION# Shape "Rectangle 0,(60+10*#HabitSpacingsMonth#),#WORKAREAWIDTH#,#HabitSpacingsMonth# | Fill Color 0,0,0,1 | Stroke Color 0,0,0,1"][!UpdateMeter #CURRENTSECTION#][!Redraw]
+
+[Habit10]
+Meter=STRING
+Stringalign=CenterCenter
+X=80
+Y=(-1*#HabitSpacingsMonth#/2)R
+Antialias=1
+DynamicVariables=1
+UpdateDivider=-1
+Fontsize=#MonthTextSize#
+Fontface=#LocalFontFace2#
+FontColor=#CalendarFontColor#
+Text=#Habit10#
+Group=Months
+Disabled=#Habit10Disabled#
+
+;================================================================== Day Styles ==================================================================
+[DayBGStyle]
+;Shape=Ellipse (#DayHeight#/2),(#DayHeight#/2),(#DayHeight#/2) | StrokeWidth 3 | Fill Color 0,0,0,1 | Stroke Color #DayActiveColorHover#
+DynamicVariables=1
+UpdateDivider=-1
+;flip negatives for horiz/vert layout
+Group=Daygroup
+MouseOverAction=[!SetOption #CURRENTSECTION# ImageTint #DayActiveColorHover#][!UpdateMeter #CURRENTSECTION#][!Redraw]
+MouseLeaveAction=[!SetOption #CURRENTSECTION# ImageTint #DayActiveColor#][!UpdateMeter #CURRENTSECTION#][!Redraw]
+
+[DayNumberStyle]
+Stringalign=CenterCenter
+StringStyle=Bold
+StringEffect=Shadow
+FontEffectColor=#DayFontEffectColor#
+Antialias=1
+Fontsize=(#HabitSpacingsDay#*0.43)
+Fontface=#LocalFontFace3#
+FontColor=#CalendarFontColor#
+X=#HabitSpacingsDay#r
+Y=r
+W=#HabitSpacingsDay#
+H=#HabitSpacingsDay#
+Group=Daygroup
+
+;=====================================================================================================================================================
+;------------------------------------------------------------------ CURRENT MONTH DAYS ---------------------------------------------------------------------
+;=====================================================================================================================================================
+
+;-----Day1-----
+[MeterDay1]
+Meter=String
+Stringalign=CenterCenter
+X=#MeterDay1X#
+Y=110
+W=#HabitSpacingsDay#
+H=#HabitSpacingsDay#
+Group=Daygroup
+StringStyle=Bold
+StringEffect=Shadow
+FontEffectColor=#DayFontEffectColor#
+Fontsize=(#HabitSpacingsDay#*0.43)
+Fontface=#LocalFontFace3#
+FontColor=#CalendarFontColor#
+Antialias=1
+Text=1
+[MeterDay2]
+Meter=String
+Meterstyle=DayNumberStyle
+Text=2
+[MeterDay3]
+Meter=String
+Meterstyle=DayNumberStyle
+Text=3
+[MeterDay4]
+Meter=String
+Meterstyle=DayNumberStyle
+Text=4
+[MeterDay5]
+Meter=String
+Meterstyle=DayNumberStyle
+Text=5
+[MeterDay6]
+Meter=String
+Meterstyle=DayNumberStyle
+Text=6
+[MeterDay7]
+Meter=String
+Meterstyle=DayNumberStyle
+Text=7
+[MeterDay8]
+Meter=String
+Meterstyle=DayNumberStyle
+Text=8
+[MeterDay9]
+Meter=String
+Meterstyle=DayNumberStyle
+Text=9
+[MeterDay10]
+Meter=String
+Meterstyle=DayNumberStyle
+Text=10
+[MeterDay11]
+Meter=String
+Meterstyle=DayNumberStyle
+Text=11
+[MeterDay12]
+Meter=String
+Meterstyle=DayNumberStyle
+Text=12
+[MeterDay13]
+Meter=String
+Meterstyle=DayNumberStyle
+Text=13
+[MeterDay14]
+Meter=String
+Meterstyle=DayNumberStyle
+Text=14
+[MeterDay15]
+Meter=String
+Meterstyle=DayNumberStyle
+Text=15
+[MeterDay16]
+Meter=String
+Meterstyle=DayNumberStyle
+Text=16
+[MeterDay17]
+Meter=String
+Meterstyle=DayNumberStyle
+Text=17
+[MeterDay18]
+Meter=String
+Meterstyle=DayNumberStyle
+Text=18
+[MeterDay19]
+Meter=String
+Meterstyle=DayNumberStyle
+Text=19
+[MeterDay20]
+Meter=String
+Meterstyle=DayNumberStyle
+Text=20
+[MeterDay21]
+Meter=String
+Meterstyle=DayNumberStyle
+Text=21
+[MeterDay22]
+Meter=String
+Meterstyle=DayNumberStyle
+Text=22
+[MeterDay23]
+Meter=String
+Meterstyle=DayNumberStyle
+Text=23
+[MeterDay24]
+Meter=String
+Meterstyle=DayNumberStyle
+Text=24
+[MeterDay25
+Meter=String
+Meterstyle=DayNumberStyle
+Text=25
+[MeterDay26]
+Meter=String
+Meterstyle=DayNumberStyle
+Text=26
+[MeterDay27]
+Meter=String
+Meterstyle=DayNumberStyle
+Text=27
+[MeterDay28]
+Meter=String
+Meterstyle=DayNumberStyle
+Text=28
+[MeterDay29]
+Meter=String
+Meterstyle=DayNumberStyle
+Text=29
+[MeterDay30]
+Meter=String
+Meterstyle=DayNumberStyle
+Text=30
+[MeterDay31]
+Meter=String
+Meterstyle=DayNumberStyle
+Text=31
+
+;-------------------------------CURRENT DAY UNDERLINE ---------------------------
+[MeasureDayUnderline]
+Measure=Calc
+Formula=1
+IfAboveValue=0
+IfAboveAction=[!SetOption "MeterDay[CurrentDayofMonthNum]" InlineSetting Underline]
+;[!UpdateMeter "M[CurrentMonth]Day#CurrentDayMeter#Num"];[!Redraw]
+UpdateDivider=600
+
+[Habit1Day1]
+Meter=Shape
+X=#MeterDay1X#
+Y=(110+#HabitSpacingsMonth#)
+Shape=Ellipse 0,((-1*#HabitSpacingsDay#/4)*0.75),((#HabitSpacingsDay#/2)*0.75),((#HabitSpacingsDay#/2)*0.75) | Fill Color [&MeasureHabit1Day[&MeasureDay1]Color] | Stroke Color 255,255,255,1
+DynamicVariables=1
+MouseOverAction=[!SetOption #CURRENTSECTION# Shape "Ellipse 0,((-1*#HabitSpacingsDay#/4)*0.75),((#HabitSpacingsDay#/2)*0.75),((#HabitSpacingsDay#/2)*0.75) | Fill Color [&MeasureHabit1Day[&MeasureDay1]ColorHover] | Stroke Color 255,255,255,1"][!UpdateMeter #CURRENTSECTION#][!Redraw]
+MouseLeaveAction=[!SetOption #CURRENTSECTION# Shape "Ellipse 0,((-1*#HabitSpacingsDay#/4)*0.75),((#HabitSpacingsDay#/2)*0.75),((#HabitSpacingsDay#/2)*0.75) | Fill Color [&MeasureHabit1Day[&MeasureDay1]Color] | Stroke Color 255,255,255,1"][!UpdateMeter #CURRENTSECTION#][!Redraw]
+LeftMouseUpAction=[!WriteKeyValue Variables Habit1Day[&MeasureDay1] (1-[#Habit1Day[&MeasureDay1]]) "#@#Calendar-Day-Variables-1.inc"][!UpdateMeter Habit1Day1][!CommandMeasure StreakScript "Initialize()"][!Updatemeter StreakNumber][!Redraw][!Refresh][!Log "[MeasureColorHabit1Day153]"]
+
+[Habit1Day2]
+Meter=Shape
+X=#HabitSpacingsDay#r
+Y=r
+Shape=Ellipse 0,((-1*#HabitSpacingsDay#/4)*0.75),((#HabitSpacingsDay#/2)*0.75),((#HabitSpacingsDay#/2)*0.75) | Fill Color [&MeasureHabit1Day[&MeasureDay2]Color] | Stroke Color 255,255,255,1
+DynamicVariables=1
+MouseOverAction=[!SetOption #CURRENTSECTION# Shape "Ellipse 0,((-1*#HabitSpacingsDay#/4)*0.75),((#HabitSpacingsDay#/2)*0.75),((#HabitSpacingsDay#/2)*0.75) | Fill Color [&MeasureHabit1Day[&MeasureDay2]ColorHover] | Stroke Color 255,255,255,1"][!UpdateMeter #CURRENTSECTION#][!Redraw]
+MouseLeaveAction=[!SetOption #CURRENTSECTION# Shape "Ellipse 0,((-1*#HabitSpacingsDay#/4)*0.75),((#HabitSpacingsDay#/2)*0.75),((#HabitSpacingsDay#/2)*0.75) | Fill Color [&MeasureHabit1Day[&MeasureDay2]Color] | Stroke Color 255,255,255,1"][!UpdateMeter #CURRENTSECTION#][!Redraw]
+LeftMouseUpAction=[!WriteKeyValue Variables Habit1Day[&MeasureDay2] (1-[#Habit1Day[&MeasureDay2]]) "#@#Calendar-Day-Variables-1.inc"][!UpdateMeter Habit1Day2][!CommandMeasure StreakScript "Initialize()"][!Updatemeter StreakNumber][!Redraw][!Refresh][!Log "[&MeasureHabit1Day[&MeasureDay2]Color]"]
+
+;copy paste on from here if anyone wants to fix performance issues (most likely need to go script route vs. the 7000+ measures needed)

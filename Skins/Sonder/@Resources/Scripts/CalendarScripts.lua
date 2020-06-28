@@ -1,5 +1,5 @@
 function Initialize()
-print('Calendar Script Running...')
+	print("Calendar Script running")
 	local CurrentDayNumber = SKIN:GetVariable('CurrentDayMeter')
 	local LeapYear = SKIN:GetVariable('LeapYearAdj')
 	local CurrentStreakTemp = 0
