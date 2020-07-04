@@ -63,7 +63,7 @@ Formula=((CurrentYear%4 = 0) && (CurrentYear%100 <> 0) || (CurrentYear%400 = 0))
 ;===================================================================================================================================================================================================
 [CurrentMonthName]
 Measure=Time
-FormatLocale=Local
+FormatLocale=#LanguageOverride#
 Format=%B
 
 [January]
@@ -71,7 +71,7 @@ Measure=Time
 TimeStamp=January
 TimeStampFormat=%B
 TimeStampLocale=en-US
-FormatLocale=Local
+FormatLocale=#LanguageOverride#
 Format=%B
 UpdateDivider=-1
 
@@ -80,7 +80,7 @@ Measure=Time
 TimeStamp=February
 TimeStampFormat=%B
 TimeStampLocale=en-US
-FormatLocale=Local
+FormatLocale=#LanguageOverride#
 Format=%B
 UpdateDivider=-1
 
@@ -89,7 +89,7 @@ Measure=Time
 TimeStamp=March
 TimeStampFormat=%B
 TimeStampLocale=en-US
-FormatLocale=Local
+FormatLocale=#LanguageOverride#
 Format=%B
 UpdateDivider=-1
 
@@ -98,7 +98,7 @@ Measure=Time
 TimeStamp=April
 TimeStampFormat=%B
 TimeStampLocale=en-US
-FormatLocale=Local
+FormatLocale=#LanguageOverride#
 Format=%B
 UpdateDivider=-1
 
@@ -107,7 +107,7 @@ Measure=Time
 TimeStamp=May
 TimeStampFormat=%B
 TimeStampLocale=en-US
-FormatLocale=Local
+FormatLocale=#LanguageOverride#
 Format=%B
 UpdateDivider=-1
 
@@ -116,7 +116,7 @@ Measure=Time
 TimeStamp=June
 TimeStampFormat=%B
 TimeStampLocale=en-US
-FormatLocale=Local
+FormatLocale=#LanguageOverride#
 Format=%B
 UpdateDivider=-1
 
@@ -125,7 +125,7 @@ Measure=Time
 TimeStamp=July
 TimeStampFormat=%B
 TimeStampLocale=en-US
-FormatLocale=Local
+FormatLocale=#LanguageOverride#
 Format=%B
 UpdateDivider=-1
 
@@ -134,7 +134,7 @@ Measure=Time
 TimeStamp=August
 TimeStampFormat=%B
 TimeStampLocale=en-US
-FormatLocale=Local
+FormatLocale=#LanguageOverride#
 Format=%B
 UpdateDivider=-1
 
@@ -143,7 +143,7 @@ Measure=Time
 TimeStamp=September
 TimeStampFormat=%B
 TimeStampLocale=en-US
-FormatLocale=Local
+FormatLocale=#LanguageOverride#
 Format=%B
 UpdateDivider=-1
 
@@ -152,7 +152,7 @@ Measure=Time
 TimeStamp=October
 TimeStampFormat=%B
 TimeStampLocale=en-US
-FormatLocale=Local
+FormatLocale=#LanguageOverride#
 Format=%B
 UpdateDivider=-1
 
@@ -161,7 +161,7 @@ Measure=Time
 TimeStamp=November
 TimeStampFormat=%B
 TimeStampLocale=en-US
-FormatLocale=Local
+FormatLocale=#LanguageOverride#
 Format=%B
 UpdateDivider=-1
 
@@ -170,7 +170,7 @@ Measure=Time
 TimeStamp=December
 TimeStampFormat=%B
 TimeStampLocale=en-US
-FormatLocale=Local
+FormatLocale=#LanguageOverride#
 Format=%B
 UpdateDivider=-1
 
