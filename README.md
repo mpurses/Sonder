@@ -55,7 +55,7 @@ TaskbarX: https://chrisandriessen.nl/taskbarx/
 
 ## Requirements
 Rainmeter 4.3 or newer: https://www.rainmeter.net  
-System supports [CoreTemp](https://www.alcpu.com/CoreTemp/) for CPU core temperatures and some other information.
+System supports [CoreTemp](https://www.alcpu.com/CoreTemp/) for CPU core temperatures and [HWINFO](https://www.hwinfo.com/) for others.
 
 ## Installation Instructions
 After downloading the .RMSKIN package from https://www.deviantart.com/michaelpurses/art/Sonder-Rainmeter-skin-838147223, make sure you have Rainmeter installed, then simply open the file to install the suite. It is recommended that you load the included layout if it is your first time installing. If you are updating from a prior version, you do not need to load the layout.
