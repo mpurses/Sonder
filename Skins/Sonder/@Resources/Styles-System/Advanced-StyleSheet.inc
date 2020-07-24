@@ -50,7 +50,8 @@ colorSbControlCorner=0,0,3
 bgOffset=10
 gadgetBgWidth=(#WidthValueSystem#-20)
 bgWidth=#gadgetBgWidth#
-bgWidthAbs=(#bgWidth# + (#bgOffset# * 2))
+bgWidthAbs=#bgWidth#
+;(#bgWidth# + (#bgOffset# * 2))
 
 contentMarginAbs=3
 contentMargin=(#contentMarginAbs# + #bgOffset# - 1)
@@ -191,12 +192,12 @@ Group=Background
 DynamicVariables=1
 
 [StyleBackground]
-Shape=Rectangle (0 * #scale#),(0 * #scale#),(#bgWidth# * #scale#),([[#CURRENTSECTION]:H] - ((0 * 2) * #scale#)),(#cornerRoundness# * #scale#) | StrokeWidth 0 | Fill Color 26,27,28,255
+Shape=Rectangle 0,0,(#bgWidth# * #scale#),([[#CURRENTSECTION]:H] - ((0 * 2) * #scale#)),(#cornerRoundness# * #scale#) | StrokeWidth 0 | Fill Color 26,27,28,255
 ;Shape2=Rectangle ((#bgOffset# + #showBgBorder#) * #scale#),((#bgOffset# + #showBgBorder#) * #scale#),((#bgWidth# - (#showBgBorder# * 2)) * #scale#),([[#CURRENTSECTION]:H] - (((#bgOffset# * 2) + (#showBgBorder# * 2)) * #scale#)),(#cornerRoundness# * #scale#) | StrokeWidth 0 | Fill Color 26,27,28,255
 BgGradient=90 | #colorBg# ; 0 | #colorSubBg# ; 1
 X=0
 Y=0
-W=((#bgWidth# + (0 * 2)) * #scale#)
+W=#bgWidth#
 H=([MeterBackgroundHeight:Y] * #scale#)
 DynamicVariables=1
 Group=Background
