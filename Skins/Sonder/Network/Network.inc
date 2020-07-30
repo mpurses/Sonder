@@ -19,6 +19,7 @@ MaxValue=1000000
 MinValue=0
 ;Interface=Best
 ;DynamicVariables=1
+;OnUpdateAction=[!CommandMeasure ScriptGraph "Graph()"]
 
 [MeasureNetInPercent]
 Measure=Calc
@@ -184,6 +185,34 @@ MeterStyle=StyleSystem#Variant#Graph | StyleSystem#Variant#Graph2
 MeasureName=MeasureNetIn#SystemGraphType#
 LeftMouseUpAction=["perfmon.exe" "/res"]
 ToolTipText="Open Resource Monitor"
+
+; ; Script for generating the line graph
+; [ScriptGraph]
+; Measure=Script
+; ScriptFile=#@#scripts\GraphShape.lua
+; ShapeWidth=(#SidebarWidthNetwork#*#ScaleValueNetwork#)
+; ShapeHeight=(30*#ScaleValueNetwork#)
+; InputMeasure=MeasureNetOutFloating
+; OutputGraph=ShapeGraph
+; AutoScale=1
+
+; ; Measure to get CPU usage
+; ;[MeasureCPU]
+; ;Measure=CPU
+; ;OnUpdateAction=[!CommandMeasure ScriptGraph "Graph()"]
+
+; ; Shape graph
+; [ShapeGraph]
+; Meter=Shape
+; X=(#Scale#*(10+(4*#HideBordersBottom#)))
+; Y=(125*#ScaleValueNetwork#)
+; H=(37*#ScaleValueNetwork#)
+; Shape=Path Graph1 | StrokeWidth (3*#ScaleValueNetwork#) | Stroke Color #NetworkUpColor# | StrokeLineJoin Round
+; Shape2=Path Graph2 | StrokeWidth 0 | Fill LinearGradient Grad | StrokeLineJoin Round
+; Graph1=0,0|Lineto 0,0
+; Graph2=0,0|Lineto 0,0
+; Grad = 270 | #NetworkUpColor#,225 ; 0 | #NetworkUpColor#,0 ; 1
+; Padding=0,0,0,(10*#ScaleValueNetwork#)
 
 ;-----------------------
 ; LOWER TEXT

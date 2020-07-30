@@ -5,8 +5,6 @@
 [Variables]
 @include=#@#Variables.inc
 ColorImage=#GlobalSkinBackgroundColor#
-LocalFontFace=ITC Avant Garde Pro XLt
-LocalFontFace2=ITC Avant Garde Pro Bk
 ;Font=Segou UI
 ;Font=#LocalFontName#
 ;SkinMouseOver=0
