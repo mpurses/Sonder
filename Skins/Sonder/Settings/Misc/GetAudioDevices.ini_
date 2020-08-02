@@ -1,0 +1,41 @@
+; original author alatsombath / Github: alatsombath
+; adjusted to fit to the monstercat visualizer by marcopixel
+
+[Rainmeter]
+Update=-1
+OnRefreshAction=[!SkinCustomMenu]
+OnUnfocusAction=[!DeactivateConfig]
+ContextTitle=" Default"
+ContextAction=[!SetOption - String "(Change)"][!UpdateMeasure -]
+
+[Metadata]
+Name=Audio Device List Menu
+Author=mpurses
+Version=2.5.1
+
+
+[Variables]
+; Includes the variables used for the skin.
+@include=#@#Variables.inc
+
+[-]
+Measure=String
+OnChangeAction=[!WriteKeyValue Variables AudioDeviceID "" "#@#Variables.inc"][!Refreshgroup Visualizer][!DeactivateConfig]
+
+[MeasureAudio]
+Measure=Plugin
+Plugin=AudioLevel
+Port=Output
+
+[MeasureAudioDeviceList]
+Measure=Plugin
+Plugin=AudioLevel
+Parent=MeasureAudio
+Type=DeviceList
+
+[ParseAudioDeviceList]
+Measure=Script
+ScriptFile=#@#Scripts\AudioDeviceList.lua
+
+[MeterDummy]
+Meter=Image
