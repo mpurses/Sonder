@@ -71,7 +71,7 @@ labelOffset=53
 
 ; FONT SETTINGS
 fontFace=#LocalFontFace#
-fontFaceSettings=#LocalFontFace8#
+fontFaceSettings=#LocalFontFace2#
 fontFaceCn=#LocalFontFace#
 fontSize=9
 fontWeight=500
@@ -107,7 +107,8 @@ colorNvidia=119,185,0
 
 colorError=200,53,53
 colorCloseButton=157,33,33
-colorHelpButton=27,57,131
+colorHelpButton=36,36,38
+;27,57,131
 
 histogramAlpha=50
 hoverAlpha=200
@@ -538,14 +539,15 @@ X=-18r
 Y=-1r
 
 [StyleStringSettingsSkinTitle]
-FontSize=11
-FontWeight=700
+FontSize=13
+FontWeight=900
+FontFace=#LocalFontFace2#
 StringAlign=Center
 FontColor=#colorMain#
 X=#contentMargin#
 Y=#contentMargin#
-Padding=0,-3,0,0
-StringCase=Upper
+Padding=0,0,0,0
+;StringCase=Upper
 
 [StyleStringSettingsGPUSkinTitle]
 FontSize=11
@@ -553,7 +555,7 @@ FontWeight=700
 FontColor=#colorMain#
 ;X=310
 Y=#contentMargin#
-Padding=0,-3,0,0
+Padding=0,0,0,0
 StringCase=Upper
 
 [StyleStringSettingsSectionLabel]
@@ -955,8 +957,23 @@ ToolTipTitle=Title text
 ToolTipText=Body text
 ToolTipWidth=300
 
-[StyleShapeHelpIconInputBox]
-Padding=-7,-10,0,-3
+; [StyleShapeHelpIcon]
+; Meter=IMAGE
+; ImageName=#@#Images\info.png
+; W=14
+; H=14
+; Imagetint=255,255,255
+; X=4R
+; ;(#contentMarginRight# - [#CURRENTSECTION#:W] + 1)
+; Y=r
+; TransformationMatrix=#transformationMatrix#
+; DynamicVariables=1
+; Padding=-7,-7,0,0
+; ToolTipTitle=Title text
+; ToolTipText=Body text
+; ToolTipWidth=300
+; [StyleShapeHelpIconInputBox]
+; Padding=-7,-10,0,-3
 
 [StyleShapeHelpIconInputBoxLabel]
 Padding=-7,-7,0,-1

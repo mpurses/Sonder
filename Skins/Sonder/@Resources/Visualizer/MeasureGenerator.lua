@@ -10,7 +10,9 @@ function MeasureGeneratorStargazer(band,preview)
 						'Parent=Audio\n',
 						'Type=Band\n',
 						'Channel=Avg\n',
-						'BandIdx='..i..'\n')
+						'BandIdx='..i..'\n',
+						'UpdateDivider=#UpdateSpeed#\n',
+						'DynamicVariables=1\n')
 		else
 			file:write('[MeasureAudio'..i..']\n',
 						'Measure=Calc\n',
@@ -36,7 +38,9 @@ function MeasureGeneratorWave(band,preview,wavetype)
 						'Parent=Audio\n',
 						'Type=Band\n',
 						'Channel=Avg\n',
-						'BandIdx='..i..'\n')
+						'BandIdx='..i..'\n',
+						'UpdateDivider=#UpdateSpeed#\n',
+						'DynamicVariables=1\n')
 		else
 			file:write('[MeasureAudio'..i..']\n',
 						'Measure=Calc\n',
@@ -61,7 +65,9 @@ function MeasureGeneratorPoly(w,preview,h)
 						'Parent=Audio\n',
 						'Type=Band\n',
 						'Channel=Avg\n',
-						'BandIdx='..i..'\n')
+						'BandIdx='..i..'\n',
+						'UpdateDivider=#UpdateSpeed#\n',
+						'DynamicVariables=1\n')
 		else
 			file:write('[MeasureAudio'..i..']\n',
 						'Measure=Calc\n',
@@ -84,7 +90,9 @@ function MeasureGeneratorBar(band,preview)
 						'Parent=Audio\n',
 						'Type=Band\n',
 						'Channel=Avg\n',
-						'BandIdx='..i..'\n')
+						'BandIdx='..i..'\n',
+						'UpdateDivider=#UpdateSpeed#\n',
+						'DynamicVariables=1\n')
 		else
 			file:write('[MeasureAudio'..i..']\n',
 						'Measure=Calc\n',

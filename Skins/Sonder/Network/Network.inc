@@ -12,6 +12,155 @@ Group=AllNoWeather
  ; https://docs.rainmeter.net/manual/measures/net/ 
 ; You may see other max values in places throughout the code, but they are not used. (For a single bar graph in percent that is not used right now. Which is what the max value would be better used for.)
 
+; [Variables]
+; maxBitsPerSec=0
+; maxBytesPerSec=0
+; textNetInOutPeakBits="0.0000 k"
+; textNetInOutPeakBytes="0.0000 k"
+; textNetInBits=""
+; textNetInBytes=""
+; textNetInSessionTotal=""
+; textNetInTotal=""
+; textNetOutBits=""
+; textNetOutBytes=""
+; textNetOutSessionTotal=""
+; textNetOutTotal=""
+; interfaceEthernet=""
+; interfaceWireless=""
+; interfaceOther=""
+
+; [MeasureFixedPrecisionFormatScript]
+; Measure=Script
+; ScriptFile=#@#Scripts\FixedPrecisionFormat.lua
+
+; ; ------------------------------
+; ; NETWORK TRAFFIC
+; [MeasureAdapterStatusEthernet]
+; Measure=Plugin
+; Plugin=ActiveNet
+; Type=NetStatus
+; Name=#interfaceEthernet#
+; Group=ActiveNet
+; UpdateDivider=-1
+
+; [MeasureAdapterStatusWireless]
+; Measure=Plugin
+; Plugin=ActiveNet
+; Type=NetStatus
+; Name=#interfaceWireless#
+; Group=ActiveNet
+; UpdateDivider=-1
+
+; [MeasureAdapterStatusOther]
+; Measure=Plugin
+; Plugin=ActiveNet
+; Type=NetStatus
+; Name=#interfaceOther#
+; Group=ActiveNet
+; UpdateDivider=-1
+
+; @includeNetworkTraffic=#ROOTCONFIGPATH#Network\NetworkTraffic.inc
+; ; Calculations
+; [MeasureNetInBytes]
+; Measure=Calc
+; Formula=MeasureNetInEthernetBytes + MeasureNetInWirelessBytes + MeasureNetInOtherBytes + MeasureNetInBestBytes
+; IfCondition=1
+; IfTrueAction=[!SetVariable textNetInBytes [&MeasureFixedPrecisionFormatScript:FormatNumber([&MeasureNetInBytes],3,'1k')]]
+; OnChangeAction=[!SetVariable textNetInBytes [&MeasureFixedPrecisionFormatScript:FormatNumber([&MeasureNetInBytes],3,'1k')]]
+; DynamicVariables=1
+
+; [MeasureNetInBitsCalc]
+; Measure=Calc
+; Formula=MeasureNetInBytes * 8
+; IfCondition=1
+; IfTrueAction=[!SetVariable textNetInBits [&MeasureFixedPrecisionFormatScript:FormatNumber([&MeasureNetInBitsCalc],3,'1k')]]
+; OnChangeAction=[!SetVariable textNetInBits [&MeasureFixedPrecisionFormatScript:FormatNumber([&MeasureNetInBitsCalc],3,'1k')]]
+; DynamicVariables=1
+
+; [MeasureNetInBytesSessionTotal]
+; Measure=Calc
+; Formula=MeasureNetInEthernetBytesSessionTotal + MeasureNetInWirelessBytesSessionTotal + MeasureNetInOtherBytesSessionTotal + MeasureNetInBestBytesSessionTotal
+; IfCondition=1
+; IfTrueAction=[!SetVariable textNetInSessionTotal [&MeasureFixedPrecisionFormatScript:FormatNumber([&MeasureNetInBytesSessionTotal],4,'1k')]]
+; OnChangeAction=[!SetVariable textNetInSessionTotal [&MeasureFixedPrecisionFormatScript:FormatNumber([&MeasureNetInBytesSessionTotal],4,'1k')]]
+; DynamicVariables=1
+
+; [MeasureNetInBytesTotal]
+; Measure=Calc
+; Formula=MeasureNetInEthernetBytesTotal + MeasureNetInWirelessBytesTotal + MeasureNetInOtherBytesTotal + MeasureNetInBestBytesTotal
+; IfCondition=1
+; IfTrueAction=[!SetVariable textNetInTotal [&MeasureFixedPrecisionFormatScript:FormatNumber([&MeasureNetInBytesTotal],4,'1k')]]
+; OnChangeAction=[!SetVariable textNetInTotal [&MeasureFixedPrecisionFormatScript:FormatNumber([&MeasureNetInBytesTotal],4,'1k')]]
+; DynamicVariables=1
+
+; [MeasureNetOutBytes]
+; Measure=Calc
+; Formula=MeasureNetOutEthernetBytes + MeasureNetOutWirelessBytes + MeasureNetOutOtherBytes + MeasureNetOutBestBytes
+; IfCondition=1
+; IfTrueAction=[!SetVariable textNetOutBytes [&MeasureFixedPrecisionFormatScript:FormatNumber([&MeasureNetOutBytes],3,'1k')]]
+; OnChangeAction=[!SetVariable textNetOutBytes [&MeasureFixedPrecisionFormatScript:FormatNumber([&MeasureNetOutBytes],3,'1k')]]
+; DynamicVariables=1
+
+; [MeasureNetOutBitsCalc]
+; Measure=Calc
+; Formula=MeasureNetOutBytes * 8
+; IfCondition=1
+; IfTrueAction=[!SetVariable textNetOutBits [&MeasureFixedPrecisionFormatScript:FormatNumber([&MeasureNetOutBitsCalc],3,'1k')]]
+; OnChangeAction=[!SetVariable textNetOutBits [&MeasureFixedPrecisionFormatScript:FormatNumber([&MeasureNetOutBitsCalc],3,'1k')]]
+; DynamicVariables=1
+
+; [MeasureNetOutBytesSessionTotal]
+; Measure=Calc
+; Formula=MeasureNetOutEthernetBytesSessionTotal + MeasureNetOutWirelessBytesSessionTotal + MeasureNetOutOtherBytesSessionTotal + MeasureNetOutBestBytesSessionTotal
+; IfCondition=1
+; IfTrueAction=[!SetVariable textNetOutSessionTotal [&MeasureFixedPrecisionFormatScript:FormatNumber([&MeasureNetOutBytesSessionTotal],4,'1k')]]
+; OnChangeAction=[!SetVariable textNetOutSessionTotal [&MeasureFixedPrecisionFormatScript:FormatNumber([&MeasureNetOutBytesSessionTotal],4,'1k')]]
+; DynamicVariables=1
+
+; [MeasureNetOutBytesTotal]
+; Measure=Calc
+; Formula=MeasureNetOutEthernetBytesTotal + MeasureNetOutWirelessBytesTotal + MeasureNetOutOtherBytesTotal + MeasureNetOutBestBytesTotal
+; IfCondition=1
+; IfTrueAction=[!SetVariable textNetOutTotal [&MeasureFixedPrecisionFormatScript:FormatNumber([&MeasureNetOutBytesTotal],4,'1k')]]
+; OnChangeAction=[!SetVariable textNetOutTotal [&MeasureFixedPrecisionFormatScript:FormatNumber([&MeasureNetOutBytesTotal],4,'1k')]]
+; DynamicVariables=1
+
+; ; ------------------------------
+; ; PING
+
+; ; [MeasurePing]
+; ; Measure=Plugin
+; ; Plugin=PingPlugin
+; ; DestAddress=#pingUrl#
+; ; FinishAction=[!UpdateMeter PingString][!Redraw]
+
+; ; ------------------------------
+; ; MAX TRANSFER SPEED
+
+; [MeasureNetInOutPeakBits]
+; Measure=Calc
+; Formula=Max(Max(MeasureNetInBitsCalc, MeasureNetOutBitsCalc), #maxBitsPerSec#)
+; IfConditionMode=1
+; IfCondition=(MeasureNetInOutPeakBits > #maxBitsPerSec#)
+; IfTrueAction=[!SetVariable maxBitsPerSec [MeasureNetInOutPeakBits:]][!SetVariable textNetInOutPeakBits [&MeasureFixedPrecisionFormatScript:FormatNumber([&MeasureNetInOutPeakBits],5,'1k')]]
+; DynamicVariables=1
+; Group=NetInOut
+
+; [MeasureNetInOutPeakBytes]
+; Measure=Calc
+; Formula=Max(Max(MeasureNetInBytes, MeasureNetOutBytes), #maxBytesPerSec#)
+; IfConditionMode=1
+; IfCondition=(MeasureNetInOutPeakBytes > #maxBytesPerSec#)
+; IfTrueAction=[!SetVariable maxBytesPerSec [MeasureNetInOutPeakBytes:]][!SetVariable textNetInOutPeakBytes [&MeasureFixedPrecisionFormatScript:FormatNumber([&MeasureNetInOutPeakBytes],5,'1k')]]
+; DynamicVariables=1
+; Group=NetInOut
+
+
+
+
+;==================================================
+;Network Graph Measures
+
 [MeasureNetInFloating]
 Measure=NetIn
 ;1 MB/s
@@ -222,7 +371,8 @@ Meter=STRING
 MeterStyle=StyleSystem#Variant#GraphLabel | StyleSystem#Variant#GraphLabel1
 ; Prefix="· "
 Text="UP"
-
+; ToolTipText="                          Net Out:        Net In:#CRLF#Speed:              #textNetOutBits#b/s   #textNetInBits#b/s#CRLF#Amount:          #textNetOutBytes#B/s   #textNetInBytes#B/s#CRLF#Peak Speed:     #textNetInOutPeakBits#b/s#CRLF#Peak Amount: #textNetInOutPeakBytes#B/s#CRLF#Amount:          #textNetOutBytes#B/s   #textNetInBytes#B/s#CRLF#Session Total:   #textNetOutSessionTotal#B   #textNetInSessionTotal#B#CRLF#Total:                 #textNetOutTotal#B   #textNetInTotal#B"
+; DynamicVariables=1
 
 [NetOutNumber]
 Meter=STRING
@@ -245,3 +395,22 @@ MeasureName=MeasureNetInFloating
 ;Text="%1/s"
 AutoScale=1
 NumOfDecimals=0
+
+; ; NET IN/OUT
+; #textNetOutBits#b/s
+; #textNetOutBytes#B/s
+; #textNetInBits#b/s
+; #textNetInBytes#B/s
+
+; ; NETWORK PEAKS
+; #textNetInOutPeakBits#b/s
+; #textNetInOutPeakBytes#B/s
+
+; ; ------------------------------
+; ; NETWORK TOTALS
+
+; #textNetOutSessionTotal#B
+; #textNetOutTotal#B
+
+; #textNetInSessionTotal#B
+; #textNetInTotal#B
