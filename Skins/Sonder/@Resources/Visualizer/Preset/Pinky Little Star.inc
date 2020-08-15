@@ -1,6 +1,7 @@
 Name=Pinky Little Star
 Time=2017 Jun 21 20:26:18
 Wallpaper=none
+WallpaperFit=none
 X=0
 Y=64
 Distance=34

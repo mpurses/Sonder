@@ -45,6 +45,7 @@ function Initialize()
 	for i = 1, n do
 		dot[i] = {}
 		for j = 1, m do
+			-- Starter dot locations
 			dot[i][j] ={x = math.random(0,w),
 						y = math.random(0,h), 
 						color = (grad1[1]+(grad2[1]-grad1[1])*(i/n*gradOrient + j/m*(1-gradOrient)))..','..(grad1[2]+(grad2[2]-grad1[2])*(i/n*gradOrient + j/m*(1-gradOrient)))..','..(grad1[3]+(grad2[3]-grad1[3])*(i/n*gradOrient + j/m*(1-gradOrient)))}
@@ -68,7 +69,8 @@ end
 speedScaler = 5
 function drawAsh(anchorX,scale)
 	for i = 1, n do
-		dot[i][anchorX].x = dot[i][anchorX].x + dir*s*speedScaler*anchorX/m*audioMeasure[1]:GetValue() + dir*0.2
+		dot[i][anchorX].x = dot[i][anchorX].x + dir*s*speedScaler*anchorX/m*audioMeasure[1]:GetValue()
+--		+ dir*0.2
 		SKIN:Bang('!SetOption Shape Shape'..shapeCount..' "Ellipse '..dot[i][anchorX].x..','
 				..(dot[i][anchorX].y+outSine(dot[i][anchorX].x,0,-FloatAmount,w,anchorX))..','
 				..(scale * anchorX/m * W_Amount)..','..(scale * anchorX/m * H_Amount)..' |StrokeWidth 0 | Fill Color '..dot[i][anchorX].color..'"')

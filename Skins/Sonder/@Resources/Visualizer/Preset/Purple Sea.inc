@@ -1,6 +1,7 @@
 Name=Purple Sea
 Time=2017 Jun 21 19:57:59
 Wallpaper=none
+WallpaperFit=none
 X=681
 Y=56
 Distance=34

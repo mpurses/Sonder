@@ -1,6 +1,7 @@
 Name=Teal Explosion
 Time=2017 Jun 21 20:09:17
 Wallpaper=none
+WallpaperFit=none
 X=702
 Y=97
 Distance=34

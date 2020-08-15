@@ -1,6 +1,7 @@
 Name=Summon Ritual
 Time=2017 Jun 21 21:09:10
 Wallpaper=none
+WallpaperFit=none
 X=514
 Y=111
 Distance=20

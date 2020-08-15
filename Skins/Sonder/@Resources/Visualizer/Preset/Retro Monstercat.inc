@@ -1,6 +1,7 @@
 Name=Retro Monstercat
 Time=2017 Jun 21 21:02:04
 Wallpaper=none
+WallpaperFit=none
 X=0
 Y=64
 Distance=34

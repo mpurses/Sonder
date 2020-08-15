@@ -15,7 +15,7 @@ function Initialize()
 	n = math.floor(h/den)
 	MeasureGeneratorStargazer(m,tonumber(SKIN:GetVariable('Preview')))
 
-	start = dir == 1 and 0 or w
+	start = dir == 1 and 0 or h
 
 	dotSize  = tonumber(SKIN:GetVariable('Dot_Max_Size'))
 	W_Amount = tonumber(SKIN:GetVariable('Ellipse_W_Scale'))
@@ -45,6 +45,7 @@ function Initialize()
 	for i = 1, n do
 		dot[i] = {}
 		for j = 1, m do
+		-- Starter dot locations
 			dot[i][j] ={x = math.random(0,w),
 						y = math.random(0,h), 
 						color = (grad1[1]+(grad2[1]-grad1[1])*(i/n*gradOrient + j/m*(1-gradOrient)))..','..(grad1[2]+(grad2[2]-grad1[2])*(i/n*gradOrient + j/m*(1-gradOrient)))..','..(grad1[3]+(grad2[3]-grad1[3])*(i/n*gradOrient + j/m*(1-gradOrient)))}
@@ -68,14 +69,15 @@ end
 speedScaler = 5
 function drawAsh(anchorY,scale)
 	for i = 1, n do
-		dot[i][anchorY].y = dot[i][anchorY].y + 1*s*speedScaler*anchorY/n*audioMeasure[1]:GetValue() + 1*0.2
-		-- Shape=Ellipse 0,0,#Dot_Max_Size# | StrokeWidth 0 | Scale #Ellipse_W_Scale#,#Ellipse_H_Scale# | Fill LinearGradient MyFillGradient
+		dot[i][anchorY].y = dot[i][anchorY].y + dir*s*speedScaler*anchorY/n*audioMeasure[1]:GetValue()
+-- 		+ dir*0.2
 		SKIN:Bang('!SetOption Shape Shape'..shapeCount..' "Ellipse '..(dot[i][anchorY].x+outSine(dot[i][anchorY].y,0,-FloatAmount,h,anchorY))..','
 				..(dot[i][anchorY].y+outSine(dot[i][anchorY].y,0,-BounceFactor,h,anchorY))..','
 				..(scale * anchorY/n * W_Amount)..','..(scale * anchorY/n * H_Amount)..' |StrokeWidth 0 | Fill Color '..dot[i][anchorY].color..'"')
 		shapeCount = shapeCount + 1
 		if dot[i][anchorY].y > h or dot[i][anchorY].y < 0 then 
 			dot[i][anchorY].y = start
+			-- This adds new dots after they disappear
 			dot[i][anchorY].x = math.random(0,w)
 		end
 	end

@@ -107,6 +107,6 @@ end
 
 function clearMod()
 	for i=2,shapeCount do
-		SKIN:Bang('!SetOption Shape Shape'..i..' "Ellipse 0,0,0,0"')
+		SKIN:Bang('!SetOption Shape Shape'..i..' "Ellipse 0,0,0,1"')
 	end
 end

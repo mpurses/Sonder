@@ -1,5 +1,5 @@
 [Rainmeter]
-Group=AllNoWeather
+Group=AllNoWeather | AllNoVisualizer
 ;---------------------------------------------------------------------
 ; MEASURES
 
@@ -170,6 +170,11 @@ MinValue=0
 ;DynamicVariables=1
 ;OnUpdateAction=[!CommandMeasure ScriptGraph "Graph()"]
 
+[MeasureNetInFloatingADJ]
+Measure=Calc
+Formula=(MeasureNetInFloating * #BitsORBytes#)
+DynamicVariables=1
+
 [MeasureNetInPercent]
 Measure=Calc
 Formula=MeasureNetInFloating / #NetworkMaxDownload#
@@ -181,6 +186,11 @@ MaxValue=1000000
 MinValue=0
 ;Interface=Best
 ;DynamicVariables=1
+
+[MeasureNetOutFloatingADJ]
+Measure=Calc
+Formula=(MeasureNetOutFloating * #BitsORBytes#)
+DynamicVariables=1
 
 [MeasureNetOutPercent]
 Measure=Calc
@@ -324,14 +334,14 @@ MeterStyle=StyleSystem#Variant#Border | StyleSystem#Variant#Border5
 [NetOut]
 Meter=Histogram
 MeterStyle=StyleSystem#Variant#Graph | StyleSystem#Variant#Graph1
-MeasureName=MeasureNetOut#SystemGraphType#
+MeasureName=MeasureNetOut#SystemGraphType#ADJ
 LeftMouseUpAction=["perfmon.exe" "/res"]
 ToolTipText="Open Resource Monitor"
 
 [NetIn]
 Meter=Histogram
 MeterStyle=StyleSystem#Variant#Graph | StyleSystem#Variant#Graph2
-MeasureName=MeasureNetIn#SystemGraphType#
+MeasureName=MeasureNetIn#SystemGraphType#ADJ
 LeftMouseUpAction=["perfmon.exe" "/res"]
 ToolTipText="Open Resource Monitor"
 
@@ -369,7 +379,7 @@ ToolTipText="Open Resource Monitor"
 [NetOutLabel]
 Meter=STRING
 MeterStyle=StyleSystem#Variant#GraphLabel | StyleSystem#Variant#GraphLabel1
-; Prefix="· "
+; Prefix="ï¿½ "
 Text="UP"
 ; ToolTipText="                          Net Out:        Net In:#CRLF#Speed:              #textNetOutBits#b/s   #textNetInBits#b/s#CRLF#Amount:          #textNetOutBytes#B/s   #textNetInBytes#B/s#CRLF#Peak Speed:     #textNetInOutPeakBits#b/s#CRLF#Peak Amount: #textNetInOutPeakBytes#B/s#CRLF#Amount:          #textNetOutBytes#B/s   #textNetInBytes#B/s#CRLF#Session Total:   #textNetOutSessionTotal#B   #textNetInSessionTotal#B#CRLF#Total:                 #textNetOutTotal#B   #textNetInTotal#B"
 ; DynamicVariables=1
@@ -377,7 +387,7 @@ Text="UP"
 [NetOutNumber]
 Meter=STRING
 MeterStyle=StyleSystem#Variant#GraphText | StyleSystem#Variant#GraphText1
-MeasureName=MeasureNetOutFloating
+MeasureName=MeasureNetOutFloatingADJ
 ;Text="%1/s"
 AutoScale=1
 NumOfDecimals=0
@@ -386,12 +396,12 @@ NumOfDecimals=0
 Meter=STRING
 MeterStyle=StyleSystem#Variant#GraphLabel | StyleSystem#Variant#GraphLabel2
 Text="DOWN"
-; Postfix=" ·"
+; Postfix=" ï¿½"
 
 [NetInNumber]
 Meter=STRING
 MeterStyle=StyleSystem#Variant#GraphText | StyleSystem#Variant#GraphText2
-MeasureName=MeasureNetInFloating
+MeasureName=MeasureNetInFloatingADJ
 ;Text="%1/s"
 AutoScale=1
 NumOfDecimals=0
