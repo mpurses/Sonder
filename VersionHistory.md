@@ -1,3 +1,4 @@
+## Download Latest Release: https://github.com/mpurses/Sonder/releases  
 ### Version History  
 #### • 08.15.2020 - v2.5.3:  
 - Settings: Change all accent colors at once setting.  
