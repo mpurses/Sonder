@@ -1,7 +1,7 @@
 ## Download Latest Release: https://github.com/mpurses/Sonder/releases  
 ### Version History  
 #### • 08.22.2020 - v2.4.3: 
-- Fix Weather - New way to automatically get your location and lot's of code changes underneath so please report any bugs you encounter. Switch to use Weather.com API (jsmorley's code)  
+- Fix Weather - New way to automatically get your location and lot's of code changes underneath so please report any bugs you encounter. Switch to use Weather.com API (jsmorley's code)  !YOU WILL NEED TO RE-APPLY YOUR UNIT SETTINGS!
 - Visualizer: NEW Line-based Visualizer  
 - Calendar: Adjust Month Font sizes to be slightly smaller so you can put the calendar on left edge of screen  
 - Calendar: Vertical "Y" adjustment option (For the smaller fonts)  
