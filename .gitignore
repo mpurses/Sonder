@@ -353,73 +353,9 @@ MigrationBackup/
 .ionide/
 
 Sonder files for DeviantArt/
-Skins/@Backup/
-Skins/@Vault/
-Skins/ActionTimerExamples/
-Skins/ASTROWeather/
-Skins/background/
-Skins/CoreTemp/
-Skins/HWiNFO/
-Skins/LargeCleanWeather/
-Skins/ModernGadgets/
-Skins/_ModernGadgets_/
-Skins/RainformerHWi/
-Skins/testing/
-Skins/ToggleCheckBox/
-Skins/NUXHD/
-Skins/PoorMansCalendar/
-Skins/Sawny/
-Skins/bluetoothswitch/
-Skins/calendar/
-Skins/monstercat-visualizer/
-Skins/Ageo/
-Skins/Laro/
-Skins/GothamBlur/
-Skins/Monthly Calendar/
-Skins/Enigma/
-Skins/GoogleCalendar/
-Skins/WP7/
-Skins/RL Arca Majora Style/
-Skins/RetrOcOlOr/
-Skins/Everon/
-Skins/SONIQ/
-Skins/Weather.com/
-Skins/Windows10WeatherEnterpriseJSONnewTWC/
-Skins/Mond/
-Skins/Simple Clean/
-Skins/Windows10WeatherPRO/
-Skins/Rainy Days/
-Skins/Sonder/@Resources/Variables-MICHAEL-DESKTOP.inc
-Skins/Fountain of Colors/
-Skins/Back to the Basics/
-Skins/BigSur/
-Skins/bluetooth-plugin/
-Skins/ExamplesContainer/
-Skins/LuaTween - Example/
-Skins/Lumiero/
-Skins/Sundays/
-Skins/Evasion/
-Skins/Webpages/
-Skins/Snow/
-Skins/Harmony/
-Skins/La Compagnie des Ombres - Clock/
-Skins/Lisna/
-Skins/Noso/
-Skins/Spacial/
-Skins/Thomo/
-Skins/Formal/
-Skins/MouseVolume/
-Skins/_Simple Clean/
-Skins/_Snow/
-Skins/Dots-Visualizer/
-Skins/RainDots/
-Skins/Spicetify/
-Skins/SysDash/
-Skins/Rainy Days (2020-07-27_190753)/
-Skins/_Examples-Container/
-Skins/_Examples-LuaTween/
-Skins/Cleartext/
-Skins/Fountain of Colors-MICHAEL-DESKTOP/
-Skins/WebNowPlayingExample/
 Skins/Sonder/.vscode/
-Skins/Win10 Widgets/
+# Ignore everything under "directory"
+Skins/*
+# But don't ignore "another_directory"
+!Skins/Sonder
+
