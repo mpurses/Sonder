@@ -1,5 +1,16 @@
 ## Download Latest Release: https://github.com/mpurses/Sonder/releases  
 ### Version History  
+#### • 08.22.2020 - v2.4.3: 
+- Fix Weather - New way to automatically get your location and lot's of code changes underneath so please report any bugs you encounter. Switch to use Weather.com API (jsmorley's code)  !YOU WILL NEED TO RE-APPLY YOUR UNIT SETTINGS!
+- Visualizer: NEW Line-based Visualizer  
+- Calendar: Adjust Month Font sizes to be slightly smaller so you can put the calendar on left edge of screen  
+- Calendar: Vertical "Y" adjustment option (For the smaller fonts)  
+- Date: Fix Date_Handwriting skin's month font location/size  
+- More Font options for Time/Date/Calendar:  
+  - Sterilict (Spacey/Futuristic),  
+  - BankGothic Lt BT (Spacey/Futuristic),  
+  - Papyrus (Japanesey/Serenity),  
+  - Voluta Script Pro (Cursive/Firefly)  
 #### • 08.15.2020 - v2.5.3:  
 - Settings: Change all accent colors at once setting.  
 - Network: bits or Bytes option for Network graph skins (Defaulting to bits now instead of Bytes)  
