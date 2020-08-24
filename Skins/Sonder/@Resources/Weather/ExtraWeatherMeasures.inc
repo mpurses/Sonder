@@ -14,6 +14,18 @@
 ;☀↑  [@ForecastTodaySunriseTime]     ☀↓  [@ForecastTodaySunsetTime]
 ; ☾ ↑  [@MoonDay1RiseTime]     ☾ ↓  [@MoonDay1SetTime]
 ;=============================================================================================
+;[@CurrentConditionsParent2]
+;Measure=WebParser
+;Group=Parents
+;URL=[@EntireSiteSuperParent]
+;Disabled=1
+;StringIndex=1
+;RegExp=(?siU)"v3-wx-observations-current":.*"cloudCoverPhrase":(.*),.*"iconCode":(.*),.*"precip24Hour":(.*),.*"pressureAltimeter":(.*),.*"pressureChange":(.*),.*"pressureTendencyCode":(.*),.*"pressureTendencyTrend":(.*),.*"relativeHumidity":(.*),.*"sunriseTimeLocal":(.*),.*"sunsetTimeLocal":(.*),.*"temperature":(.*),.*"temperatureDewPoint":(.*),.*"temperatureFeelsLike":(.*),.*"temperatureMaxSince7AM":(.*),.*"uvDescription":(.*),.*"uvIndex":(.*),.*"validTimeLocal":(.*),.*"visibility":(.*),.*"windDirection":(.*),.*"windDirectionCardinal":(.*),.*"windGust":(.*),.*"windSpeed":(.*),.*"wxPhraseLong":(.*),.*"wxPhraseMedium":(.*),"wxPhraseShort":(.*)}
+;FinishAction=[!EnableMeasureGroup "Times"][!EnableMeasureGroup Sun][!UpdateMeasureGroup Sun][!WriteKeyValue Variables SunsetTime [@ForecastTodaySunsetTime] #@#Variables.inc][!WriteKeyValue Variables SunriseTime [@ForecastTodaySunriseTime] #@#Variables.inc][!UpdateMeasure MeasureTimeMOON][!Redraw]
+;;[@CurrentSunsetTime][@CurrentSunriseTime]
+;;FinishAction=[!EnableMeasureGroup "Times"]
+;;Group=Times
+;;Disabled=1
 
 [@CurrentObservationTimeAdjusted]
 Measure=Time
@@ -32,6 +44,7 @@ Format=#HourFormat#:%M #Fm#
 FormatLocale=#Language#
 DynamicVariables=1
 DecodeCodePoints=1
+OnChangeAction=[!WriteKeyValue Variables SunriseTime [@ForecastTodaySunriseTime] #@#Variables.inc]
 
 [@ForecastTodaySunsetTimeAdjusted]
 Measure=Time
@@ -41,6 +54,7 @@ Format=#HourFormat#:%M #Fm#
 FormatLocale=#Language#
 DynamicVariables=1
 DecodeCodePoints=1
+OnChangeAction=[!WriteKeyValue Variables SunsetTime [@ForecastTodaySunsetTime] #@#Variables.inc]
 
 [@MoonDay1RiseTimeAdjusted]
 Measure=Time
@@ -50,6 +64,8 @@ Format=#HourFormat#:%M #Fm#
 FormatLocale=#Language#
 DynamicVariables=1
 DecodeCodePoints=1
+Group=Times
+Disabled=1
 
 [@MoonDay1SetTimeAdjusted]
 Measure=Time
@@ -59,6 +75,8 @@ Format=#HourFormat#:%M #Fm#
 FormatLocale=#Language#
 DynamicVariables=1
 DecodeCodePoints=1
+Group=Times
+Disabled=1
 
 [@CurrentVisibilityDistanceAdjusted]
 Measure=String

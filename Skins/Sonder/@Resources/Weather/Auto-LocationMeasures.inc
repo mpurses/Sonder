@@ -33,7 +33,7 @@ UserAgent=Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:78.0) Gecko/20100101 Fire
 RegExp=(?siU)#Record#
 UpdateRate=86400
 Disabled=#AutoLatLong#
-OnChangeAction=[!EnableMeasureGroup LatLongChildren][!UpdateMeasureGroup LatLongChildren][!Delay 500][!DisableMeasureGroup LatLongChildren][!Log "Update MeasureLocations Finished"]
+OnChangeAction=[!EnableMeasureGroup LatLongChildren][!UpdateMeasureGroup LatLongChildren][!Delay 2000][!DisableMeasureGroup LatLongChildren][!Log "Update MeasureLocations Finished"]
 DynamicVariables=1
 ;Debug=2
 ;Debug2File=#@#EntireSite.txt
@@ -46,7 +46,7 @@ URL=[MeasureLocations]
 StringIndex=1
 RegExpSubstitute=1
 Substitute="^(.*\.)([\d]{1,6}).*$":"\1\2","":"No results"
-OnUpdateAction=[!SetVariable Latitude [MeasureLatitude1]][!WriteKeyValue Variables Latitude [MeasureLatitude1] #@#Variables.inc][!Refresh "#ROOTCONFIG#\Weather"]
+OnUpdateAction=[!SetVariable Latitude [MeasureLatitude1]][!WriteKeyValue Variables Latitude [MeasureLatitude1] #@#Variables.inc][!WriteKeyValue Variables Latitude [MeasureLatitude1] #@#Variables.inc][!Refresh "#ROOTCONFIG#\Weather"]
 
 [MeasureLongitude1]
 Measure=WebParser
@@ -56,7 +56,7 @@ URL=[MeasureLocations]
 StringIndex=2
 RegExpSubstitute=1
 Substitute="^(.*\.)([\d]{1,6}).*$":"\1\2"
-OnUpdateAction=[!SetVariable Longitude [MeasureLongitude1]][!WriteKeyValue Variables Longitude [MeasureLongitude1] #@#Variables.inc][!Refresh "#ROOTCONFIG#\Weather"]
+OnUpdateAction=[!SetVariable Longitude [MeasureLongitude1]][!WriteKeyValue Variables Longitude [MeasureLongitude1] #@#Variables.inc][!WriteKeyValue Variables Longitude [MeasureLongitude1] #@#Variables.inc][!Refresh "#ROOTCONFIG#\Weather"]
 ;IfMatch=^$
 ;IfNotMatchAction=[!ShowMeterGroup Group1][!UpdateMeterGroup Group1][!Redraw][!SetOption MeterBack H "([*MeterName1:YH*]+10)"][!UpdateMeter *][!Redraw]
 
