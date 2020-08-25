@@ -11,7 +11,7 @@ ContextAction=[!SetOption - String "(Change)"][!UpdateMeasure -]
 [Metadata]
 Name=Audio Device List Menu
 Author=mpurses
-Version=2.5.6
+Version=2.5.7
 
 
 [Variables]

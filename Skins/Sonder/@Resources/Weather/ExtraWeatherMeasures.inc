@@ -56,6 +56,27 @@ DynamicVariables=1
 DecodeCodePoints=1
 OnChangeAction=[!WriteKeyValue Variables SunsetTime [@ForecastTodaySunsetTime] #@#Variables.inc]
 
+;If Moon risetime or settime is the next day...
+[@MoonDay1RiseTimeTEST]
+Measure=String
+String=[@MoonDay1RiseTime]
+IfMatch=(?i)N\/A
+IfMatchAction=[!SetOption @MoonDay1RiseTimeAdjusted TimeStamp "[*@MoonDay2RiseTime*]"][!SetOption MeasureMoonriseHour String "[*@MoonDay2RiseTime*]"][!SetOption MeasureMoonriseMinute String "[*@MoonDay2RiseTime*]"]
+IfNotMatchAction=[!SetOption @MoonDay1RiseTimeAdjusted TimeStamp "[*@MoonDay1RiseTime*]"][!SetOption MeasureMoonriseHour String "[*@MoonDay1RiseTime*]"][!SetOption MeasureMoonriseMinute String "[*@MoonDay1RiseTime*]"]
+DynamicVariables=1
+Group=Times
+Disabled=1
+
+[@MoonDay1SetTimeTEST]
+Measure=String
+String=[@MoonDay1SetTime]
+IfMatch=(?i)N\/A
+IfMatchAction=[!SetOption @MoonDay1SetTimeAdjusted TimeStamp "[*@MoonDay2SetTime*]"][!SetOption MeasureMoonsetHour String "[*@MoonDay2SetTime*]"][!SetOption MeasureMoonsetMinute String "[*@MoonDay2SetTime*]"]
+IfNotMatchAction=[!SetOption @MoonDay1SetTimeAdjusted TimeStamp "[*@MoonDay1SetTime*]"][!SetOption MeasureMoonsetHour String "[*@MoonDay1SetTime*]"][!SetOption MeasureMoonsetMinute String "[*@MoonDay1SetTime*]"]
+DynamicVariables=1
+Group=Times
+Disabled=1
+
 [@MoonDay1RiseTimeAdjusted]
 Measure=Time
 TimeStamp=[@MoonDay1RiseTime]
