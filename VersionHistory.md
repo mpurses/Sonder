@@ -1,6 +1,24 @@
 ## Download Latest Release: https://github.com/mpurses/Sonder/releases  
 ### Version History  
-#### • 08.22.2020 - v2.4.3: 
+  
+#### • 08.25.2020 - v2.5.7: 
+- Weather: Eliminate unnecessary refreshes when opening weather settings  
+- Weather: Fix Language encoding issues and Month font size on WeatherLive  
+- Weather: Fix Moon rise/set time errors and calculations  
+- Visualizer: Changing Audio settings updates the visualizer immediately now  
+- ISS/World Map: World Weather Radar option.  
+- ISS: Flight Badge on ISS hover and eliminate all the errors in the log 
+    
+#### • 08.25.2020 - v2.5.6: 
+- Weather: Fix for accidental refreshes happening every minute causing no data to display. (Sunrise/Sunset refresh issue)  
+- WeatherLive detail skin fixes.  
+- Weather Settings: Fix Google maps icon link not updating to current lat/long  
+- Weather Settings: Possibly fix lat/long not writing to file on some computers?  
+  
+#### • 08.25.2020 - v2.5.5: 
+- Fix errors in log and hourly data not showing  
+    
+#### • 08.22.2020 - v2.5.4: 
 - Fix Weather - New way to automatically get your location and lot's of code changes underneath so please report any bugs you encounter. Switch to use Weather.com API (jsmorley's code)  !YOU WILL NEED TO RE-APPLY YOUR UNIT SETTINGS!
 - Visualizer: NEW Line-based Visualizer  
 - Calendar: Adjust Month Font sizes to be slightly smaller so you can put the calendar on left edge of screen  
@@ -11,6 +29,7 @@
   - BankGothic Lt BT (Spacey/Futuristic),  
   - Papyrus (Japanesey/Serenity),  
   - Voluta Script Pro (Cursive/Firefly)  
+  
 #### • 08.15.2020 - v2.5.3:  
 - Settings: Change all accent colors at once setting.  
 - Network: bits or Bytes option for Network graph skins (Defaulting to bits now instead of Bytes)  
@@ -19,8 +38,7 @@
 - Visualizer: Bottom to Top Direction setting for 'Serenity'  
 - Visualizer: Fix various Preset saving/applying bugs  
 - Visualizer: Refresh on color change fix and lots of other tweaks/fixes under the hood.  
-- Clean up Resource folder/code in anticipation of allowing "merging" of skins for next releases (allows you to customize Sonder more w/o deleting your added files). Needed for Visualizer Preset saving, so you will lose them in this update if you do not backup.  
-  
+- Clean up Resource folder/code in anticipation of allowing "merging" of skins for next releases (allows you to customize Sonder more w/o deleting your added files). Needed for Visualizer Preset saving, so you will lose them in this update if you do not backup.   
 #### • v2.5.2:  
 - Further tweaking and clean up of the settings; One thing you might notice/use is Toggling the loading of skins by clicking the "Titles" for each setting.  
 - Date: Left/Right/Center Option for Date_horiz  
