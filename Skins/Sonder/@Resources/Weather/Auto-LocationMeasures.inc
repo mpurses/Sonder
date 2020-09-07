@@ -3,7 +3,8 @@
 Measure=WebParser
 URL=https://www.google.com/search?q=what+city+am+i+in
 UpdateRate=86400
-Flags=Resync | NoCookies
+Flags=ForceReload | NoCookies
+ForceReload=1
 UserAgent=Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:77.0) Gecko/20100101 Firefox/77.0
 DecodeCharacterReference=1
 LogSubstringErrors=0
