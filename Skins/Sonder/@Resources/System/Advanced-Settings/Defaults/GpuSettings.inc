@@ -1,6 +1,7 @@
 [Variables]
 showGpuTitle=1
 showGpuName=1
+showGPUClock=1
 showMemoryClock=1
 showVRAM=1
 showFanInfo=1
