@@ -1,0 +1,51 @@
+; original author alatsombath / Github: alatsombath
+; adjusted to fit to the monstercat visualizer by marcopixel
+
+[Rainmeter]
+Update=-1
+OnRefreshAction=[!SkinCustomMenu]
+OnUnfocusAction=[!DeactivateConfig]
+ContextTitle=" Default"
+ContextAction=[!SetOption - String "(Change)"][!UpdateMeasure -]
+
+[Metadata]
+Name=Audio Device List
+Author=mpurses/alatsombath/marcopixel
+Version=2.1.0
+License=MIT License
+Information=Get Audio Devices
+
+[Variables]
+; Includes the variables used for the skin.
+@include=#@#Variables.inc
+
+[-]
+Measure=String
+OnChangeAction=[!WriteKeyValue Variables ID "" "#@#Variables.inc"][!DeactivateConfig]
+;[!RefreshGroup FountainOfColors][!RefreshGroup FountainOfColors][!RefreshGroup Settings]
+
+[MeasureAudioDevice]
+Measure=Plugin
+Plugin=Win7AudioPlugin
+Substitute="Speaker/Headphone":"1"
+; IfCondition=(#CURRENTSECTION#=0)
+; IfTrueAction=[!HideMeter "MeterHeadset"][!ShowMeter "MeterSpeakers"][!Redraw]
+; IfFalseAction=[!ShowMeter "MeterHeadset"][!HideMeter "MeterSpeakers"][!Redraw]
+
+
+[MeasureAudio]
+Measure=Plugin
+Plugin=AudioLevel
+Port=Output
+[MeasureAudioDeviceList]
+Measure=Plugin
+Plugin=AudioLevel
+Parent=MeasureAudio
+Type=DeviceList
+
+[ParseAudioDeviceList]
+Measure=Script
+ScriptFile=AudioDeviceList.lua
+
+[MeterDummy]
+Meter=Image
