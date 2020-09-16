@@ -1,4 +1,4 @@
-[Sonder-LunarLayout757827648Snap]
+[Sonder-LunarLayout607375206Snap]
 Meter=Image
 ImageName=#@#Presets\Preset\Snap\Sonder - Lunar Layout.png
 MaskImageName=#@#Presets\presetmask.png
@@ -8,25 +8,25 @@ Y=100
 LeftMouseUpAction=[!SetVariable Name "Sonder - Lunar Layout"][!Update][!Delay 1000][!CommandMeasure Script "ApplyPreset('Sonder - Lunar Layout')"]
 DynamicVariables=1
 Group=Preset
-[Sonder-LunarLayout757827648]
+[Sonder-LunarLayout607375206]
 Meter=String
 Text=Sonder - Lunar Layout
 MeterStyle=PresetStyle
 X=(20-#Scroll#)
 Y=160
-[Sonder-LunarLayout757827648Time]
+[Sonder-LunarLayout607375206Time]
 Meter=String
 Text=2020 Sep 12 16:15:09
 MeterStyle=TimeStyle
 X=r
 Y=R
-[Sonder-LunarLayout757827648Delete]
+[Sonder-LunarLayout607375206Delete]
 Meter=String
 MeterStyle=DeleteStyle
 X=(350-#Scroll#)
 Y=200
 LeftMouseUpAction=[!SetVariable Name "Sonder - Lunar Layout"][!Update][!Delay 1000][!CommandMeasure Script "DeletePreset('Sonder - Lunar Layout')"]
-[SonderLayout108822937Snap]
+[SonderLayout405349672Snap]
 Meter=Image
 ImageName=#@#Presets\Preset\Snap\Sonder Layout.png
 MaskImageName=#@#Presets\presetmask.png
@@ -36,19 +36,19 @@ Y=235
 LeftMouseUpAction=[!SetVariable Name "Sonder Layout"][!Update][!Delay 1000][!CommandMeasure Script "ApplyPreset('Sonder Layout')"]
 DynamicVariables=1
 Group=Preset
-[SonderLayout108822937]
+[SonderLayout405349672]
 Meter=String
 Text=Sonder Layout
 MeterStyle=PresetStyle
 X=(20-#Scroll#)
 Y=295
-[SonderLayout108822937Time]
+[SonderLayout405349672Time]
 Meter=String
 Text=2020 Sep 12 16:09:08
 MeterStyle=TimeStyle
 X=r
 Y=R
-[SonderLayout108822937Delete]
+[SonderLayout405349672Delete]
 Meter=String
 MeterStyle=DeleteStyle
 X=(350-#Scroll#)
