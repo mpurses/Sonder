@@ -194,7 +194,7 @@ H=32
 ImageTint=255,255,255
 MouseOverAction=[!SetOption SettingsIcon ImageTint #DayActiveColorHover#][!UpdateMeter SettingsIcon][!Redraw]
 MouseLeaveAction=[!SetOption SettingsIcon ImageTint 255,255,255][!UpdateMeter SettingsIcon][!Redraw]
-LeftMouseUpAction=[!RainmeterActivateConfig #ROOTCONFIG#\Settings Calendar-Settings.ini][!ZPos "0" #ROOTCONFIG#\EverydayHabitCalendar][!ZPos "1" #ROOTCONFIG#\Settings]
+LeftMouseUpAction=[!ActivateConfig #ROOTCONFIG#\Settings Calendar-Settings.ini][!ZPos "0" #ROOTCONFIG#\EverydayHabitCalendar][!ZPos "1" #ROOTCONFIG#\Settings]
 Hidden=1
 
 [Exit]
@@ -206,7 +206,7 @@ X=(#WORKAREAWIDTH#-46)
 Y=0
 MouseOverAction=[!SetOption Exit ImageName #@#Images\Exit-on.png][!UpdateMeter Exit][!Redraw]
 MouseLeaveAction=[!SetOption Exit ImageName #@#Images\Exit-off-transparent.png][!UpdateMeter Exit][!Redraw]
-LeftMouseUpAction=[!RainmeterDeactivateConfig]
+LeftMouseUpAction=[!DeactivateConfig]
 
 [Minimize]
 Meter=IMAGE
@@ -217,7 +217,7 @@ X=(#WORKAREAWIDTH#-46-46)
 Y=0
 MouseOverAction=[!SetOption Minimize ImageName #@#Images\minimize-on.png][!UpdateMeter Minimize][!Redraw]
 MouseLeaveAction=[!SetOption Minimize ImageName #@#Images\minimize-off.png][!UpdateMeter Minimize][!Redraw]
-LeftMouseUpAction=[!RainmeterActivateConfig "#ROOTCONFIG#\EverydayHabitCalendar\StreakNumberMinimized\" "Minimized.ini"][!RainmeterDeactivateConfig]
+LeftMouseUpAction=[!ActivateConfig "#ROOTCONFIG#\EverydayHabitCalendar\StreakNumberMinimized\" "Minimized.ini"][!DeactivateConfig]
 
 [HeaderText]
 Meter=STRING

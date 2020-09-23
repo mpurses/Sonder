@@ -1,3 +1,6 @@
+[Variables]
+Record=(?(?=.*"lat":).*"lat":"(.*)",.*"lon":"(.*)",.*"display_name":"(.*)")
+
 ;==================== GET CITY AND LAT/LONG DATA AUTOMATICALLY ===============================
 [MeasureGoogleMyLocation]
 Measure=WebParser
@@ -12,8 +15,8 @@ RegExp=(?siU)data-url="\/maps\/place\/(.*)\/data
 StringIndex=1
 Disabled=1
 Substitute="+":" ","":"Could not detect"
-FinishAction=[!SetVariable AutoDetectCity [MeasureGoogleMyLocation]][!WriteKeyValue Variables AutoDetectCity [MeasureGoogleMyLocation] #@#Variables.inc][!EnableMeasure MeasureLocations][!UpdateMeasure MeasureLocations][!Log "Googled your Location, getting Lat/Long data..."]
-;OnChangeAction=[!SetVariable AutoDetectCity [MeasureGoogleMyLocation]][!WriteKeyValue Variables AutoDetectCity [MeasureGoogleMyLocation] #@#Variables.inc][!Delay 500][!EnableMeasure MeasureLocations][!UpdateMeasure MeasureLocations][!Log "Update MeasureGoogleMyLocation Changed"]
+FinishAction=[!SetVariable AutoDetectCity [MeasureGoogleMyLocation]][!WriteKeyValue Variables AutoDetectCity [MeasureGoogleMyLocation] "#@#Variables.inc"][!EnableMeasure MeasureLocations][!UpdateMeasure MeasureLocations][!Log "Googled your Location, getting Lat/Long data..."]
+;OnChangeAction=[!SetVariable AutoDetectCity [MeasureGoogleMyLocation]][!WriteKeyValue Variables AutoDetectCity [MeasureGoogleMyLocation] "#@#Variables.inc"][!Delay 500][!EnableMeasure MeasureLocations][!UpdateMeasure MeasureLocations][!Log "Update MeasureGoogleMyLocation Changed"]
 
 [MeasureLocations]
 Measure=WebParser
@@ -23,7 +26,7 @@ UserAgent=Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:78.0) Gecko/20100101 Fire
 RegExp=(?siU)#Record#
 UpdateRate=86400
 Disabled=#AutoLatLong#
-FinishAction=[!EnableMeasureGroup LatLongChildren][!UpdateMeasureGroup LatLongChildren][!SetVariable Latitude [MeasureLatitude1]][!WriteKeyValue Variables Latitude [MeasureLatitude1] #@#Variables.inc][!SetVariable Longitude [MeasureLongitude1]][!WriteKeyValue Variables Longitude [MeasureLongitude1] #@#Variables.inc][!Log "Latitutude and Longitude downloaded & written"][!UpdateMeter YourLat][!UpdateMeter YourLong][!Redraw][!Update][!Delay 2000][!Refresh "#ROOTCONFIG#\Weather"][!DisableMeasureGroup LatLongChildren]
+FinishAction=[!EnableMeasureGroup LatLongChildren][!UpdateMeasureGroup LatLongChildren][!SetVariable Latitude [MeasureLatitude1]][!WriteKeyValue Variables Latitude [MeasureLatitude1] "#@#Variables.inc"][!SetVariable Longitude [MeasureLongitude1]][!WriteKeyValue Variables Longitude [MeasureLongitude1] "#@#Variables.inc"][!Log "Latitutude and Longitude downloaded & written"][!UpdateMeter YourLat][!UpdateMeter YourLong][!Redraw][!Update][!Delay 2000][!Refresh "#ROOTCONFIG#\Weather"][!DisableMeasureGroup LatLongChildren]
 ;[!Delay 2000]
 DynamicVariables=1
 
@@ -37,7 +40,7 @@ RegExpSubstitute=1
 Substitute="^(.*\.)([\d]{1,6}).*$":"\1\2","":"No results"
 ;Maybe try this if your variables aren't being written...
 ;IfMatch=^$
-;IfNotMatchAction=[!WriteKeyValue Variables Latitude [MeasureLatitude1] #@#Variables.inc]
+;IfNotMatchAction=[!WriteKeyValue Variables Latitude [MeasureLatitude1] "#@#Variables.inc"]
 
 [MeasureLongitude1]
 Measure=WebParser
@@ -49,7 +52,7 @@ RegExpSubstitute=1
 Substitute="^(.*\.)([\d]{1,6}).*$":"\1\2"
 ;Maybe try this if your variables aren't being written...
 ;IfMatch=^$
-;IfNotMatchAction=[!WriteKeyValue Variables Longitude [MeasureLongitude1] #@#Variables.inc]
+;IfNotMatchAction=[!WriteKeyValue Variables Longitude [MeasureLongitude1] "#@#Variables.inc"]
 
 [MeasureName1]
 Measure=WebParser

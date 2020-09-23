@@ -1,5 +1,38 @@
 [Variables]
 @includevars=#@#Variables.inc
+;===Month View=== - not working right now
+; MeterDay1X=200
+; HabitSpacingsDay=((#WORKAREAWIDTH#-#MeterDay1X#)/31)
+; HabitSpacingsMonth=((#WORKAREAHEIGHT#-62)/12)
+; RowHighlightColor=53,53,53,255
+; HabitRowColor=Rectangle 0,([Habit1:Y]+#HabitSpacingsMonth#/2),#WORKAREAWIDTH#,#HabitSpacingsMonth# | Fill Color 0,0,0,1 | Stroke Color 0,0,0,1
+; HabitRowColorHover=Rectangle 0,([Habit1:Y]+#HabitSpacingsMonth#/2),#WORKAREAWIDTH#,#HabitSpacingsMonth# | Fill Color #RowHighlightColor# | Stroke Color 0,0,0,1
+; HabitDayCircleColor=255,255,255,20
+; HabitDayCircleColorHover=255,255,255,35
+; HabitDayCircleColorActive=117,167,246
+; HabitDayCircleHoverColorActive=
+; HabitDayCircle=Ellipse 0,((-1*#HabitSpacingsDay#/4)*0.75),((#HabitSpacingsDay#/2)*0.75),((#HabitSpacingsDay#/2)*0.75) | Fill Color [&MeasureDay[&MeasureHabit1Day1]Color] | Stroke Color 255,255,255,1
+; HabitDayCircleHover=Ellipse 0,((-1*#HabitSpacingsDay#/4)*0.75),((#HabitSpacingsDay#/2)*0.75),((#HabitSpacingsDay#/2)*0.75) | Fill Color [&MeasureDay[&MeasureHabit1Day1]ColorHover] | Stroke Color 255,255,255,1
+; Habit1=Workout
+; Habit2=Read a book
+; Habit3=Drink Water
+; Habit4=Eat Healthy
+; Habit5=Habit5
+; Habit6=Habit6
+; Habit7=Habit7
+; Habit8=Habit8
+; Habit9=Habit9
+; Habit10=Habit10
+; Habit2Disabled=1
+; Habit3Disabled=1
+; Habit4Disabled=1
+; Habit5Disabled=1
+; Habit6Disabled=1
+; Habit7Disabled=1
+; Habit8Disabled=1
+; Habit9Disabled=1
+; Habit10Disabled=1
+
 [MeasureHabit1Day1Color]
 Measure=Calc
 Formula=#Habit1Day1#

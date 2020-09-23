@@ -1,4 +1,4 @@
 Name=Sonder Layout
-Time=2020 Sep 12 16:09:08
-Wallpaper=#@#Presets\Preset\Wallpapers\Sonder Layout-Wallpaper.bmp
+Time=2020 Sep 22 19:46:09
+Wallpaper=#ROOTCONFIGPATH#Wallpapers\Trees-22.jpg
 WallpaperFit=Fill

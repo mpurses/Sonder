@@ -5,13 +5,13 @@
 Measure=Calc
 Formula=Counter
 IfCondition=MeasureOnLoad = 1
-IfTrueAction=[!RainmeterWriteKeyValue Variables RefreshOverride 0 "#@#Variables.inc"][!UpdateMeasure StreakScript][!UpdateMeasure MeasureStreakActive]
+IfTrueAction=[!WriteKeyValue Variables RefreshOverride 0 "#@#Variables.inc"][!UpdateMeasure StreakScript][!UpdateMeasure MeasureStreakActive]
 
 [ResetRefreshOverride]
 Measure=Calc
 Formula=1
 IfEqualValue=1
-IfEqualAction=[!Delay 5000][!RainmeterWriteKeyValue Variables RefreshOverride 0 "#@#Variables.inc"]
+IfEqualAction=[!Delay 5000][!WriteKeyValue Variables RefreshOverride 0 "#@#Variables.inc"]
 UpdateDivider=-1
 
 [StreakScript]
@@ -234,7 +234,7 @@ UpdateDivider=-1
 Measure=Calc
 Formula=1
 IfEqualValue=1
-IfEqualAction=[!Delay 4000][!RainmeterWriteKeyValue Variables RefreshOverride 0 "#@#Variables.inc"]
+IfEqualAction=[!Delay 4000][!WriteKeyValue Variables RefreshOverride 0 "#@#Variables.inc"]
 UpdateDivider=-1
 DynamicVariables=1
 

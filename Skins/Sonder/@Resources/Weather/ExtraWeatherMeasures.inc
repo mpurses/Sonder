@@ -21,7 +21,7 @@
 ;Disabled=1
 ;StringIndex=1
 ;RegExp=(?siU)"v3-wx-observations-current":.*"cloudCoverPhrase":(.*),.*"iconCode":(.*),.*"precip24Hour":(.*),.*"pressureAltimeter":(.*),.*"pressureChange":(.*),.*"pressureTendencyCode":(.*),.*"pressureTendencyTrend":(.*),.*"relativeHumidity":(.*),.*"sunriseTimeLocal":(.*),.*"sunsetTimeLocal":(.*),.*"temperature":(.*),.*"temperatureDewPoint":(.*),.*"temperatureFeelsLike":(.*),.*"temperatureMaxSince7AM":(.*),.*"uvDescription":(.*),.*"uvIndex":(.*),.*"validTimeLocal":(.*),.*"visibility":(.*),.*"windDirection":(.*),.*"windDirectionCardinal":(.*),.*"windGust":(.*),.*"windSpeed":(.*),.*"wxPhraseLong":(.*),.*"wxPhraseMedium":(.*),"wxPhraseShort":(.*)}
-;FinishAction=[!EnableMeasureGroup "Times"][!EnableMeasureGroup Sun][!UpdateMeasureGroup Sun][!WriteKeyValue Variables SunsetTime [@ForecastTodaySunsetTime] #@#Variables.inc][!WriteKeyValue Variables SunriseTime [@ForecastTodaySunriseTime] #@#Variables.inc][!UpdateMeasure MeasureTimeMOON][!Redraw]
+;FinishAction=[!EnableMeasureGroup "Times"][!EnableMeasureGroup Sun][!UpdateMeasureGroup Sun][!WriteKeyValue Variables SunsetTime [@ForecastTodaySunsetTime] "#@#Variables.inc"][!WriteKeyValue Variables SunriseTime [@ForecastTodaySunriseTime] "#@#Variables.inc"][!UpdateMeasure MeasureTimeMOON][!Redraw]
 ;;[@CurrentSunsetTime][@CurrentSunriseTime]
 ;;FinishAction=[!EnableMeasureGroup "Times"]
 ;;Group=Times
@@ -44,7 +44,7 @@ Format=#HourFormat#:%M #Fm#
 FormatLocale=#Language#
 DynamicVariables=1
 DecodeCodePoints=1
-OnChangeAction=[!WriteKeyValue Variables SunriseTime [@ForecastTodaySunriseTime] #@#Variables.inc]
+OnChangeAction=[!WriteKeyValue Variables SunriseTime [@ForecastTodaySunriseTime] "#@#Variables.inc"]
 
 [@ForecastTodaySunsetTimeAdjusted]
 Measure=Time
@@ -54,7 +54,7 @@ Format=#HourFormat#:%M #Fm#
 FormatLocale=#Language#
 DynamicVariables=1
 DecodeCodePoints=1
-OnChangeAction=[!WriteKeyValue Variables SunsetTime [@ForecastTodaySunsetTime] #@#Variables.inc]
+OnChangeAction=[!WriteKeyValue Variables SunsetTime [@ForecastTodaySunsetTime] "#@#Variables.inc"]
 
 ;If Moon risetime or settime is the next day...
 [@MoonDay1RiseTimeTEST]
