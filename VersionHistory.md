@@ -1,13 +1,27 @@
 ## Download Latest Release: https://github.com/mpurses/Sonder/releases  
 ### Version History  
   
+#### • 09.24.2020 - v2.6.0: 
+- NEW SKIN: Time_Transformable & Date_Transformable - allows Transforming (skewing, scaling, rotating, scaling, moving, etc.)  
+- NEW SKIN: Theme Presets (Save & Load your Layouts, Wallpaper, & Custom Settings (colors, size, etc.) all at once. Sunrise/set options.)  
+- NEW SKIN: World Clocks on Map (included on ISS Map)  
+- Time/Date: Shadow or Glow font effect options  
+- Time: Fix Vertical skin variations for different fonts (may need to re-apply font if you are using Vert skin)  
+- Date: Fix Date_Handwriting skin skipping Sunday  
+- Visualizer: Add Audio Device ID option for users having trouble with it not working (maybe?).  
+- ISS: Display next 5 Rocket launches when you hover over Rocket near Florida (new data provider)  
+- ISS: Use less CPU, especially if map scale is below 0.33 on some systems  
+- All skins have right click options to open their UI settings now.  
+- Weather hourly data position fix (Thanks prgbmk)   
+- Other bug fixes and tweaks  
+  
 #### • 08.25.2020 - v2.5.7: 
 - Weather: Eliminate unnecessary refreshes when opening weather settings  
 - Weather: Fix Language encoding issues and Month font size on WeatherLive  
 - Weather: Fix Moon rise/set time errors and calculations  
 - Visualizer: Changing Audio settings updates the visualizer immediately now  
 - ISS/World Map: World Weather Radar option.  
-- ISS: Flight Badge on ISS hover and eliminate all the errors in the log 
+- ISS: Flight Badge on ISS hover and eliminate all the errors in the log  
     
 #### • 08.25.2020 - v2.5.6: 
 - Weather: Fix for accidental refreshes happening every minute causing no data to display. (Sunrise/Sunset refresh issue)  
