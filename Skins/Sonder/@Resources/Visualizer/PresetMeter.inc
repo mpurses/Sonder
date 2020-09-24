@@ -1,4 +1,4 @@
-[SonderDefault1044262382Snap]
+[SonderDefault1057953368Snap]
 Meter=Image
 ImageName=#@#Visualizer\Preset\Snap\Sonder Default.png
 MaskImageName=#@#Visualizer\presetmask.png
@@ -8,25 +8,25 @@ Y=80
 LeftMouseUpAction=[!CommandMeasure Script "ApplyPreset('Sonder Default')"]
 DynamicVariables=1
 Group=Preset
-[SonderDefault1044262382]
+[SonderDefault1057953368]
 Meter=String
 Text=Sonder Default
 MeterStyle=PresetStyle
 X=(20-#Scroll#)
 Y=140
-[SonderDefault1044262382Time]
+[SonderDefault1057953368Time]
 Meter=String
 Text=2020 Aug 05 18:47:45
 MeterStyle=TimeStyle
 X=r
 Y=R
-[SonderDefault1044262382Delete]
+[SonderDefault1057953368Delete]
 Meter=String
 MeterStyle=DeleteStyle
 X=(350-#Scroll#)
 Y=180
 LeftMouseUpAction=[!CommandMeasure Script "DeletePreset('Sonder Default')"]
-[Lunar863793658Snap]
+[Lunar172602899Snap]
 Meter=Image
 ImageName=#@#Visualizer\Preset\Snap\Lunar.png
 MaskImageName=#@#Visualizer\presetmask.png
@@ -36,25 +36,25 @@ Y=215
 LeftMouseUpAction=[!CommandMeasure Script "ApplyPreset('Lunar')"]
 DynamicVariables=1
 Group=Preset
-[Lunar863793658]
+[Lunar172602899]
 Meter=String
 Text=Lunar
 MeterStyle=PresetStyle
 X=(20-#Scroll#)
 Y=275
-[Lunar863793658Time]
+[Lunar172602899Time]
 Meter=String
 Text=2020 Aug 13 15:04:43
 MeterStyle=TimeStyle
 X=r
 Y=R
-[Lunar863793658Delete]
+[Lunar172602899Delete]
 Meter=String
 MeterStyle=DeleteStyle
 X=(350-#Scroll#)
 Y=315
 LeftMouseUpAction=[!CommandMeasure Script "DeletePreset('Lunar')"]
-[PinkyLittleStar624331252Snap]
+[PinkyLittleStar145109617Snap]
 Meter=Image
 ImageName=#@#Visualizer\Preset\Snap\Pinky Little Star.png
 MaskImageName=#@#Visualizer\presetmask.png
@@ -64,25 +64,25 @@ Y=350
 LeftMouseUpAction=[!CommandMeasure Script "ApplyPreset('Pinky Little Star')"]
 DynamicVariables=1
 Group=Preset
-[PinkyLittleStar624331252]
+[PinkyLittleStar145109617]
 Meter=String
 Text=Pinky Little Star
 MeterStyle=PresetStyle
 X=(20-#Scroll#)
 Y=410
-[PinkyLittleStar624331252Time]
+[PinkyLittleStar145109617Time]
 Meter=String
 Text=2017 Jun 21 20:26:18
 MeterStyle=TimeStyle
 X=r
 Y=R
-[PinkyLittleStar624331252Delete]
+[PinkyLittleStar145109617Delete]
 Meter=String
 MeterStyle=DeleteStyle
 X=(350-#Scroll#)
 Y=450
 LeftMouseUpAction=[!CommandMeasure Script "DeletePreset('Pinky Little Star')"]
-[PurpleSea369582433Snap]
+[PurpleSea481893047Snap]
 Meter=Image
 ImageName=#@#Visualizer\Preset\Snap\Purple Sea.png
 MaskImageName=#@#Visualizer\presetmask.png
@@ -92,25 +92,25 @@ Y=80
 LeftMouseUpAction=[!CommandMeasure Script "ApplyPreset('Purple Sea')"]
 DynamicVariables=1
 Group=Preset
-[PurpleSea369582433]
+[PurpleSea481893047]
 Meter=String
 Text=Purple Sea
 MeterStyle=PresetStyle
 X=(380-#Scroll#)
 Y=140
-[PurpleSea369582433Time]
+[PurpleSea481893047Time]
 Meter=String
 Text=2017 Jun 21 19:57:59
 MeterStyle=TimeStyle
 X=r
 Y=R
-[PurpleSea369582433Delete]
+[PurpleSea481893047Delete]
 Meter=String
 MeterStyle=DeleteStyle
 X=(710-#Scroll#)
 Y=180
 LeftMouseUpAction=[!CommandMeasure Script "DeletePreset('Purple Sea')"]
-[RetroMonstercat18217545Snap]
+[RetroMonstercat821607610Snap]
 Meter=Image
 ImageName=#@#Visualizer\Preset\Snap\Retro Monstercat.png
 MaskImageName=#@#Visualizer\presetmask.png
@@ -120,25 +120,25 @@ Y=215
 LeftMouseUpAction=[!CommandMeasure Script "ApplyPreset('Retro Monstercat')"]
 DynamicVariables=1
 Group=Preset
-[RetroMonstercat18217545]
+[RetroMonstercat821607610]
 Meter=String
 Text=Retro Monstercat
 MeterStyle=PresetStyle
 X=(380-#Scroll#)
 Y=275
-[RetroMonstercat18217545Time]
+[RetroMonstercat821607610Time]
 Meter=String
 Text=2017 Jun 21 21:02:04
 MeterStyle=TimeStyle
 X=r
 Y=R
-[RetroMonstercat18217545Delete]
+[RetroMonstercat821607610Delete]
 Meter=String
 MeterStyle=DeleteStyle
 X=(710-#Scroll#)
 Y=315
 LeftMouseUpAction=[!CommandMeasure Script "DeletePreset('Retro Monstercat')"]
-[SummonRitual111123319Snap]
+[SummonRitual964045815Snap]
 Meter=Image
 ImageName=#@#Visualizer\Preset\Snap\Summon Ritual.png
 MaskImageName=#@#Visualizer\presetmask.png
@@ -148,25 +148,25 @@ Y=350
 LeftMouseUpAction=[!CommandMeasure Script "ApplyPreset('Summon Ritual')"]
 DynamicVariables=1
 Group=Preset
-[SummonRitual111123319]
+[SummonRitual964045815]
 Meter=String
 Text=Summon Ritual
 MeterStyle=PresetStyle
 X=(380-#Scroll#)
 Y=410
-[SummonRitual111123319Time]
+[SummonRitual964045815Time]
 Meter=String
 Text=2017 Jun 21 21:09:10
 MeterStyle=TimeStyle
 X=r
 Y=R
-[SummonRitual111123319Delete]
+[SummonRitual964045815Delete]
 Meter=String
 MeterStyle=DeleteStyle
 X=(710-#Scroll#)
 Y=450
 LeftMouseUpAction=[!CommandMeasure Script "DeletePreset('Summon Ritual')"]
-[TealExplosion443083367Snap]
+[TealExplosion261761275Snap]
 Meter=Image
 ImageName=#@#Visualizer\Preset\Snap\Teal Explosion.png
 MaskImageName=#@#Visualizer\presetmask.png
@@ -176,19 +176,19 @@ Y=80
 LeftMouseUpAction=[!CommandMeasure Script "ApplyPreset('Teal Explosion')"]
 DynamicVariables=1
 Group=Preset
-[TealExplosion443083367]
+[TealExplosion261761275]
 Meter=String
 Text=Teal Explosion
 MeterStyle=PresetStyle
 X=(740-#Scroll#)
 Y=140
-[TealExplosion443083367Time]
+[TealExplosion261761275Time]
 Meter=String
 Text=2017 Jun 21 20:09:17
 MeterStyle=TimeStyle
 X=r
 Y=R
-[TealExplosion443083367Delete]
+[TealExplosion261761275Delete]
 Meter=String
 MeterStyle=DeleteStyle
 X=(1070-#Scroll#)
