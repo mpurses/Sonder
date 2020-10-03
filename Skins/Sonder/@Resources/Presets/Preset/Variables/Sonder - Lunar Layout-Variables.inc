@@ -1014,7 +1014,7 @@ ID=2
 
 ;************************************ THEMES *****************************************
 
-ThemeChanger=0
+ThemeChanger=1
 
 SunriseTheme=Sonder Layout
 

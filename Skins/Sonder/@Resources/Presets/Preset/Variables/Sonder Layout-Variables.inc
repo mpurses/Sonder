@@ -1018,6 +1018,6 @@ ThemeChanger=0
 
 SunriseTheme=Sonder Layout
 
-SunsetTheme=Sonder - Lunar Layout
+SunsetTheme=PERSONAL-Lunar
 
 CurrentTheme=Sonder - Lunar Layout

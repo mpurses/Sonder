@@ -1,0 +1,184 @@
+[Rainmeter]
+MiddleMouseUpAction=[!Refresh]
+AccurateText=1
+
+; CLEAN-UP of AstroDialMOD0c
+
+[Variables]
+; =========================
+; DEBUG TESTING VARIABLES
+
+; Sun / Moon Angles on the Dial (degrees)
+sunDialAngle=-1
+moonDialAngle=0
+; Angle that the illuminated limb of the moon will face (degrees, starts North, counterclockwise)
+rawMVA=90
+; If set to 1, the moon will orient based on the value above. If set to 0, waxing will display on the right, and waning will display on the left.
+showMoonAngle=1
+; Moon phase value: 0.0 (new) -> 0.5 (full) -> 1.0 (new)
+moonPhase=0.2
+
+; =========================
+
+; Colors
+colorBg=15,15,15
+colorDialArc=150,150,150
+colorMoon=200,200,200
+colorMoonBg=30,30,30
+colorMoonBorder=70,70,70
+
+; Dial settings
+dialRadius=250
+;dialStartX=3
+dialArcThickness=6
+dialObjectRadius=23
+; Make sure dialpad > moonRadius + some padding
+dialpad= 50
+; our main center of rotation
+dialCenterX = (#dialRadius# + #dialpad#)
+dialCenterY = (#dialRadius# + #dialpad#)
+
+; Moon settings
+moonRadius=23
+moonBorderThickness=3
+moonInnerRadius = (#moonRadius# - #moonBorderThickness#)
+moonViewAngle= ((#rawMVA# + #moonDialAngle#) % 360)
+
+
+; ==================================================
+; MEASURES
+; ==================================================
+
+[MeasureMoonDialVisibility]
+Measure=Calc
+Formula=#moonDialAngle#
+IfCondition=(MeasureMoonDialVisibility > 180) || (MeasureMoonDialVisibility < 0)
+IfTrueAction=[!SetVariable moonDialVisibility 0][!UpdateMeter MeterAstroDial][!Redraw]
+IfFalseAction=[!SetVariable moonDialVisibility 255][!UpdateMeter MeterAstroDial][!Redraw]
+DynamicVariables=1
+
+; Converts the moon phase value into a radius value usable by the arc shape
+[MeasureMoonShapePhaseCalc]
+Measure=Calc
+Formula=clamp(abs((#moonInnerRadius# * 4 * ((#moonPhase# > 0.5) ? (0.5 - (#moonPhase# - 0.5)) : #moonPhase#)) - #moonInnerRadius#),0,#moonInnerRadius#)
+DynamicVariables=1
+Group=MoonShape
+
+; Temporary measure for debug purposes - animates between new moon and full moon, then back
+[MeasureMoonShapeActionTimer]
+Measure=Plugin
+Plugin=ActionTimer
+ActionList1=Repeat Increase, 16, 100 | Wait 1000 | Repeat Increase, 16, 100 | Reset
+Increase=[!SetVariable moonPhase "(#moonPhase# + 0.005)"][!UpdateMeasure MeasureMoonShapePhaseCalc][!UpdateMeter MeterAstroDial][!UpdateMeasure MeasureMoonShapeActionTimer][!Redraw]
+Reset=[!SetVariable moonPhase 0][!UpdateMeasure MeasureMoonShapePhaseCalc][!UpdateMeter MeterAstroDial][!UpdateMeasure MeasureMoonShapeActionTimer][!Redraw]
+DynamicVariables=1
+
+; TEMPORARY DEBUG - rotates the moon's illuminated limb 360 degrees
+[MeasureActionTimer]
+Measure=Plugin
+Plugin=ActionTimer
+ActionList1=Repeat Increase, 16, 180
+ActionList2=ResetMove | Repeat Move, 16, 180
+ActionList3=Repeat Move, 16, 5
+ActionList4=ResetMove | Repeat Both, 16, 180
+ActionList5=Repeat Increase, 16, 5
+Increase=[!SetVariable rawMVA "(#rawMVA# + 2)"][!SetVariable moonViewAngle "((#rawMVA# + #moonDialAngle#) % 360)"][!UpdateMeasureGroup MoonShape][!UpdateMeter MeterAstroDial][!UpdateMeasure MeasureActionTimer][!Redraw]
+Move=[!SetVariable moonDialAngle "(#moonDialAngle# + 1)"][!UpdateMeasure msDialX][!UpdateMeasure msDialY][!UpdateMeter MeterAstroDial][!UpdateMeasure MeasureActionTimer][!Redraw]
+Both=[!SetVariable rawMVA "(#rawMVA# + 2)"][!SetVariable moonDialAngle "(#moonDialAngle# + 1)"][!SetVariable moonViewAngle "((#rawMVA# + #moonDialAngle#) % 360)"][!UpdateMeasure msDialX][!UpdateMeasure msDialY][!UpdateMeasureGroup MoonShape][!UpdateMeter MeterAstroDial][!UpdateMeasure MeasureActionTimer][!Redraw]
+ResetMove=[!SetVariable moonDialAngle 0][!UpdateMeasure msDialX][!UpdateMeasure msDialY][!UpdateMeasureGroup MoonShape][!UpdateMeter MeterAstroDial][!UpdateMeasure MeasureActionTimer][!Redraw]
+DynamicVariables=1
+
+; Center of rotation
+[msDialX]
+Measure=Calc
+Formula= #dialCenterX# - #dialRadius#*cos(Rad(#moonDialAngle#))
+DynamicVariables=1
+
+[msDialY]
+Measure=Calc
+Formula= #dialCenterY# - #dialRadius#*sin(Rad(#moonDialAngle#))
+DynamicVariables=1
+
+
+; ==================================================
+; METERS
+; ==================================================
+
+[MeterArc]
+Meter=Shape
+X=0
+Y=0
+W=(2*#dialCenterX#)
+H=(#dialCenterY# + #dialpad#)
+Shape= Arc (#dialCenterX# - #dialRadius#), #dialCenterY#, (#dialCenterX# + #dialRadius#), #dialCenterY#, #dialRadius#, #dialRadius# | StrokeWidth #dialArcThickness# | Stroke Color #colorDialArc# | StrokeStartCap Round | StrokeEndCap Round
+Shape2 = Ellipse #dialCenterX#, #dialCenterY#, 5 | Fill Color 0,0,255
+SolidColor=#colorBg#
+DynamicVariables=1
+
+
+[MeterAstroDial]
+Meter=Shape
+Shape  = Ellipse ([msDialX]), ([msDialY]), #moonRadius# | StrokeWidth 0 | Fill Color #colorMoonBorder#,#moonDialVisibility#
+Shape2 = Ellipse ([msDialX]), ([msDialY]), #moonInnerRadius# | StrokeWidth 0 | Fill Color #colorMoonBg#,#moonDialVisibility#
+
+; Shapes WITH offset (disabled)
+;Shape3=Ellipse ([msDialX]), ([msDialY]), #moonInnerRadius# | StrokeWidth 0 | Fill Color #colorMoon#,#moonDialVisibility#
+;Shape4= Path MoonArc | StrokeWidth 0 | Fill Color #colorMoon# | Rotate ((#showMoonAngle# = 1) ? (-#moonViewAngle#) : ((#moonPhase# > 0.5) ? -90 : 90)), #moonInnerRadius#, #moonInnerRadius# | Offset #moonBorderThickness#,#moonBorderThickness# | StrokeLineJoin Round
+;MoonArc= ([msDialX] - #moonRadius#), ([msDialY] - #moonBorderThickness#) | ArcTo ([msDialX] + (2*#moonInnerRadius# - #moonRadius#)), ([msDialY] - #moonBorderThickness#), #moonInnerRadius#, [MeasureMoonShapePhaseCalc:], 0, (((#moonPhase# > 0.25) && (#moonPhase# < 0.75)) ? 1 : 0) | ArcTo ([msDialX] - #moonRadius#), ([msDialY] - #moonBorderThickness#), #moonInnerRadius#, #moonInnerRadius#,  0, 1
+;Shape5=Combine Shape3 | Intersect Shape4
+; | Rotate #moonDialAngle#,(#dialRadius# + [MeasureMoonLimbArcRotationXOffsetCalc:]),([MeasureMoonLimbArcRotationYOffsetCalc:])
+
+; Shape WITHOUT offset, Without redundant background moon
+Shape3= Path MoonArc | StrokeWidth 0 | Fill Color #colorMoon# | Rotate ((#showMoonAngle# = 1) ? (-#moonViewAngle#) : ((#moonPhase# > 0.5) ? -90 : 90)), #moonInnerRadius#, #moonInnerRadius# | StrokeLineJoin Round
+MoonArc= ([msDialX] - #moonInnerRadius#), ([msDialY]) | ArcTo ([msDialX] + #moonInnerRadius#), ([msDialY]), #moonInnerRadius#, [MeasureMoonShapePhaseCalc:], 0, (((#moonPhase# > 0.25) && (#moonPhase# < 0.75)) ? 1 : 0) | ArcTo ([msDialX] - #moonInnerRadius#), ([msDialY]), #moonInnerRadius#, #moonInnerRadius#,  0, 1
+
+;Padding=10,10,10,10
+;SolidColor=#colorBg#
+;SolidColor=255,0,0,50
+DynamicVariables=1
+LeftMouseUpAction=[!CommandMeasure MeasureMoonShapeActionTimer "Execute 1"]
+
+
+
+[MeterDebugLimbRotation]
+Meter=String
+FontFace=Arial
+FontSize=12
+FontColor=230,230,230
+Padding=0,5,0,5
+SolidColor=#colorBg#
+X=0
+W=(2*#dialCenterX#)
+Y=([MeterArc:YH])
+Text=Debug Limb Rotation
+LeftMouseUpAction=[!CommandMeasure MeasureActionTimer "Execute 1"]
+Antialias=1
+
+[MeterDebugDialRotation]
+Meter=String
+MeterStyle=MeterDebugLimbRotation
+Y=R
+Text=Debug Dial Rotation
+LeftMouseUpAction=[!CommandMeasure MeasureActionTimer "Execute 2"]
+
+[MeterDebugStepDialRotation]
+Meter=String
+MeterStyle=MeterDebugLimbRotation
+Y=R
+Text=Debug Step Dial Rotation
+LeftMouseUpAction=[!CommandMeasure MeasureActionTimer "Execute 3"]
+
+[MeterDebugBoth]
+Meter=String
+MeterStyle=MeterDebugLimbRotation
+Y=R
+Text=Debug Both Rotations
+LeftMouseUpAction=[!CommandMeasure MeasureActionTimer "Execute 4"]
+
+[MeterDebugStepLimb]
+Meter=String
+MeterStyle=MeterDebugLimbRotation
+Y=R
+Text=Debug Step Limb Rotation
+LeftMouseUpAction=[!CommandMeasure MeasureActionTimer "Execute 5"]
+

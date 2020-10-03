@@ -1,3 +1,4 @@
 # Auto detect text files and perform LF normalization
 * text=auto
 #* text working-tree-encoding=UTF-16LE-BOM eol=CRLF
+#* text working-tree-encoding=UTF-16

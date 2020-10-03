@@ -359,3 +359,11 @@ Skins/*
 # But don't ignore "another_directory"
 !Skins/Sonder
 
+Skins/Sonder/@Resources/Presets/Preset/Wallpapers/PERSONAL-Sonder Transform-Wallpaper.bmp
+Skins/Sonder/@Resources/Presets/Preset/Wallpapers/PERSONAL-Lunar-Wallpaper.bmp
+Skins/Sonder/@Resources/Presets/Preset/Variables/PERSONAL-Sonder Transform-Variables.inc
+Skins/Sonder/@Resources/Presets/Preset/Variables/PERSONAL-Lunar-Variables.inc
+Skins/Sonder/@Resources/Presets/Preset/Snap/PERSONAL-Sonder Transform.png
+Skins/Sonder/@Resources/Presets/Preset/Snap/PERSONAL-Lunar.png
+Skins/Sonder/@Resources/Presets/Preset/PERSONAL-Sonder Transform.inc
+Skins/Sonder/@Resources/Presets/Preset/PERSONAL-Lunar.inc
