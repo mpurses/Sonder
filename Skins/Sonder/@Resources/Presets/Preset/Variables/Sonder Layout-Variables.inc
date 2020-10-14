@@ -1,4 +1,4 @@
-[Variables]
+﻿[Variables]
 
 ;************************************** All ***************************************
 
@@ -162,6 +162,8 @@ Settingsiconpath=#@#Images\colors2.png
 
 ScrollMouseIncrement=0.05
 
+;Transform Variables
+
 WHSize=390
 
 TMm11=1
@@ -199,6 +201,14 @@ TimeTransformFormat=#Hours#%M
 TransformHourPattern=^(\d{1,2})\d{2}$
 
 TransformMinutePattern=^\d{1,2}(\d{2})$
+
+; EXAMPLE TO ADD ':' and 'am/pm' to Time Transform skin
+
+;TimeTransformFormat ->  #Hours#:%M%p
+
+;TransformHourPattern  ->  ^(\d{1,2}):\d{2}\w{2}$
+
+;TransformMinutePattern  ->  ^\d{1,2}:(\d{2})\w{2}$
 
 
 
@@ -510,11 +520,11 @@ HiddenMoon=0
 
 HiddenMoonDay=0
 
-Daytime=0
+Daytime=1
 
-SunsetTime=18:59
+SunsetTime=18:25
 
-SunriseTime=06:51
+SunriseTime=07:12
 
 SizeValue=0.65
 
@@ -536,19 +546,7 @@ TempXLocation=270
 
 TempIconXLocation=-170
 
-OpenDown=-1
-
-xx=).*
-
-SpeedUnit=Mph
-
-PressureUnit=In
-
-VisibilityUnit=Mile
-
 ShowHourlyInfoOnHover=0
-
-
 
 ;***New Weather API Variables***
 
@@ -718,7 +716,7 @@ WorldMapLocation9=
 
 WorldMapLocation10=
 
-; Time Zones are automatically retireved, do not write your own
+; Time Zones are automatically retireved via settings window
 
 WorldMapTimeZone1=0
 
@@ -779,6 +777,18 @@ WorldMapLon9=0
 WorldMapLat10=0
 
 WorldMapLon10=0
+
+;Day/Night Shadow
+
+WorldDaylightShadow=0
+
+WorldDaylightShadowAlpha=80
+
+WorldCityLightsAlpha=245
+
+WorldCityLightsTint=255,240,220
+
+PlaywithTime=1
 
 
 
@@ -866,6 +876,10 @@ VisualizerColor1=105,155,115
 
 VisualizerColor2=212,212,212
 
+VisualizerKeepOnScreen=1
+
+VisualizerClickThrough=0
+
 ; 0,90,180,270. Do not set other number or skin will break.
 
 GradientOrientation=90
@@ -950,6 +964,8 @@ CenterScreenY=520
 
 MoonSizeForYourScreen=340
 
+LunarLimitForYourScreen=1310
+
 Wanderer_CenterX=#CenterScreenX#
 
 Wanderer_CenterY=#CenterScreenY#
@@ -986,7 +1002,9 @@ LineReactionAverage=0
 
 FFTSize=2048
 
-FFTOverlap=1101.78175
+;Dont Change this one
+
+FFTOverlap=((#FFTSize#/2)+(440*((#FFTSize#/4096)*2.5)))
 
 FFTAttack=150
 
@@ -1014,10 +1032,10 @@ ID=2
 
 ;************************************ THEMES *****************************************
 
-ThemeChanger=0
+ThemeChanger=1
 
-SunriseTheme=Sonder Layout
+SunriseTheme=
 
-SunsetTheme=PERSONAL-Lunar
+SunsetTheme=
 
-CurrentTheme=Sonder - Lunar Layout
+CurrentTheme=
