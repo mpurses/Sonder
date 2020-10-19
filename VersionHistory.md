@@ -1,6 +1,17 @@
 ## Download Latest Release: https://github.com/mpurses/Sonder/releases  
 ### Version History  
   
+  #### • 10.19.2020 - v2.6.1: 
+- New Features:  
+  - World Map: Day/night shadow + City lights option (moves throughout the day and changes shape based on the day of year)  
+- Bug Fixes:  
+  - World Map: Fix Time Zones at +/-10 for world clock, other fixes to prevent failing to get time zone data and reduce crashes.  
+  - World Map: Fix Rocket data/Radar disappearing when there are too many refreshes.  
+  - World Map: Fix Humans on ISS tooltip display  
+  - Theme Presets: writing extra lines in Variables.inc.  
+  - Theme Presets: Apply correct visualizer when changing themes.  
+  - Visualizer: Troubleshooting guide/bug fixes, better math for Lunar preset to fit your screen  
+  
 #### • 09.24.2020 - v2.6.0: 
 - NEW SKIN: Time_Transformable & Date_Transformable - allows Transforming (skewing, scaling, rotating, scaling, moving, etc.)  
 - NEW SKIN: Theme Presets (Save & Load your Layouts, Wallpaper, & Custom Settings (colors, size, etc.) all at once. Sunrise/set options.)  
