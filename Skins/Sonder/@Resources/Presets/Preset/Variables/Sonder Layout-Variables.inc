@@ -780,7 +780,7 @@ WorldMapLon10=0
 
 WorldDaylightShadow=0
 
-WorldDaylightShadowAlpha=80
+WorldDaylightShadowAlpha=90
 
 WorldCityLightsAlpha=245
 
