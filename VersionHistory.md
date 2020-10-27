@@ -1,7 +1,7 @@
 ## Download Latest Release: https://github.com/mpurses/Sonder/releases  
 ### Version History  
   
-  #### • 10.19.2020 - v2.6.1: 
+  #### • 10.19.2020 - v2.6.1/2: 
 - New Features:  
   - World Map: Day/night shadow + City lights option (moves throughout the day and changes shape based on the day of year)  
 - Bug Fixes:  
