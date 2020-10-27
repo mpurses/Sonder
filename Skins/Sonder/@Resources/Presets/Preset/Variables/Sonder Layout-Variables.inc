@@ -558,13 +558,13 @@ AutoDetectLocation=1
 
 AutoLatLong=1
 
-AutoDetectCity=Wentzville, MO
+AutoDetectCity=Denver, CO
 
 ;Latitude & Longitude will automatically change from AutoDetectCity value if AutoLatLong equals 1
 
-Latitude=38.824413
+Latitude=39.739236
 
-Longitude=-90.868311
+Longitude=-104.984862
 
 ;e - "Imperial", using Fahrenheit for temperatures.
 
@@ -583,8 +583,6 @@ DateFormat_MonthDay=%2 %3
 ; Change to %#H if 24 hour format (changed via main hour format settings or unit settings)
 
 TimeFormatHourly=%#I%p
-
-ImagePath=#@#Weather\Icons\
 
 WeatherIconPath=#@#Weather\Icons\
 
