@@ -1,6 +1,11 @@
 ## Download Latest Release: https://github.com/mpurses/Sonder/releases  
 ### Version History  
   
+  #### • 10.28.2020 - v2.6.3: 
+ - Time: New Reflection option  
+ - World Map: Bug fixes for ISS tooltip and update map resolution when scrolling  
+ - Weather: Changing weather icon color produces more accurate colors now  
+  
   #### • 10.19.2020 - v2.6.1/2: 
 - New Features:  
   - World Map: Day/night shadow + City lights option (moves throughout the day and changes shape based on the day of year)  
