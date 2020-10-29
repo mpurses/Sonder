@@ -7,13 +7,14 @@ Sonder is a Rainmeter skin with the essentials...
 - 12hr, 24hr, vertical and horizontal layout, custom colors, scaling, and formatting.  
 - Handwritten skin (Laro mod)  
 - Large Date skin (Ageo mod)  
-- Global Date  
+- Global Date and more...  
 
 ### Weather (based on AstroWeather by xxenium)  
-- Gets feed from Weather Channel website html (updated for June 2020 Weather Channel website)  
+- Gets data from Weather Channel website (updated for August 2020 Weather Channel API) 
 - 7 variants  
 - Click current temperature to open the settings to customize.  
 - Change any text or icon color.  
+- Hourly info displayed on hover.  
 
 ### Calendar
 - Minimal Monthly Calendar  
@@ -24,23 +25,29 @@ Sonder is a Rainmeter skin with the essentials...
 - Settings for customizing any color and open at a certain time as a reminder.  
 
 ### ISS Tracker  
-- Track the international Space Station on a map  
-- Add your location to see when it passes over your area.  
+- Track the international Space Station on a map and data on when it passes over your area.  
+- Data on the next 5 Rocket Launches.  
+- World Clock.  
+- Weather Radar Data.  
+- Dynamic Day/Night Shadow.  
 
 ### System (based on illustro)  
 - Overall CPU % and RAM usage. (GPU%, Swap, and Core Temp options available in settings)  
 - Advanced System stats skin using HWINFO (based off raiguard's Modern Gadgets code)  
 - Click on System text to open Task Manager.  
 - Ability to change bar color, height, width, and scale.  
-- Volume, Brightness, and Bluetooth controls
+- Volume, Brightness, Wifi, and Bluetooth controls
 
 ### Network Graph (based on Enigma by Kaelri)  
--Network info and automatic adjusting graph/text of up/down usage.  
--Click on graph to open Resource Monitor  
--Ability to change any color  
+- Network info and automatic adjusting graph/text of up/down usage.  
+- Click on graph to open Resource Monitor  
+- Ability to change any color  
 
-Recycle bin
+### Recycle bin  
 - Right Click to empty, Left Click to Open. 
+
+### Dot-based Visualizer (based on code by XukaKun)  
+- Check it out, you'll love it.  
 
 ### Wallpaper  
 https://ze-robot.com/images/source/3035.jpg  
