@@ -1,1 +1,0 @@
-Sonder\@Resources\Settings\CpuSettings.inc | Sonder\@Resources\Settings\DisksSettings.inc | Sonder\@Resources\Settings\GpuSettings.inc | Sonder\@Resources\Settings\GpuSettings1.inc | Sonder\@Resources\Settings\GpuSettings2.inc | Sonder\@Resources\Settings\GpuSettings3.inc
