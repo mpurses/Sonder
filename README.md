@@ -4,7 +4,7 @@
 </p>
  
 
-Sonder is a Rainmeter skin with the essentials...  
+Sonder is a [Rainmeter](https://www.rainmeter.net/) skin with the essentials...  
 
 ### Time and Date (based on Elegance by lilshizzy)  
 - 12hr, 24hr, vertical and horizontal layout, custom colors, scaling, and formatting.  
