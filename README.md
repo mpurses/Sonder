@@ -11,11 +11,11 @@ Sonder is a Rainmeter skin with the essentials...
 
 ### Weather (based on AstroWeather by xxenium)  
 - Gets data from Weather Channel website (updated for August 2020 Weather Channel API) 
-- 7 variants  
 - Click current temperature to open the settings to customize.  
-- Change any text or icon color.  
-- Hourly info displayed on hover.  
-
+- Hourly info displayed on hover. 
+- Change any text or icon color. 
+- 7 variants  
+ 
 ### Calendar
 - Minimal Monthly Calendar  
 
@@ -24,7 +24,7 @@ Sonder is a Rainmeter skin with the essentials...
 - Keeps track of your current streak number (days without breaking the chain)  
 - Settings for customizing any color and open at a certain time as a reminder.  
 
-### ISS Tracker  
+### World Map - with ISS, Rocket Launches, Clock, Radar...  
 - Track the international Space Station on a map and data on when it passes over your area.  
 - Data on the next 5 Rocket Launches.  
 - World Clock.  
@@ -47,10 +47,10 @@ Sonder is a Rainmeter skin with the essentials...
 - Right Click to empty, Left Click to Open. 
 
 ### Dot-based Visualizer (based on code by XukaKun)  
-- Check it out, you'll love it.  
+- Dots > Bars
 
 ### Wallpaper  
-https://ze-robot.com/images/source/3035.jpg  
+https://raw.githubusercontent.com/mpurses/Sonder/master/Skins/Sonder/Wallpapers/Trees-22.jpg 
 
 ### Favorite Wallpaper engines:  
 https://steamcommunity.com/sharedfiles/filedetails/?id=1675095968  
