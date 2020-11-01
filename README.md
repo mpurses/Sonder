@@ -1,14 +1,17 @@
-# Sonder
-![](Skins/Sonder/@Resources/Images/header.bmp)
+ # Sonder
+ <p align="center">
+  <img src="https://raw.githubusercontent.com/mpurses/Sonder/master/Screenshots/Sonder-v2.4.png">
+</p>
+ 
 
-Sonder is a Rainmeter skin with the essentials...  
+Sonder is a [Rainmeter](https://www.rainmeter.net/) skin with the essentials...  
 
 ### Time and Date (based on Elegance by lilshizzy)  
 - 12hr, 24hr, vertical and horizontal layout, custom colors, scaling, and formatting.  
 - Handwritten skin (Laro mod)  
 - Large Date skin (Ageo mod)  
 - Global Date and more...  
-
+  
 ### Weather (based on AstroWeather by xxenium)  
 - Gets data from Weather Channel website (updated for August 2020 Weather Channel API) 
 - Click current temperature to open the settings to customize.  
