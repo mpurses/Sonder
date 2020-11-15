@@ -3,7 +3,7 @@
 
 #### • 12.01.2020 - v2.6.5: (UPCOMING RELEASE)
 - Weather: Fix locations not being found automatically for Weather/TimeZones for some internet connections.  
-- Weather: Option to select from 3 more locations if first lat/long is wrong (for when sometimes a county takes wrong priority over a city).  
+- Weather: Option to select from 3 more locations if first lat/long is wrong (for when sometimes an incorrect county takes wrong priority over a city).  
 - World Map: Right-Click option to "Time Travel" without the settings window. Click & Drag OR Scroll over map to adjust shadow/time. Day Slider below map. Right-Click again to turn off.  
 - World Map: Fade edges on side of Map/Night Shadow.  
 - World Map: Ability to add up to 15 World Clock Locations.  
