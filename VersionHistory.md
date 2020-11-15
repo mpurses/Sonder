@@ -1,5 +1,21 @@
 ## Download Latest Release: https://github.com/mpurses/Sonder/releases  
 ### Version History  
+
+  #### • 12.01.2020 - v2.6.5: (UPCOMING RELEASE)
+- Weather: Fix locations not being found automatically for Weather/TimeZones for some internet connections.  
+- Weather: Option to select from 3 more locations if first lat/long is wrong (for when sometimes a county takes wrong priority over a city).  
+- World Map: Right-Click option to "Time Travel" without the settings window. Click & Drag OR Scroll over map to adjust shadow/time. Day Slider below map. Right-Click again to turn off.  
+- World Map: Fade edges on side of Map/Night Shadow.  
+- World Map: Ability to add up to 15 World Clock Locations.  
+- World Map: fix stuck on 12:00 when scrolling for time travel. Month-Day format instead of Day #. Other bug fixes...  
+- Recycle Bin: Allow to move skin now when you click&drag anywhere on the skin  
+- Calendar: Option to open google calendar to each day  
+- EverdayCalendar: Big speed improvements/code simplification, Remove lag when clicking days, other bug fixes.  
+ 
+  #### • 11.01.2020 - v2.6.4: 
+- Calendar: Fix incorrect days for Monday first users  
+- Time: Slightly better reflection gradient  
+- World Map: Slightly better CPU usage on some systems  
   
   #### • 10.28.2020 - v2.6.3: 
  - Time: New Reflection option  
