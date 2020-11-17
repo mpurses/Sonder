@@ -55,12 +55,7 @@ Sonder is a [Rainmeter](https://www.rainmeter.net/) skin with the essentials...
 ### Wallpaper  
 https://raw.githubusercontent.com/mpurses/Sonder/master/Skins/Sonder/Wallpapers/Trees-22.jpg 
 
-### Favorite Wallpaper engines:  
-https://steamcommunity.com/sharedfiles/filedetails/?id=1675095968  
-https://steamcommunity.com/sharedfiles/filedetails/?id=1604225602  
-
-
-Centered/Transparent Taskbar  
+### Centered/Transparent Taskbar  
 TaskbarX: https://chrisandriessen.nl/taskbarx/  
 
 ## Requirements
