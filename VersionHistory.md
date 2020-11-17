@@ -9,7 +9,7 @@
 - World Map: Ability to add up to 15 World Clock Locations.  
 - World Map: Month-Day format instead of Day #. Fix stuck on 12:00 when scrolling for time travel. Fix ISS Humans again. Other bug fixes...  
 - Recycle Bin: Allow to move skin now when you click&drag anywhere on the skin  
-- Calendar: Option to open google calendar to each day  
+- Calendar: Option to open google calendar to selected day  
 - EverdayCalendar: Big speed improvements/code simplification, Remove lag when clicking days, other bug fixes.  
  
 #### • 11.01.2020 - v2.6.4: 
