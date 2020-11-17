@@ -7,7 +7,7 @@
 - World Map: Right-Click option to "Time Travel" without the settings window. Click & Drag OR Scroll over map to adjust shadow/time. Day Slider below map. Right-Click again to turn off.  
 - World Map: Fade edges on side of Map/Night Shadow.  
 - World Map: Ability to add up to 15 World Clock Locations.  
-- World Map: fix stuck on 12:00 when scrolling for time travel. Month-Day format instead of Day #. Other bug fixes...  
+- World Map: Month-Day format instead of Day #. Fix stuck on 12:00 when scrolling for time travel. Fix ISS Humans again. Other bug fixes...  
 - Recycle Bin: Allow to move skin now when you click&drag anywhere on the skin  
 - Calendar: Option to open google calendar to each day  
 - EverdayCalendar: Big speed improvements/code simplification, Remove lag when clicking days, other bug fixes.  
