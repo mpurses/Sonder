@@ -67,5 +67,6 @@ Download the .RMSKIN package from here:
 [![Github All Releases](https://img.shields.io/github/downloads/mpurses/Sonder/total.svg?colorB=699B73)](https://github.com/mpurses/Sonder/releases)  
 or https://www.deviantart.com/michaelpurses/art/Sonder-Rainmeter-skin-838147223, make sure you have Rainmeter installed, then simply open the file to install the suite. It is recommended that you load the included layout if it is your first time installing. If you are updating from a prior version, you do not need to load the layout.  
   
-Contact me and other projects: https://www.michaelpurses.com/   
+## Contact me and other projects  
+https://www.michaelpurses.com/   
 
