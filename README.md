@@ -6,13 +6,13 @@
 
 Sonder is a [Rainmeter](https://www.rainmeter.net/) skin with the essentials...  
 
-### Time and Date (based on Elegance by lilshizzy)  
+### Time and Date  
 - 12hr, 24hr, vertical and horizontal layout, custom colors, scaling, and formatting.  
 - Handwritten skin (Laro mod)  
 - Large Date skin (Ageo mod)  
 - Global Date and more...  
   
-### Weather (based on AstroWeather by xxenium)  
+### Weather  
 - Gets data from Weather Channel website (updated for August 2020 Weather Channel API) 
 - Click current temperature to open the settings to customize.  
 - Hourly info displayed on hover. 
@@ -34,14 +34,14 @@ Sonder is a [Rainmeter](https://www.rainmeter.net/) skin with the essentials...
 - Weather Radar Data.  
 - Dynamic Day/Night Shadow.  
 
-### System (based on illustro)  
+### System  
 - Overall CPU % and RAM usage. (GPU%, Swap, and Core Temp options available in settings)  
 - Advanced System stats skin using HWINFO (based off raiguard's Modern Gadgets code)  
 - Click on System text to open Task Manager.  
 - Ability to change bar color, height, width, and scale.  
 - Volume, Brightness, Wifi, and Bluetooth controls
 
-### Network Graph (based on Enigma by Kaelri)  
+### Network Graph   
 - Network info and automatic adjusting graph/text of up/down usage.  
 - Click on graph to open Resource Monitor  
 - Ability to change any color  
