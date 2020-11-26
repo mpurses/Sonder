@@ -1,4 +1,5 @@
  # Sonder
+ [![Github All Releases](https://img.shields.io/github/downloads/mpurses/Sonder/total?colorB=699B73&style=for-the-badge&logo=github)](https://github.com/mpurses/Sonder/releases) [![DeviantArt All Releases](https://img.shields.io/badge/dynamic/json?logo=deviantart&label=Downloads&color=05cc47&style=for-the-badge&query=%24.community.statistics._attributes.downloads&url=https%3A%2F%2Fbackend.deviantart.com%2Foembed%3Furl%3Dhttps%253A%252F%252Fwww.deviantart.com%252Fmichaelpurses%252Fart%252FSonder-Rainmeter-skin-838147223%26format%3Djson)](https://www.deviantart.com/michaelpurses/art/Sonder-Rainmeter-skin-838147223)  
  <p align="center">
   <img src="https://raw.githubusercontent.com/mpurses/Sonder/master/Screenshots/Sonder-v2.4.png">
 </p>
@@ -63,9 +64,8 @@ Rainmeter 4.3 or newer: https://www.rainmeter.net
 System supports [CoreTemp](https://www.alcpu.com/CoreTemp/) for CPU core temperatures and [HWINFO](https://www.hwinfo.com/) for others.
 
 ## Installation Instructions
-Download the .RMSKIN package from here:
-[![Github All Releases](https://img.shields.io/github/downloads/mpurses/Sonder/total.svg?colorB=699B73)](https://github.com/mpurses/Sonder/releases)  
-or https://www.deviantart.com/michaelpurses/art/Sonder-Rainmeter-skin-838147223, make sure you have Rainmeter installed, then simply open the file to install the suite. It is recommended that you load the included layout if it is your first time installing. If you are updating from a prior version, you do not need to load the layout.  
+Download the .RMSKIN package from here or Deviantart: [![Github All Releases](https://img.shields.io/github/downloads/mpurses/Sonder/total?colorB=699B73&style=for-the-badge&logo=github)](https://github.com/mpurses/Sonder/releases) [![DeviantArt All Releases](https://img.shields.io/badge/dynamic/json?logo=deviantart&label=Downloads&color=05cc47&style=for-the-badge&query=%24.community.statistics._attributes.downloads&url=https%3A%2F%2Fbackend.deviantart.com%2Foembed%3Furl%3Dhttps%253A%252F%252Fwww.deviantart.com%252Fmichaelpurses%252Fart%252FSonder-Rainmeter-skin-838147223%26format%3Djson)](https://www.deviantart.com/michaelpurses/art/Sonder-Rainmeter-skin-838147223)  
+Make sure you have Rainmeter installed, then simply open the file to install the suite. It is recommended that you load the included layout if it is your first time installing. If you are updating from a prior version, you do not need to load the layout.  
   
 ## Contact me and other projects  
 https://www.michaelpurses.com/   
