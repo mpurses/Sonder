@@ -8,9 +8,11 @@
 - World Map: Fade edges on side of Map/Night Shadow.  
 - World Map: Ability to add up to 15 World Clock Locations.  
 - World Map: Month-Day format instead of Day #. Fix stuck on 12:00 when scrolling for time travel. Fix ISS Humans again. Other bug fixes...  
-- Recycle Bin: Allow to move skin now when you click&drag anywhere on the skin  
-- Calendar: Option to open google calendar to selected day  
+- Calendar: Option to open Google Calendar to selected day.
 - EverdayCalendar: Big speed improvements/code simplification, Remove lag when clicking days, other bug fixes.  
+- System Utilities: Add alternate variants of Volume and Brightness skins, Reduce CPU usage for Bluetooth.  
+- Recycle Bin: Allow to move skin now when you click&drag anywhere on the skin.  
+
  
 #### • 11.01.2020 - v2.6.4: 
 - Calendar: Fix incorrect days for Monday first users  
@@ -85,6 +87,7 @@
 - Visualizer: Fix various Preset saving/applying bugs  
 - Visualizer: Refresh on color change fix and lots of other tweaks/fixes under the hood.  
 - Clean up Resource folder/code in anticipation of allowing "merging" of skins for next releases (allows you to customize Sonder more w/o deleting your added files). Needed for Visualizer Preset saving, so you will lose them in this update if you do not backup.   
+
 #### • v2.5.2:  
 - Further tweaking and clean up of the settings; One thing you might notice/use is Toggling the loading of skins by clicking the "Titles" for each setting.  
 - Date: Left/Right/Center Option for Date_horiz  
