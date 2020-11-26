@@ -1,5 +1,4 @@
- # Sonder
- [![Github All Releases](https://img.shields.io/github/downloads/mpurses/Sonder/total?colorB=699B73&style=for-the-badge&logo=github)](https://github.com/mpurses/Sonder/releases) [![DeviantArt All Releases](https://img.shields.io/badge/dynamic/json?logo=deviantart&label=Downloads&color=05cc47&style=for-the-badge&query=%24.community.statistics._attributes.downloads&url=https%3A%2F%2Fbackend.deviantart.com%2Foembed%3Furl%3Dhttps%253A%252F%252Fwww.deviantart.com%252Fmichaelpurses%252Fart%252FSonder-Rainmeter-skin-838147223%26format%3Djson)](https://www.deviantart.com/michaelpurses/art/Sonder-Rainmeter-skin-838147223)  
+[![Github All Releases](https://img.shields.io/github/downloads/mpurses/Sonder/total?colorB=699B73&style=for-the-badge&logo=github)](https://github.com/mpurses/Sonder/releases) [![DeviantArt All Releases](https://img.shields.io/badge/dynamic/json?logo=deviantart&label=Downloads&color=05cc47&style=for-the-badge&query=%24.community.statistics._attributes.downloads&url=https%3A%2F%2Fbackend.deviantart.com%2Foembed%3Furl%3Dhttps%253A%252F%252Fwww.deviantart.com%252Fmichaelpurses%252Fart%252FSonder-Rainmeter-skin-838147223%26format%3Djson)](https://www.deviantart.com/michaelpurses/art/Sonder-Rainmeter-skin-838147223)  
  <p align="center">
   <img src="https://raw.githubusercontent.com/mpurses/Sonder/master/Screenshots/Sonder-v2.4.png">
 </p>
