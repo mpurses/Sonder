@@ -1,4 +1,4 @@
-[SonderLayout179095914Snap]
+[SonderLayout553501730Snap]
 Meter=Image
 ImageName=#@#Presets\Preset\Snap\Sonder Layout.png
 MaskImageName=#@#Presets\presetmask.png
@@ -8,25 +8,25 @@ Y=100
 LeftMouseUpAction=[!WriteKeyValue Variables CurrentTheme "Sonder Layout" "#@#Variables.inc"][!CommandMeasure MeasureRunCopyVariablesFile Run][!SetOption ApplyingPreset Text "Applying Preset..."][!ShowMeter ApplyingPreset][!Redraw][!SetVariable Name "Sonder Layout"][!Update][!Delay 1000][!CommandMeasure Script "ApplyPreset('Sonder Layout')"]
 DynamicVariables=1
 Group=Preset
-[SonderLayout179095914]
+[SonderLayout553501730]
 Meter=String
 Text=Sonder Layout
 MeterStyle=PresetStyle
 X=(20-#Scroll#)
 Y=160
-[SonderLayout179095914Time]
+[SonderLayout553501730Time]
 Meter=String
 Text=2020 Oct 14 10:29:50
 MeterStyle=TimeStyle
 X=r
 Y=R
-[SonderLayout179095914Delete]
+[SonderLayout553501730Delete]
 Meter=String
 MeterStyle=DeleteStyle
 X=(350-#Scroll#)
 Y=200
 LeftMouseUpAction=[!SetVariable Name "Sonder Layout"][!Update][!Delay 1000][!CommandMeasure Script "DeletePreset('Sonder Layout')"]
-[Sonder-LunarLayout201691608Snap]
+[Sonder-LunarLayout678946787Snap]
 Meter=Image
 ImageName=#@#Presets\Preset\Snap\Sonder - Lunar Layout.png
 MaskImageName=#@#Presets\presetmask.png
@@ -36,19 +36,19 @@ Y=235
 LeftMouseUpAction=[!WriteKeyValue Variables CurrentTheme "Sonder - Lunar Layout" "#@#Variables.inc"][!CommandMeasure MeasureRunCopyVariablesFile Run][!SetOption ApplyingPreset Text "Applying Preset..."][!ShowMeter ApplyingPreset][!Redraw][!SetVariable Name "Sonder - Lunar Layout"][!Update][!Delay 1000][!CommandMeasure Script "ApplyPreset('Sonder - Lunar Layout')"]
 DynamicVariables=1
 Group=Preset
-[Sonder-LunarLayout201691608]
+[Sonder-LunarLayout678946787]
 Meter=String
 Text=Sonder - Lunar Layout
 MeterStyle=PresetStyle
 X=(20-#Scroll#)
 Y=295
-[Sonder-LunarLayout201691608Time]
+[Sonder-LunarLayout678946787Time]
 Meter=String
 Text=2020 Oct 14 11:54:18
 MeterStyle=TimeStyle
 X=r
 Y=R
-[Sonder-LunarLayout201691608Delete]
+[Sonder-LunarLayout678946787Delete]
 Meter=String
 MeterStyle=DeleteStyle
 X=(350-#Scroll#)
