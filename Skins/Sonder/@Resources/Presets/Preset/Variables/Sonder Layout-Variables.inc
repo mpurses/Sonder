@@ -2,8 +2,7 @@
 ;************************************** All ***************************************
 notifyUpdates=1
 CheckForPrereleases=0
-RandomNumGenerated=1
-;437597227
+RandomNumGenerated=0
 RandomNumID=437597227
 LanguageOverride=Local
 LocalFontFace=ITC Avant Garde Pro XLt
@@ -50,8 +49,7 @@ LocalFontFace41=SF Pro Display
 LocalFontFace42=Moving Skate
 
 
-;***************************** Background Color on hover *****************************
-GlobalSkinBackgroundColor=White
+;***************************** All-Background Color on hover *****************************
 GlobalSkinBackgroundColorTint=0,0,0
 GlobalSkinBackgroundAlpha=70
 GlobalSkinBackgroundAlphaInactive=1
@@ -59,8 +57,8 @@ AllAccentColors=105,155,115
 
 
 ;************************************ ColorPicker ************************************
-CurrentColorToModify=LandOutlineColor
-ColorPickerChosenColor=0,0,0
+CurrentColorToModify=VolumeIconColor2
+ColorPickerChosenColor=255,255,255,130
 
 
 ;*************************************** Time ****************************************
@@ -153,9 +151,10 @@ MonthCalendarScale=1
 CalendarColorDays=245,245,245
 CalendarColorMonth=105,155,115
 Date_MonthFont_YAdj=-30
-Month_YAdj_All=0
+Month_YAdj_All=10
 FirstDayofWeek=0
 ExtraDays=0
+LinkToGCal=0
 
 
 ;********************************** Everyday Calendar ********************************
@@ -163,9 +162,9 @@ CalendarLayout=1
 RefreshOverride=0
 CalendarBackgroundColor=0,0,0,235
 HeaderText=Everyday Calendar
-CalendarFontColor=220,220,220
+CalendarFontColor0=0,0,0
+CalendarFontColor1=220,220,220
 CurrentDayUnderlineColor=55,55,255
-FontColorOn=0,0,0
 HeaderTextSize=18
 HabitTextSize=14
 DayHeight=30.77419
@@ -202,11 +201,11 @@ MonthTextSize=14
 DayTextSize=(#DayHeight#*0.43)
 DayTextSizeHover=(#DayHeight#*0.525)
 DayActiveColor=97,147,226
-DayActiveColorHover=150,200,255,255
+DayActiveColorHover=150,200,255
 StreakTodayNotCompleteColor=110,110,110
 DayFontEffectColor=180,180,180,100
 LeapYearAdj=0
-CurrentDayMeter=256
+CurrentDayMeter=336
 CurrentStreak=0
 TodayComplete=0
 CalendarSelectDayOption=1
@@ -214,6 +213,32 @@ ReminderOn=0
 ReminderTime=Off
 ActiveDayImage=#@#Images\Calendar-Active.png
 ActiveShape=Image
+;***Month View***
+MeterDay1X=200
+RowHighlightColor=53,53,53,255
+HabitDayCircleColor1=255,255,255,20
+HabitDayCircleColorHover1=255,255,255,35
+HabitDayCircleColor0=#DayActiveColor#
+HabitDayCircleColorHover0=#DayActiveColorHover#
+Habit1=Workout
+Habit2=Read a book
+Habit3=Drink Water
+Habit4=Eat Healthy
+Habit5=Learn Language
+Habit6=Habit6
+Habit7=Habit7
+Habit8=Habit8
+Habit9=Habit9
+Habit10=Habit10
+Habit2Disabled=0
+Habit3Disabled=0
+Habit4Disabled=0
+Habit5Disabled=0
+Habit6Disabled=1
+Habit7Disabled=1
+Habit8Disabled=1
+Habit9Disabled=1
+Habit10Disabled=1
 
 
 ;**************************************** System *************************************
@@ -234,7 +259,7 @@ SidebarWidthNetwork=200
 NetworkDownColor=255,255,255,160
 NetworkUpColor=105,155,115
 NetworkMainTextColor=255,255,255
-BitsORBytes=1
+BitsORBytes=8
 
 
 ;************************************ Recycle Bin ************************************
@@ -253,8 +278,8 @@ DisabledTimeMoon=0
 HiddenMoon=0
 HiddenMoonDay=0
 Daytime=1
-SunsetTime=16:52
-SunriseTime=06:35
+SunsetTime=16:36
+SunriseTime=07:02
 SizeValue=0.65
 FontColor=255,255,255
 FontColorSettings=255,255,255
@@ -271,7 +296,7 @@ Degrees=°
 UpdateRate=660
 AutoDetectLocation=1
 AutoLatLong=1
-AutoDetectCity=Denver, CO
+AutoDetectCity=Denver, Colorado
 ;Latitude & Longitude will automatically change from AutoDetectCity value if AutoLatLong equals 1
 Latitude=39.739236
 Longitude=-104.984862
@@ -315,7 +340,7 @@ ISSScale=1
 MapWidth=3000
 MapHeight=1500
 LandColor=255,255,255
-MapAlpha=50
+MapAlpha=70
 LandOutlineColor=0,0,0
 MapOutlineAlpha=40
 YourLat=#Latitude#
@@ -326,7 +351,7 @@ ShowRocket=0
 ShowISS=0
 ;**** World Clock ****
 WorldMapTimeTextColor=240,240,240
-WorldMapTimeSecondaryTextColor=180,180,180
+WorldMapTimeSecondaryTextColor=255,255,255,150
 WorldClockTextScale=1
 WorldMapCitySearch=Tokyo, Japan
 WorldMapLatSearch=
@@ -341,6 +366,11 @@ WorldMapShow7=1
 WorldMapShow8=1
 WorldMapShow9=1
 WorldMapShow10=1
+WorldMapShow11=1
+WorldMapShow12=1
+WorldMapShow13=1
+WorldMapShow14=1
+WorldMapShow15=1
 WorldMapLocation1=
 WorldMapLocation2=
 WorldMapLocation3=
@@ -351,6 +381,11 @@ WorldMapLocation7=
 WorldMapLocation8=
 WorldMapLocation9=
 WorldMapLocation10=
+WorldMapLocation11=
+WorldMapLocation12=
+WorldMapLocation13=
+WorldMapLocation14=
+WorldMapLocation15=
 ; Time Zones are automatically retireved via settings window
 ; Offsets are in seconds, so Time Zone -5 is (-5*3600) -> -18000 
 WorldMapTimeZone1=0
@@ -363,6 +398,11 @@ WorldMapTimeZone7=0
 WorldMapTimeZone8=0
 WorldMapTimeZone9=0
 WorldMapTimeZone10=0
+WorldMapTimeZone11=0
+WorldMapTimeZone12=0
+WorldMapTimeZone13=0
+WorldMapTimeZone14=0
+WorldMapTimeZone15=0
 WorldMapLat1=0
 WorldMapLon1=0
 WorldMapLat2=0
@@ -383,6 +423,16 @@ WorldMapLat9=0
 WorldMapLon9=0
 WorldMapLat10=0
 WorldMapLon10=0
+WorldMapLat11=0
+WorldMapLon11=0
+WorldMapLat12=0
+WorldMapLon12=0
+WorldMapLat13=0
+WorldMapLon13=0
+WorldMapLat14=0
+WorldMapLon14=0
+WorldMapLat15=0
+WorldMapLon15=0
 ;Day/Night Shadow
 WorldDaylightShadow=0
 WorldDaylightShadowAlpha=100
@@ -400,7 +450,9 @@ VolumeBarHeight=132
 VolumeBGMargin=12
 VolumeIconSize=36
 VolumeIconColor=0,0,0,130
+VolumeIconColor2=255,255,255,170
 VolumeIconBGColor=255,255,255,30
+VolumeIconBGColor2=0,0,0,60
 VolumeBarBGColor=255,255,255,40
 VolumeBarColor=255,255,255,100
 VolumeTextColor=255,255,255,130
@@ -512,4 +564,4 @@ ID=2
 ThemeChanger=1
 SunriseTheme=
 SunsetTheme=
-CurrentTheme=
+CurrentTheme=Sonder Layout
