@@ -1,18 +1,19 @@
 ## Download Latest Release: https://github.com/mpurses/Sonder/releases  
 ### Version History  
 
-#### • 12.01.2020 - v2.6.5: (UPCOMING RELEASE)
-- Weather: Fix locations not being found automatically for Weather/TimeZones for some internet connections.  
-- Weather: Option to select from 3 more locations if first lat/long is wrong (for when sometimes an incorrect county takes wrong priority over a city).  
-- World Map: Right-Click option to "Time Travel" without the settings window. Click & Drag OR Scroll over map to adjust shadow/time. Day Slider below map. Right-Click again to turn off.  
-- World Map: Fade edges on side of Map/Night Shadow.  
-- World Map: Ability to add up to 15 World Clock Locations.  
-- World Map: Month-Day format instead of Day #. Fix stuck on 12:00 when scrolling for time travel. Fix ISS Humans again. Other bug fixes...  
-- Calendar: Option to open Google Calendar to selected day.
-- EverdayCalendar: Big speed improvements/code simplification, Remove lag when clicking days, other bug fixes.  
-- System Utilities: Add alternate variants of Volume and Brightness skins, Reduce CPU usage for Bluetooth.  
+#### • 12.01.2020 - v2.7.0:
+- Weather: Fix locations not being found automatically for Weather/TimeZones for some internet connections.
+- Weather: Option to select from 3 more locations if first lat/long is wrong (for when sometimes an incorrect county takes wrong priority over a city).
+- World Map: Right-Click option to "Time Travel" without the settings window. Click & Drag OR Scroll over map to adjust shadow/time. Day Slider below map. Right-Click again to turn off.
+- World Map: Fade edges on side of Map/Night Shadow.
+- World Map: Ability to add up to 15 World Clock Locations.
+- World Map: Month-Day format instead of Day #. Fix stuck on 12:00 when scrolling for time travel. Fix ISS Humans again. Other bug fixes...
+- Calendar: Option to open Google Calendar to selected day, other bug fixes.
+- EverydayCalendar: Big speed improvements/code simplification, Remove lag when clicking days, other bug fixes.
+- EverydayCalendar: Month-view with ability to track individual habits.
+- System Utilities: New alternate variants of Volume and Brightness skins, Reduce CPU usage for Bluetooth variant
 - Recycle Bin: Allow to move skin now when you click&drag anywhere on the skin.  
-
+  
  
 #### • 11.01.2020 - v2.6.4: 
 - Calendar: Fix incorrect days for Monday first users  
