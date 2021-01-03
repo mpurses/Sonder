@@ -568,3 +568,7 @@ ThemeChanger=1
 SunriseTheme=
 SunsetTheme=
 CurrentTheme=Sonder Layout
+[Variables]
+SunriseTheme=Sonder Layout
+SunsetTheme=
+ThemeChanger=0
