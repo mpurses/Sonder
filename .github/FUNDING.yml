@@ -1,6 +1,4 @@
 # These are supported funding model platforms
 
 github: mpurses
-custom: ["paypal.com/cgi-bin/webscr?cmd=_donations&business=E59D22UD5FZGY&item_name=Sonder+donation&currency_code=USD"]
-custom: ["https://venmo.com/MichaelPurses"]
-custom: ["https://cash.app/$MichaelPurses"]
+custom: ["venmo.com/MichaelPurses", "cash.app/$MichaelPurses", "paypal.com/cgi-bin/webscr?cmd=_donations&business=E59D22UD5FZGY&item_name=Sonder+donation&currency_code=USD"]
