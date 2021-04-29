@@ -248,13 +248,3 @@ Channel=Avg
 BandIdx=25
 UpdateDivider=#UpdateSpeed#
 DynamicVariables=1
-[MeasureAudio26]
-Measure=Plugin
-Group=Audio
-Plugin=AudioLevel
-Parent=Audio
-Type=Band
-Channel=Avg
-BandIdx=26
-UpdateDivider=#UpdateSpeed#
-DynamicVariables=1
