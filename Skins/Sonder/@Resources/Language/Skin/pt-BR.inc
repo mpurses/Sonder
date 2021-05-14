@@ -42,5 +42,5 @@ Location=Localização
 Time=Tempo
 InternationalSpaceStation=Estação Espacial Internacional
 Location=Localização
-NextPassoversAtYourLocation=Próxima passovers no seu local
+NextPassoversAtYourLocation=Próxima data que passará pelo seu local
 HumansOnISSRightNow=Humanos na EEI agora
