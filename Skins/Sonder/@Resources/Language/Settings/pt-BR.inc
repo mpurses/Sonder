@@ -1,7 +1,7 @@
 ﻿[Variables]
 MainSettings=Configurações
 Weather=Clima
-Visualizer=Visualizar
+Visualizer=Visualizer
 SystemAdvanced=Sistema Avançado
 Utilities=Utilidades
 Time=Tempo
