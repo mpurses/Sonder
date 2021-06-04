@@ -13,7 +13,7 @@ MouseLeaveAction=[!CommandMeasure Animation "Stop 1"][!CommandMeasure Animation 
 [Metadata]
 Author=mpurses
 License=Creative Commons Attribution-Non-Commercial-Share Alike 3.0
-Version=21.1.0
+Version=21.6.0
 Information=Circular Screen Brightness adjuster via scrolling.|This version Uses 'ScreenBrightness' plugin instead of 'Backlight' plugin. Use this if the other version causes Rainmeter to crash.
 
 [Variables]

@@ -1,4 +1,4 @@
 Name=Sonder - Lunar Layout
-Time=2020 Dec 28 15:05:35
-Wallpaper=#ROOTCONFIGPATH#Wallpapers\ajamesmccarthy-9000x9000.jpg
-WallpaperFit=Tile
+Time=2021 Jun 04 10:00:22
+Wallpaper=#ROOTCONFIGPATH#Wallpapers\ajamesmccarthy-16-9.jpg
+WallpaperFit=Fit
