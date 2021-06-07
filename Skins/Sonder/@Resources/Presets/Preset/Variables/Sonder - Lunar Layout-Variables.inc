@@ -1139,3 +1139,5 @@ SunriseTheme=Sonder Layout
 SunsetTheme=Sonder - Lunar Layout
 
 CurrentTheme=Sonder - Lunar Layout
+[Variables]
+ThemeChanger=1
