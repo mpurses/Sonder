@@ -934,11 +934,11 @@ WifiIconBGColorOn=50,115,208,1
 
 WifiOpenDelay=1250
 
-TurnOnWifi=["%windir%\explorer.exe" "ms-availablenetworks:"][!Delay #WifiOpenDelay#][#@#\Scripts\Send3TabKey.vbs][!Delay 24][#@#\Scripts\SendSpaceKey.vbs][!Delay 24][#@#\Scripts\SendEscKey.vbs]
+Turn_On_Wifi=["%windir%\explorer.exe" "ms-availablenetworks:"][!Delay #WifiOpenDelay#][#@#\Scripts\Send3TabKey.vbs][!Delay 24][#@#\Scripts\SendSpaceKey.vbs][!Delay 24][#@#\Scripts\SendEscKey.vbs]
 
-TurnOffWifi=["%windir%\explorer.exe" "ms-availablenetworks:"][!Delay #WifiOpenDelay#][#@#\Scripts\Send4TabKey.vbs][!Delay 24][#@#\Scripts\SendSpaceKey.vbs][!Delay 24][#@#\Scripts\SendEscKey.vbs]
+Turn_Off_Wifi=["%windir%\explorer.exe" "ms-availablenetworks:"][!Delay #WifiOpenDelay#][#@#\Scripts\Send4TabKey.vbs][!Delay 24][#@#\Scripts\SendSpaceKey.vbs][!Delay 24][#@#\Scripts\SendEscKey.vbs]
 
-;If you want to open the Wifi Settings window use this for TurnOnWifi/TurnOffWifi...
+;If you want to open the Wifi Settings window use this for Turn_On_Wifi/Turn_Off_Wifi...
 
 ;["%windir%\explorer.exe" "ms-settings:network-wifi"][!Delay #WifiOpenDelay#][#@#\Scripts\SendSpaceKey.vbs][!Delay 24][#@#\Scripts\SendCloseKey.vbs]
 
