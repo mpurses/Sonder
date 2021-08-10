@@ -1,7 +1,7 @@
 Name=Lunar
 Time=2020 Aug 13 15:04:43
-Wallpaper=#ROOTCONFIGPATH#Wallpapers\ajamesmccarthy-9000x9000.jpg
-WallpaperFit=Tile
+Wallpaper=#ROOTCONFIGPATH#Wallpapers\ajamesmccarthy-16-9.jpg
+WallpaperFit=Fit
 X=0
 Y=0
 Distance=20
