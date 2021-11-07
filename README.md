@@ -10,7 +10,7 @@
   <a href="https://www.deviantart.com/michaelpurses/art/Sonder-Rainmeter-skin-838147223">
     <img alt="DeviantArt Downloads" src="https://img.shields.io/badge/dynamic/json?logo=deviantart&label=Downloads&color=05cc47&style=for-the-badge&query=%24.community.statistics._attributes.downloads&url=https%3A%2F%2Fbackend.deviantart.com%2Foembed%3Furl%3Dhttps%253A%252F%252Fwww.deviantart.com%252Fmichaelpurses%252Fart%252FSonder-Rainmeter-skin-838147223%26format%3Djson">
   </a>   
-  <img src="https://raw.githubusercontent.com/mpurses/Sonder/master/Plugins/Screenshots/Sonder-v21.6.png">
+  <img src="https://raw.githubusercontent.com/mpurses/Sonder/master/Plugins/Screenshots/Sonder-v21.11.png">
 </p>
  
 
@@ -51,7 +51,7 @@ Sonder is a [Rainmeter](https://www.rainmeter.net/) skin with the essentials...
 - Advanced System stats skin using HWINFO (based off raiguard's Modern Gadgets code)  
 - Click on System text to open Task Manager.  
 - Ability to change bar color, height, width, and scale.  
-- Volume, Brightness, Wifi, and Bluetooth controls
+- Volume, Brightness, Wifi, Bluetooth, Power, Restart, Sleep, & Lock controls
 
 ### Network Graph   
 - Network info and automatic adjusting graph/text of up/down usage.  
